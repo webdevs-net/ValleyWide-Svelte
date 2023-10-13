@@ -1,0 +1,14 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 547 1891" width="547" height="1891">
+	<title>service-mobile-bars-svg</title>
+	<defs>
+		<linearGradient id="g1" x1="-96.2" y1="-731.3" x2="1015.6" y2="-629" gradientUnits="userSpaceOnUse">
+			<stop offset=".19" stop-color="#263a63" stop-opacity="0"/>
+			<stop offset=".867" stop-color="#263a63" stop-opacity="1"/>
+			<stop offset=".906" stop-color="#263a63" stop-opacity="0"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: none;stroke: url(#g1);stroke-width: 2.5 } 
+	</style>
+	<path id="Layer" class="s0" d="m2.7 0.8v278.5h541.1v327.9h-541.1v301.2h541.1v323.8h-541.1v297h541.1v361"/>
+</svg>

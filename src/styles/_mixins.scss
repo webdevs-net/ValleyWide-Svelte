@@ -1,0 +1,130 @@
+// A map of breakpoints.
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1600px,
+  xl1: 1601px,
+  ipadmini: 769px, // for ipad mini
+  ml: 426px, // for service bar bg breakpoints
+  mm: 376px,
+  ms: 321px,
+  w545: 545px,
+  default: 1441px,
+  laptopS: 1025px,
+  w1400: 1400px,
+  w800: 801px,
+);
+
+// @include respond-above(sm) {}
+@mixin media-min($breakpoint) {
+
+    // If the breakpoint exists in the map.
+    @if map-has-key($breakpoints, $breakpoint) {
+  
+      // Get the breakpoint value.
+      $breakpoint-value: map-get($breakpoints, $breakpoint);
+  
+      // Write the media query.
+      @media (min-width: $breakpoint-value) {
+        @content;
+      }
+    
+    // If the breakpoint doesn't exist in the map.
+    } @else {
+  
+      // Log a warning.
+      @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+//
+//  RESPOND BELOW
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include media-max(sm) {}
+@mixin media-max($breakpoint) {
+
+    // If the breakpoint exists in the map.
+    @if map-has-key($breakpoints, $breakpoint) {
+  
+      // Get the breakpoint value.
+      $breakpoint-value: map-get($breakpoints, $breakpoint);
+  
+      // Write the media query.
+      @media (max-width: ($breakpoint-value - 1)) {
+        @content;
+      }
+    
+    // If the breakpoint doesn't exist in the map.
+    } @else {
+  
+      // Log a warning.
+      @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+  }
+  
+  
+  //
+  //  RESPOND BETWEEN
+  //––––––––––––––––––––––––––––––––––––––––––––––––––
+  
+  // @include respond-between(sm, md) {}
+  @mixin media-between($lower, $upper) {
+  
+    // If both the lower and upper breakpoints exist in the map.
+    @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+  
+      // Get the lower and upper breakpoints.
+      $lower-breakpoint: map-get($breakpoints, $lower);
+      $upper-breakpoint: map-get($breakpoints, $upper);
+  
+      // Write the media query.
+      @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+        @content;
+      }
+    
+    // If one or both of the breakpoints don't exist.
+    } @else {
+  
+      // If lower breakpoint is invalid.
+      @if (map-has-key($breakpoints, $lower) == false) {
+  
+        // Log a warning.
+        @warn 'Your lower breakpoint was invalid: #{$lower}.';
+      }
+  
+      // If upper breakpoint is invalid.
+      @if (map-has-key($breakpoints, $upper) == false) {
+  
+        // Log a warning.
+        @warn 'Your upper breakpoint was invalid: #{$upper}.';
+      }
+    }
+  }
+
+  // Scrollbars
+  @mixin scrollbars($size, $bradius, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    // For Google Chrome
+    &::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+      border-radius: $bradius;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: $background-color;
+      border-radius: $bradius;
+    }
+  
+    // For Internet Explorer
+    & {
+      scrollbar-face-color: $foreground-color;
+      scrollbar-track-color: $background-color;
+    }
+  }
