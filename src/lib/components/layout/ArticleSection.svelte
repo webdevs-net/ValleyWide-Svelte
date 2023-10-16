@@ -7,11 +7,11 @@
 	// import Animate from "$lib/components/Animate.svelte";
 	import { textAnimate, fly, fadeIn, slide } from '$lib/GsapAnimation.js';
 
-	const domain = "https://api.ulfbuilt.com"
+	let domain = "https://vwapi.netdevs.net/"
 	
 	let promise = fetchCta();
 	async function fetchCta(){
-		const url = 'https://api.ulfbuilt.com/api/global-article-cta?populate=deep,2';
+		const url = domain+'api/global-article-cta?populate=deep,2';
 		const headers = {
 			Authorization: 'Bearer ' + PUBLIC_STRAPI_API
 		};

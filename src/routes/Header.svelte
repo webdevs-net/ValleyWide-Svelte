@@ -9,7 +9,7 @@
 	import HamburgerLight from "$lib/img/HamburgerLight.svg"
 	import HamburgerDark from "$lib/img/HamburgerDark.svg"
 	import { PUBLIC_STRAPI_API } from '$env/static/public';
-	
+	let domain = "https://vwapi.netdevs.net/"
 	import {
 	  Collapse,
 	  Navbar,
@@ -32,9 +32,8 @@
 	import { fly, slide } from 'svelte/transition';
 
 	let promise = fetchSiteSettings();
-	const domain = "https://api.ulfbuilt.com/";
 	async function fetchSiteSettings(){
-		const url = 'https://api.ulfbuilt.com/api/site-setting?populate=deep,3';
+		const url = domain+'api/site-setting?populate=deep,3';
 		const headers = {
 			Authorization: 'Bearer ' + PUBLIC_STRAPI_API
 		};

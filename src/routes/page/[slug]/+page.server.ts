@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { STRAPI_API } from '$env/static/private';
-
+let domain = "https://vwapi.netdevs.net/"
 export async function load(params) {
-    const url = 'https://api.ulfbuilt.com/api/pages?filters[slug][$eq]='+params.params.slug+'&populate=deep';
+    const url = domain+'api/pages?filters[slug][$eq]='+params.params.slug+'&populate=deep';
     const headers = {
         Authorization: 'Bearer ' + STRAPI_API
     }

@@ -5,7 +5,7 @@
     // import { fade, fly } from 'svelte/transition';
     import { textAnimate, fly, fadeIn, slide } from '$lib/GsapAnimation.js';
     export let data;
-    const url = 'https://api.ulfbuilt.com';
+    const domain = 'https://vwapi.netdevs.net/';
 
     $: num = data.num;
     $: num2 = data.num+3;
@@ -40,7 +40,7 @@
     </div>
 </Container>
     
- <div class="cover__coverimg" in:fadeIn id="single_article_img" gsap-duration="1" style="background-image:url({url}{data.page.data[0].attributes.featuredimage.data.attributes.formats.large.url ? data.page.data[0].attributes.featuredimage.data.attributes.formats.large.url : data.page.data[0].attributes.featuredimage.data.attributes.url});"></div>
+ <div class="cover__coverimg" in:fadeIn id="single_article_img" gsap-duration="1" style="background-image:url({domain}{data.page.data[0].attributes.featuredimage.data.attributes.formats.large.url ? data.page.data[0].attributes.featuredimage.data.attributes.formats.large.url : data.page.data[0].attributes.featuredimage.data.attributes.url});"></div>
  
 </div>
 <section class="content">
@@ -66,7 +66,7 @@
                             <div class="related-articles__easein-container">
                                 <div class="easein-img">
                                     <a href="/articles/{blog.attributes.slug ? blog.attributes.slug : '#'}" class="zoomImg"> 
-                                        <img src="{url}{blog.attributes.featuredimage.data.attributes.formats.large.url ? blog.attributes.featuredimage.data.attributes.formats.large.url : blog.attributes.featuredimage.data.attributes.url}" alt="blogtitle" class="blog-img w-100">
+                                        <img src="{domain}{blog.attributes.featuredimage.data.attributes.formats.large.url ? blog.attributes.featuredimage.data.attributes.formats.large.url : blog.attributes.featuredimage.data.attributes.url}" alt="blogtitle" class="blog-img w-100">
                                     </a>
                                 </div>
                             </div>

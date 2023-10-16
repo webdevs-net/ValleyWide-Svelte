@@ -15,7 +15,7 @@
     let aboutimage = data.about.data.attributes.featuredimage.data.attributes.formats.large_x2.url ? data.about.data.attributes.featuredimage.data.attributes.formats.large_x2.url : data.about.data.attributes.featuredimage.data.attributes.url 
     let aboutsubheading = data.about.data.attributes.Aboutsubheading
     let about = data.about.data.attributes
-    let url = "https://api.ulfbuilt.com/";
+    let url = "https://vwapi.netdevs.net/";
     let scroll: number;
 
     let testimonialsData = data.testimonials.data;

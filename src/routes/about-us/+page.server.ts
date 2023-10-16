@@ -1,8 +1,8 @@
 import { STRAPI_API } from '$env/static/private';
 import axios from 'axios';
-
+let domain = "https://vwapi.netdevs.net/"
 export async function load() {
-    const url = 'https://api.ulfbuilt.com/api/about-us?populate=*';
+    const url = domain+'api/about-us?populate=*';
     const headers = {
         Authorization: 'Bearer ' + STRAPI_API 
     }  
@@ -11,7 +11,7 @@ export async function load() {
     // const response = await fetch(url, {
     //     headers: { 'Authorization': 'bearer ' + STRAPI_API },
     // });
-    const urlTestimonials = 'https://api.ulfbuilt.com/api/testimonials?populate=deep';
+    const urlTestimonials = domain+'api/testimonials?populate=deep';
     const testimonials = await axios.get(urlTestimonials, { headers }); 
 
     // return response.json();

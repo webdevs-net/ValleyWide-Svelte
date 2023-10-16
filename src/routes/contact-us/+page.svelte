@@ -9,7 +9,7 @@
     const color = "darkblue";
     import { Col, Container, Row } from 'sveltestrap';
     import { PUBLIC_STRAPI_API } from '$env/static/public';
-    const url = "https://api.ulfbuilt.com/";
+    let domain = "https://vwapi.netdevs.net/";
     
     let phone = data.contact.data.attributes.phone;
     let office_address = data.contact.data.attributes.office_address;
@@ -19,7 +19,7 @@
 	let emailResponse = data.contactDetails.data.attributes.contactDetails.emailResponse;
     let name = '', email = '', formPhone = '', message = '', result = ''
     async function doContact () {
-        const url = 'https://api.ulfbuilt.com/api/contact-forms';
+        const url = domain+'api/contact-forms';
 		const res = await fetch(url, {
 			method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': 'bearer ' + PUBLIC_STRAPI_API },
@@ -37,7 +37,7 @@
             result = json.error.message
         }else{
             result = 'Processing...'
-        const url2 = 'https://api.ulfbuilt.com/api/email/';
+        const url2 = domain+'api/email/';
 		const res2 = await fetch(url2, {
 			method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': 'bearer ' + PUBLIC_STRAPI_API },
@@ -68,7 +68,7 @@
 	<meta name="description" content="ULF BUILT" />
 </svelte:head>
 
-<PageBanner title="{data.contact.data.attributes.title ? data.contact.data.attributes.title : 'Contact Us'}" extraClass="contact" subTitle="{data.contact.data.attributes.Subheading ? data.contact.data.attributes.Subheading : ''}" banner="{url}{data.contact.data.attributes.featuredimage.data.attributes.formats.large_x2.url ? data.contact.data.attributes.featuredimage.data.attributes.formats.large_x2.url : data.contact.data.attributes.featuredimage.data.attributes.url}" />
+<PageBanner title="{data.contact.data.attributes.title ? data.contact.data.attributes.title : 'Contact Us'}" extraClass="contact" subTitle="{data.contact.data.attributes.Subheading ? data.contact.data.attributes.Subheading : ''}" banner="{domain}{data.contact.data.attributes.featuredimage.data.attributes.formats.large_x2.url ? data.contact.data.attributes.featuredimage.data.attributes.formats.large_x2.url : data.contact.data.attributes.featuredimage.data.attributes.url}" />
 
 <section class="mx-10 contact_inner">
     <!-- <Animate> -->
@@ -107,7 +107,7 @@
         </Container>
     <!-- </Animate> -->
 </section>
-    <div class="contact-img" style="background-image: url({url}{data.contact.data.attributes.formcover.data.attributes.formats.large.url ? data.contact.data.attributes.formcover.data.attributes.formats.large.url : data.data.attributes.formcover.data.attributes.url});">
+    <div class="contact-img" style="background-image: url({domain}{data.contact.data.attributes.formcover.data.attributes.formats.large.url ? data.contact.data.attributes.formcover.data.attributes.formats.large.url : data.data.attributes.formcover.data.attributes.url});">
     <div class="contact-box container-fluid">
                 <div class="contact-form border-radius">
                     <h2 class="text-center pb-4 text-animate secondary-font" in:textAnimate id="contact_form_heading" gsap-start="center bottom" gsap-duration="1.5">{data.contact.data.attributes.contact_form_title ? data.contact.data.attributes.contact_form_title : ''}</h2>

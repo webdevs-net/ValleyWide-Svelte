@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Col, Container, Row } from "sveltestrap";
 	export let data;
-	let domain = "https://api.ulfbuilt.com";
+	let domain = "https://vwapi.netdevs.net/";
 	let page =  data.data[0].attributes;
 </script>
 <svelte:head>

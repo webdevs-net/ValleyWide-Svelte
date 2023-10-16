@@ -3,33 +3,13 @@
     import {Container, Row, Col} from 'sveltestrap';
     import Cta from '$lib/components/layout/Cta.svelte';
     import Animate from '$lib/components/Animate.svelte';
-    // import { fade, fly } from "svelte/transition";
     import PageBanner from '$lib/components/layout/PageBanner.svelte';
-    // import { onMount } from "svelte";
-    // import axios from "axios";
-    const url = "https://api.ulfbuilt.com/";
+    let domain = "https://vwapi.netdevs.net/";
     let page = data.services.data.attributes
     let featuredProjects = data.portfolios.data
     import noFeatured from "$lib/img/blog-empty.svg"
     let fallback = data.fallback.data.attributes.fallbackImage.data;
     import { textAnimate, fly, fadeIn, slide, scaleUp, slowDownSection } from '$lib/GsapAnimation.js';
-
-    // export let pdata;
-    // export let featuredProjects;
-    // let promise = fetchProject();
-    // async function fetchProject(){
-    //     const url = 'https://api.ulfbuilt.com/api/portfolios?populate=deep';
-    //     const headers = {
-    //         Authorization: 'Bearer ec0d6b5aece1773cbd6e5f48756c70d9b0b3a59a4d1c325a2e699c1c1b1cae0980dc56aa2c3dfd565237b2a00db9a547a1a9e54a86f80697b31766e6bf80257b37760df84c70b534edeb4df0bdde9452777a52a757850d7a82c28dba854776c405f20ef3fbd95c72b759280f375f69191f2ca75d69600ea9584d8b2100309072' 
-    //     }    
-    //     const response = await axios.get(url, { headers });
-    //     pdata = response.data;
-    //     featuredProjects = pdata.data;
-    // }
-
-    // onMount(() => {
-    //     promise = fetchProject();
-    // });	
 
     import { onMount } from "svelte";
 	import { loadingCursor } from '$lib/cursorChange.js';
@@ -44,7 +24,7 @@
 	<meta name="description" content="ULFBUILT" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </svelte:head>
-<PageBanner title="{page.Title ? page.Title : 'Services'}" extraClass="services" subTitle="{page.Subheading ? page.Subheading : ''}"  banner="{url}{page.Cover.data[0].attributes.formats.large_x2.url ? page.Cover.data[0].attributes.formats.large_x2.url : page.Cover.data[0].attributes.url}"  />
+<PageBanner title="{page.Title ? page.Title : 'Services'}" extraClass="services" subTitle="{page.Subheading ? page.Subheading : ''}"  banner="{domain}{page.Cover.data[0].attributes.formats.large_x2.url ? page.Cover.data[0].attributes.formats.large_x2.url : page.Cover.data[0].attributes.url}"  />
 
 <section class="service-b mvw-10" in:slowDownSection id="service-b">
     <!-- <Animate> -->
@@ -56,7 +36,7 @@
                             <div class="service-b__service-box">
                                 <div class="service-b__service-box__service-box-inner">
                                         <div class="service-b__service-box__service-box-inner__service-icon">
-                                            <img in:fadeIn gsap-start="center top" id="about_icon1" gsap-duration="2" src="{url}{page.section1item1icon.data.attributes.url}" alt="{page.section1item1heading}" width="{page.section1item1icon.data.attributes.width}" height="{page.section1item1icon.data.attributes.height}">
+                                            <img in:fadeIn gsap-start="center top" id="about_icon1" gsap-duration="2" src="{domain}{page.section1item1icon.data.attributes.url}" alt="{page.section1item1heading}" width="{page.section1item1icon.data.attributes.width}" height="{page.section1item1icon.data.attributes.height}">
                                         </div>
                                     <h4 in:slide gsap-start="center top" id="about_title_icon1" gsap-duration="2">{page.section1item1heading ? page.section1item1heading : ''}</h4>
                                 </div>
@@ -69,7 +49,7 @@
                             <div class="service-b__service-box">
                                 <div class="service-b__service-box__service-box-inner">
                                     <div class="service-b__service-box__service-box-inner__service-icon">
-                                        <img in:fadeIn gsap-start="center top" id="about_icon2" gsap-duration="2" src="{url}{page.section1item2icon.data.attributes.url}" alt="{page.section1item2heading}" width="{page.section1item2icon.data.attributes.width}" height="{page.section1item2icon.data.attributes.height}">
+                                        <img in:fadeIn gsap-start="center top" id="about_icon2" gsap-duration="2" src="{domain}{page.section1item2icon.data.attributes.url}" alt="{page.section1item2heading}" width="{page.section1item2icon.data.attributes.width}" height="{page.section1item2icon.data.attributes.height}">
                                     </div>
                                     <h4 in:slide gsap-start="center top" id="about_title_icon2" gsap-duration="2">{page.section1item2heading ? page.section1item2heading : ''}</h4>
                                 </div>
@@ -82,7 +62,7 @@
                             <div class="service-b__service-box">
                                 <div class="service-b__service-box__service-box-inner">
                                     <div class="service-b__service-box__service-box-inner__service-icon">
-                                        <img in:fadeIn gsap-start="center top" id="about_icon3" gsap-duration="2" src="{url}{page.section1item3icon.data.attributes.url}" alt="{page.section1item3heading}" width="{page.section1item3icon.data.attributes.width}" height="{page.section1item3icon.data.attributes.height}"> 
+                                        <img in:fadeIn gsap-start="center top" id="about_icon3" gsap-duration="2" src="{domain}{page.section1item3icon.data.attributes.url}" alt="{page.section1item3heading}" width="{page.section1item3icon.data.attributes.width}" height="{page.section1item3icon.data.attributes.height}"> 
                                     </div>
                                     <h4 in:slide gsap-start="center top" id="about_title_icon3" gsap-duration="2">{page.section1item3heading ? page.section1item3heading : ''}</h4>
                                 </div>
@@ -95,7 +75,7 @@
                             <div class="service-b__service-box">
                                 <div class="service-b__service-box__service-box-inner">
                                     <div class="service-b__service-box__service-box-inner__service-icon">
-                                        <img in:fadeIn gsap-start="center top" id="about_icon4" gsap-duration="2" src="{url}{page.section1item4icon.data.attributes.url}" alt="{page.section1item4heading}" width="{page.section1item4icon.data.attributes.width}" height="{page.section1item4icon.data.attributes.height}">
+                                        <img in:fadeIn gsap-start="center top" id="about_icon4" gsap-duration="2" src="{domain}{page.section1item4icon.data.attributes.url}" alt="{page.section1item4heading}" width="{page.section1item4icon.data.attributes.width}" height="{page.section1item4icon.data.attributes.height}">
                                     </div>
                                     <h4 in:slide gsap-start="center top" id="about_title_icon4" gsap-duration="2">{page.section1item4heading ? page.section1item4heading : ''}</h4>
                                 </div>
@@ -108,7 +88,7 @@
                             <div class="service-b__service-box">
                                 <div class="service-b__service-box__service-box-inner">
                                     <div class="service-b__service-box__service-box-inner__service-icon">
-                                        <img in:fadeIn gsap-start="center top" id="about_icon5" gsap-duration="2" src="{url}{page.section1item5icon.data.attributes.url}" alt="{page.section1item5heading}" width="{page.section1item5icon.data.attributes.width}" height="{page.section1item5icon.data.attributes.height}">
+                                        <img in:fadeIn gsap-start="center top" id="about_icon5" gsap-duration="2" src="{domain}{page.section1item5icon.data.attributes.url}" alt="{page.section1item5heading}" width="{page.section1item5icon.data.attributes.width}" height="{page.section1item5icon.data.attributes.height}">
                                     </div>
                                     <h4 in:slide gsap-start="center top" id="about_title_icon5" gsap-duration="2">{page.section1item5heading ? page.section1item5heading : ''}</h4>
                                 </div>
@@ -121,7 +101,7 @@
                             <div class="service-b__service-box">
                                 <div class="service-b__service-box__service-box-inner">
                                     <div class="service-b__service-box__service-box-inner__service-icon">
-                                        <img in:fadeIn gsap-start="center top" id="about_icon6" gsap-duration="2" src="{url}{page.section1item6icon.data.attributes.url}" alt="{page.section1item6heading}" width="{page.section1item6icon.data.attributes.width}" height="{page.section1item6icon.data.attributes.height}">
+                                        <img in:fadeIn gsap-start="center top" id="about_icon6" gsap-duration="2" src="{domain}{page.section1item6icon.data.attributes.url}" alt="{page.section1item6heading}" width="{page.section1item6icon.data.attributes.width}" height="{page.section1item6icon.data.attributes.height}">
                                     </div>
                                     <h4 in:slide gsap-start="center top" id="about_title_icon6" gsap-duration="2">{page.section1item6heading ? page.section1item6heading : ''}</h4>
                                 </div>
@@ -150,7 +130,7 @@
                     </Col>
                     <Col md="6" class="imageCont">
                         {#if page.section2image.data}
-                        <img in:fly id="about_sua_img1" gsap-duration="3" gsap-y="50" gsap-delay="0.5" src="{url}{page.section2image.data.attributes.formats.large.url ? page.section2image.data.attributes.formats.large.url : page.section2image.data.attributes.url}" alt="{page.section2heading}" class="w-100" width="{page.section2image.data.attributes.width}" height="{page.section2image.data.attributes.height}">
+                        <img in:fly id="about_sua_img1" gsap-duration="3" gsap-y="50" gsap-delay="0.5" src="{domain}{page.section2image.data.attributes.formats.large.url ? page.section2image.data.attributes.formats.large.url : page.section2image.data.attributes.url}" alt="{page.section2heading}" class="w-100" width="{page.section2image.data.attributes.width}" height="{page.section2image.data.attributes.height}">
                         {/if}
                     </Col>
                 </Row>
@@ -163,7 +143,7 @@
             <Row noGutters class="justify-content-center flex-md-row flex-column-reverse sets-us-apart__row">
                 <Col md="6" class="imageCont">
                     {#if page.section3image.data}
-                    <img in:fly id="about_sua_img2" gsap-duration="3" gsap-y="50" gsap-delay="0.5" src="{url}{page.section3image.data.attributes.formats.large.url ? page.section3image.data.attributes.formats.large.url : page.section3image.data.attributes.url}" alt="{page.section3heading}" class="w-100">
+                    <img in:fly id="about_sua_img2" gsap-duration="3" gsap-y="50" gsap-delay="0.5" src="{domain}{page.section3image.data.attributes.formats.large.url ? page.section3image.data.attributes.formats.large.url : page.section3image.data.attributes.url}" alt="{page.section3heading}" class="w-100">
                     {/if}
                 </Col>
                 <Col md="6" class="sets-us-apart__content">
@@ -198,7 +178,7 @@
                 </Col>
                 <Col md="6" class="imageCont">
                     {#if page.section4image.data}
-                    <img in:fly id="about_sua_img3" gsap-duration="3" gsap-delay="0.5" gsap-y="50" src="{url}{page.section4image.data.attributes.formats.large.url ? page.section4image.data.attributes.formats.large.url : page.section4image.data.attributes.url}" alt="{page.section4heading}" class="w-100">
+                    <img in:fly id="about_sua_img3" gsap-duration="3" gsap-delay="0.5" gsap-y="50" src="{domain}{page.section4image.data.attributes.formats.large.url ? page.section4image.data.attributes.formats.large.url : page.section4image.data.attributes.url}" alt="{page.section4heading}" class="w-100">
                     {/if}
                 </Col>
             </Row>
@@ -208,7 +188,7 @@
 <section class="height-100vh fullwidth" in:fly id="about_banneronly_img_section" gsap-y="10" >
     <!-- <Animate> -->
         {#if page.section5image.data}
-        <img in:scaleUp id="about_banneronly_img" gsap-duration="1.5" src="{url}{page.section5image.data.attributes.formats.large.url ? page.section5image.data.attributes.formats.large.url : page.section5image.data.attributes.url}" alt="{page.title}" class="w-100 image-scale-up">
+        <img in:scaleUp id="about_banneronly_img" gsap-duration="1.5" src="{domain}{page.section5image.data.attributes.formats.large.url ? page.section5image.data.attributes.formats.large.url : page.section5image.data.attributes.url}" alt="{page.title}" class="w-100 image-scale-up">
         {/if}
     <!-- </Animate> -->
 </section>
@@ -234,9 +214,9 @@
                 <Col md="6">
                     <div class="explore__article" in:fly id="related-items{index}" gsap-duration="1" gsap-delay={index/2} gsap-y="30" gsap-start="top center">
                         <a href="portfolio/{featuredProject.attributes.slug}" data-sveltekit-reload class="zoomImg">
-                            <!-- <img src="{url}{featuredProject.attributes.featuredImage.data.attributes.url}" alt="{featuredProject.attributes.featuredImage.data.attributes.alternativeText}"> -->
+                            <!-- <img src="{domain}{featuredProject.attributes.featuredImage.data.attributes.url}" alt="{featuredProject.attributes.featuredImage.data.attributes.alternativeText}"> -->
                             {#if featuredProject.attributes.featuredImage.data != null}
-                            <img src="{url}{featuredProject.attributes.featuredImage.data.attributes.formats.large.url ? featuredProject.attributes.featuredImage.data.attributes.formats.large.url : featuredProject.attributes.featuredImage.data.attributes.url}" alt="{featuredProject.attributes.featuredImage.data.attributes.alternativeText}" />
+                            <img src="{domain}{featuredProject.attributes.featuredImage.data.attributes.formats.large.url ? featuredProject.attributes.featuredImage.data.attributes.formats.large.url : featuredProject.attributes.featuredImage.data.attributes.url}" alt="{featuredProject.attributes.featuredImage.data.attributes.alternativeText}" />
                             {:else}
                             <img src="{fallback ? url+fallback.attribute.url : noFeatured}" alt="{featuredProject.attributes.title}" >
                             {/if}

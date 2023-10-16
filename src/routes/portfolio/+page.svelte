@@ -16,7 +16,7 @@
     import { paginate, LightPaginationNav } from 'svelte-paginate';
     import { textAnimate, fly, fadeIn, slide } from '$lib/GsapAnimation.js';
 
-	let domain = "https://api.ulfbuilt.com";
+	let domain = "https://vwapi.netdevs.net/";
 	let portfolio =  data.portfolio.data.attributes; 
     let fallback = data.fallback.data.attributes.fallbackImage.data;
     // let propCount = 10;
@@ -59,7 +59,7 @@
     $: if (activeTab) { // Check if has new variable data
         loading = true;
         (async () => {
-            const url = "https://api.ulfbuilt.com/api/portfolios?filters[categories][id][$eq]="+activeTab+"&populate=deep,2";
+            const url = domain+"api/portfolios?filters[categories][id][$eq]="+activeTab+"&populate=deep,2";
             const headers = {
                 Authorization: 'Bearer ' + PUBLIC_STRAPI_API
             }  

@@ -16,13 +16,11 @@
 	import { textAnimate, fly, fadeIn, slide, fly2, slowDownSection, stopSection } from '$lib/GsapAnimation.js';
 
 	let y=0;
-	const domain = "https://api.ulfbuilt.com";
+	let domain = "https://vwapi.netdevs.net/";
 	const home = data.home.data.attributes;
 	let fallback = data.fallback.data.attributes.fallbackImage.data;
 	let propCount = 3;
-	//let listener = {};
 
-	// Function for portfolio masonry
 	let portfolioList = [];
 	let loading;
 
@@ -34,7 +32,7 @@
 	$: if (activeTab) { // Check if has new variable data
 		loading = true;
         (async () => {
-            const url = "https://api.ulfbuilt.com/api/portfolios?filters[categories][id][$eq]="+activeTab+"&populate=deep,2";
+            const url = domain+"api/portfolios?filters[categories][id][$eq]="+activeTab+"&populate=deep,2";
             const headers = {
                 Authorization: 'Bearer ' + PUBLIC_STRAPI_API
             }
@@ -206,7 +204,7 @@ const handleBottomArrowClick = () => {
 												<!-- in:fly="{{ y: 0, duration: 1000, delay:index * 1500}}" out:fly="{{y:0, duration:1000 }}       -->
 												<a data-sveltekit-reload href="/portfolio/{project.attributes.slug}" class="zoomImg">      
 													{#if project.attributes.featuredImage.data != null}
-													<img src="https://api.ulfbuilt.com/{project.attributes.featuredImage.data.attributes.formats.large.url ? project.attributes.featuredImage.data.attributes.formats.large.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}" >   
+													<img src="{domain}{project.attributes.featuredImage.data.attributes.formats.large.url ? project.attributes.featuredImage.data.attributes.formats.large.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}" >   
 													{:else}
 													<img src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}" >
 													{/if}

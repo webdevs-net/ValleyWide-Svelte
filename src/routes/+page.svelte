@@ -11,8 +11,9 @@
 	import { textAnimate, fly, fadeIn, slide, fly2, slowDownSection, stopSection } from '$lib/GsapAnimation.js';
 
 	let y=0;
-	const domain = "https://api.ulfbuilt.com";
+	let domain = "https://vwapi.netdevs.net/";
 	const home = data.home.data.attributes;
+	
 	let fallback = data.fallback.data.attributes.fallbackImage.data;
 	let propCount = 3;
 	//let listener = {};
@@ -29,7 +30,7 @@
 	$: if (activeTab) { // Check if has new variable data
 		loading = true;
         (async () => {
-            const url = "https://api.ulfbuilt.com/api/portfolios?filters[categories][id][$eq]="+activeTab+"&populate=deep,2";
+            const url = domain + "api/portfolios?filters[categories][id][$eq]="+activeTab+"&populate=deep,2";
             const headers = {
                 Authorization: 'Bearer ' + PUBLIC_STRAPI_API
             }
@@ -137,97 +138,6 @@ const handleBottomArrowClick = () => {
 		</Carousel3>
 	</Container>
 </section>
-
-
-<!-- {#if home.homeBuilderBanner.data}
-<section class="bannerOnly flex-column-center" id="bannerOnly">
-	<div class="bannerOnly--Container">
-		<div in:fadeIn id="bannerOnlyImg" gsap-duration="2" class="section--bannerOnly">
-		<ParallaxImage imageHeight="80" imageUrl="{domain}{home.homeBuilderBanner.data.attributes.formats.large_x2.url ? home.homeBuilderBanner.data.attributes.formats.large_x2.url : home.homeBuilderBanner.data.attributes.url}"></ParallaxImage>
-		</div>
-	</div>
-</section>
-{/if} -->
-
-<!-- <section class="categories mvw-10" in:slowDownSection id="categories-section">
-	<Container class="categories_wrapper">
-		<Row>
-			<Col class="text-center">
-				<h2 class="text-animate secondary-font" in:textAnimate id="category_title" gsap-duration="1" >
-					{@html home.categoryGalleryTabHeading ? home.categoryGalleryTabHeading : ''}
-				</h2>
-				<div class="categories__tabs">
-					<div class="categories__tabs__heading">
-						{#if innerWidth > 767}
-						<ul in:fly id="categories" gsap-duration="1">
-							{#each home.categories.data as heading}
-								<li>
-									<span
-									data-category="{heading.id}"
-									class:active="{activeTab === heading.id}"
-									on:click="{() => handleTabClick(heading.id)}">
-									{heading.attributes.Title ? heading.attributes.Title : ''}
-									</span>
-								</li>
-							{/each}
-						</ul>
-						{/if}
-						{#if innerWidth <= 767}
-
-						<div class="options-container">
-							<div class="options">
-								{#each home.categories.data as heading}
-								<div class="option" 
-									data-category="{heading.id}"
-									class:active="{activeTab === heading.id}"
-									on:click="{() => handleTabClick(heading.id)}">
-									{heading.attributes.Title ? heading.attributes.Title : ''}
-								</div>
-							{/each}
-							</div>
-							<div class="arrow-top" on:click={handleTopArrowClick}>
-							  <img src="{arrowtop}" alt="arrowtop" />
-							</div>
-							<div class="arrow-bottom" on:click={handleBottomArrowClick}>
-							  <img src="{arrowtop}" alt="arrowbottom" />
-							</div>
-						  </div>
-						{/if}
-					</div>
-					
-					<div class="categories__tabs__gallery" >
-						{#key activeTab}
-							{#if loading}
-								<div class="col text-center list-text-details">Loading...</div>
-							{:else}
-								{#if portfolioList.length == 0} 
-									<div class="col text-center list-text-details">No Project Found...</div>
-								{:else}
-									<div class="container masonry_container">       
-										{#each portfolioList as project, index}				
-											{#if index < propCount}
-											<div class="masonry-items" in:fly id="masonry-items{index}" gsap-duration="1" gsap-delay={index/2} gsap-y="30" gsap-start="top center"> 
-												<a data-sveltekit-reload href="/portfolio/{project.attributes.slug}" class="zoomImg">      
-													{#if project.attributes.featuredImage.data != null}
-													<img src="https://api.ulfbuilt.com/{project.attributes.featuredImage.data.attributes.formats.large.url ? project.attributes.featuredImage.data.attributes.formats.large.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}" >   
-													{:else}
-													<img src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}" >
-													{/if}
-												</a>
-											</div>	                    
-											{/if}				
-										{/each}
-									</div>
-								{/if}
-							{/if}
-						{/key}
-					</div>					
-				</div>	
-			</Col>
-		</Row>
-	</Container>
-</section> -->
-
 
 <section class="flex-column-center" id="tnr">
 	<div class="tnr">

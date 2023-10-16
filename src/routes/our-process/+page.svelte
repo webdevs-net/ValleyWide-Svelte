@@ -6,7 +6,7 @@
     import ParallaxImage from "$lib/components/parallaxImage.svelte";
     // import { fade, fly } from 'svelte/transition';
     import { textAnimate, fly, fadeIn, slide, scaleUp, slowDownSection } from '$lib/GsapAnimation.js';
-    const domain = "https://api.ulfbuilt.com";
+    let domain = "https://vwapi.netdevs.net/";
     export let data;
     const processData = data.data.attributes;
 
@@ -21,7 +21,6 @@
 <svelte:head>
 	<title>{processData.section1heading ? processData.section1heading : 'Our Process'}</title>
 	<meta name="description" content="ULFBUILT" />
-    <!-- <link rel="preload" href="{domain}{processData.Cover.data[0].attributes.url}" as="image"> -->
 </svelte:head>
 <PageBanner title="{processData.section1heading ? processData.section1heading : 'Our Process'}" subTitle="{processData.bannerSub ? processData.bannerSub : ''}" banner="{domain}{processData.Cover.data[0].attributes.formats.large_x2 ? processData.Cover.data[0].attributes.formats.large_x2.url : processData.Cover.data[0].attributes.url}" />
 <section class="our-process">

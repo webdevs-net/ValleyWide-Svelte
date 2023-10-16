@@ -11,7 +11,7 @@
     // import { fade, fly } from 'svelte/transition';
     import { textAnimate, fly, fadeIn, slide } from '$lib/GsapAnimation.js';
     // let blogs = data.blogs.data;
-    let url = "https://api.ulfbuilt.com";
+    let domain = "https://vwapi.netdevs.net/"
     let title = data.page.data.attributes.title;
     let fallback = data.fallback.data.attributes.fallbackImage.data;
     // let items = blogs;
@@ -39,9 +39,9 @@
         (async () => {
             let apiUrl;
             if(activeCategoryTab || activeCategoryTab != '') { // if has activeCategoryTab, add it on the fetch url
-                apiUrl = "https://api.ulfbuilt.com/api/blogs?sort[0]=createdAt:"+activeDate+"&filters[blog_category][id][$eq]="+activeCategoryTab+"&populate=deep";
+                apiUrl = domain + "api/blogs?sort[0]=createdAt:"+activeDate+"&filters[blog_category][id][$eq]="+activeCategoryTab+"&populate=deep";
             } else {
-                apiUrl = "https://api.ulfbuilt.com/api/blogs?sort[0]=createdAt:"+activeDate+"&populate=deep";
+                apiUrl = domain + "api/blogs?sort[0]=createdAt:"+activeDate+"&populate=deep";
             }
             const headers = {
                 Authorization: 'Bearer ' + PUBLIC_STRAPI_API
@@ -83,7 +83,7 @@
 	<meta name="description" content="ULF BUILT" />
 </svelte:head>
 
-<PageBanner title="{data.page.data.attributes.title ? data.page.data.attributes.title : 'Articles & Press'}" extraClass="articles" subTitle="{data.page.data.attributes.Subheading ? data.page.data.attributes.Subheading : ''}"  banner="{url}{data.page.data.attributes.Cover.data[0].attributes.formats.large_x2.url ? data.page.data.attributes.Cover.data[0].attributes.formats.large_x2.url  : data.page.data.attributes.Cover.data[0].attributes.url}"/>
+<PageBanner title="{data.page.data.attributes.title ? data.page.data.attributes.title : 'Articles & Press'}" extraClass="articles" subTitle="{data.page.data.attributes.Subheading ? data.page.data.attributes.Subheading : ''}"  banner="{domain}{data.page.data.attributes.Cover.data[0].attributes.formats.large_x2.url ? data.page.data.attributes.Cover.data[0].attributes.formats.large_x2.url  : data.page.data.attributes.Cover.data[0].attributes.url}"/>
 <section class="category">
     <!-- <Animate> -->
         <Container>

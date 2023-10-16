@@ -6,7 +6,7 @@
     import { textAnimate, fly, fadeIn, slide, slowDownSection } from '$lib/GsapAnimation.js';
 
 	export let data;
-	let domain = "https://api.ulfbuilt.com";
+	let domain = "https://vwapi.netdevs.net/";
 	let ourTeam =  data.data.attributes;
 
     let showModal = false;

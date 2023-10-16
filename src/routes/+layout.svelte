@@ -12,7 +12,7 @@
     // import { fade, fly } from 'svelte/transition';
     import { gsap } from 'gsap';
     import ScrollSmoother from '$lib/ScrollSmoother.svelte';
-
+    let domain = "https://vwapi.netdevs.net/"
     // let isHomePage = false;
     function isHome(url) {
         return url === "/" ? false : true;
@@ -40,7 +40,7 @@
     export let data;
     </script>
     <svelte:head>
-        <link rel="preconnect" href="https://api.ulfbuilt.com/">
+        <link rel="preconnect" href="{domain}">
         <!-- <script src="/flickity/flickity.pkgd.min.js"></script> -->
     </svelte:head>
     

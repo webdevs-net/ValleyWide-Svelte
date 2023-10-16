@@ -9,12 +9,12 @@
 	import Animate from '$lib/components/Animate.svelte';
     // import { fade, fly } from 'svelte/transition';
 	import { textAnimate, fly, fadeIn, slide, bgZoom } from '$lib/GsapAnimation.js';
-
+	let domain = "https://vwapi.netdevs.net/"
 	let emailTo = '';
 	let emailSubject = '';
 	let emailResponse = '';
 	async function fetchContactDetails(){
-		const url = 'https://api.ulfbuilt.com/api/site-setting?populate=deep,3';
+		const url = domain+'api/site-setting?populate=deep,3';
 		const headers = {
 			Authorization: 'Bearer ' + PUBLIC_STRAPI_API
 		};
@@ -33,7 +33,7 @@
 
     let name = '', email = '', phone = '', message = '', result = ''
     async function doContact () {
-        const contactUrl = 'https://api.ulfbuilt.com/api/contact-forms';
+        const contactUrl = domain + 'api/contact-forms';
 		const res = await fetch(contactUrl, {
 			method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': 'bearer ' + PUBLIC_STRAPI_API },
@@ -51,7 +51,7 @@
             result = json.error.message
         }else{
             result = 'Processing...'
-			const url2 = 'https://api.ulfbuilt.com/api/email/';
+			const url2 = domain+'api/email/';
 			const res2 = await fetch(url2, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json', 'Authorization': 'bearer ' + PUBLIC_STRAPI_API },
@@ -71,9 +71,8 @@
 	}
 
 	let promise = fetchContactSettings();
-	const domain = "https://api.ulfbuilt.com/";
 	async function fetchContactSettings(){
-		const url = 'https://api.ulfbuilt.com/api/contact-cta?populate=deep,3';
+		const url = domain + 'api/contact-cta?populate=deep,3';
 		const headers = {
 			Authorization: 'Bearer ' + PUBLIC_STRAPI_API
 		};

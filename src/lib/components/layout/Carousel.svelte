@@ -4,11 +4,10 @@ import { onMount } from 'svelte';
 import { Col } from "sveltestrap";
 import axios from "axios";
 	import { PUBLIC_STRAPI_API } from '$env/static/public';
-// import Flickity from "flickity";
 import noFeatured from "$lib/img/blog-empty.svg"
-// import { fade, fly } from 'svelte/transition';
-
 import { textAnimate, fly, fadeIn, slide } from '$lib/GsapAnimation.js';
+const domain = 'https://vwapi.netdevs.net/'
+
 
 let flickityInstance;
 export let preHeading; 
@@ -21,7 +20,7 @@ let innerWidth;
 
   let promise = fetchFallback();
 	async function fetchFallback(){
-		const url = 'https://api.ulfbuilt.com/api/site-setting?populate=deep,3';
+		const url = domain + 'api/site-setting?populate=deep,3';
 		const headers = {
 			Authorization: 'Bearer ' + PUBLIC_STRAPI_API
 		};
@@ -37,26 +36,6 @@ let innerWidth;
 onMount(() => {
   promise = fetchFallback();
   innerWidth = window.innerWidth;
-  
-//   flickityInstance = new Flickity('.slider-container', {
-//     cellAlign: 'left',
-//     contain: true,
-//     wrapAround: true,
-//     prevNextButtons: false,
-//     pageDots: false,
-//     autoPlay: false,
-//     groupCells: 1,
-//     draggable: true,
-//     on: {
-//       change: updateProgress,
-//     },
-//   });
-// })
-
-
-
-const domain = "https://api.ulfbuilt.com"
-
 let progressPercentage = 0;
 
 function updateProgress(index) {

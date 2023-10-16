@@ -5,7 +5,7 @@
 	import PageBanner from '$lib/components/layout/PageBanner.svelte';
     // import { fade, fly } from "svelte/transition";
     import { textAnimate, fly, fadeIn, slide } from '$lib/GsapAnimation.js';
-    const url = "https://api.ulfbuilt.com/";
+    let domain = "https://vwapi.netdevs.net/";
 
     import { onMount } from "svelte";
 	import { loadingCursor } from '$lib/cursorChange.js';
@@ -18,7 +18,7 @@
 	<title>{data.data.attributes.title ? data.data.attributes.title : 'Privacy Policy'}</title>
 	<meta name="description" content="ULF BUILT" />
 </svelte:head>
-<PageBanner title="{data.data.attributes.title ? data.data.attributes.title : 'Privacy Policy'}" extraClass="privacy" subTitle="{data.data.attributes.Subheading ? data.data.attributes.Subheading : ''}"  banner="{url}{data.data.attributes.Cover.data.attributes.url}"/>
+<PageBanner title="{data.data.attributes.title ? data.data.attributes.title : 'Privacy Policy'}" extraClass="privacy" subTitle="{data.data.attributes.Subheading ? data.data.attributes.Subheading : ''}"  banner="{domain}{data.data.attributes.Cover.data.attributes.url}"/>
 
 <section class="content" >
     <Container class="mw-1000 h-text">

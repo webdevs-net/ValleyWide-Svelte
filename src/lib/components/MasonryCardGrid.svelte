@@ -5,6 +5,7 @@
     import { onMount } from 'svelte'
     import noFeatured from "$lib/img/blog-empty.svg"
     import Animate from "./Animate.svelte";
+    let domain = "https://vwapi.netdevs.net/"
     // const gap = 5;
     // const defaultDirection = "end";
     // const align = "end";
@@ -21,7 +22,7 @@
     export let propCount;
     let promise = fetchPortfolios();
     async function fetchPortfolios(){
-        const url = "https://api.ulfbuilt.com/api/portfolios?filters[categories][id][$eq]="+id+"&populate=deep,2";
+        const url = domain+"api/portfolios?filters[categories][id][$eq]="+id+"&populate=deep,2";
         const headers = {
             Authorization: 'Bearer ' + PUBLIC_STRAPI_API
         }  
@@ -53,7 +54,7 @@
                 <div class="masonry-items" in:fly="{{ y: 0, duration: 1000, delay:index * 1500}}" out:fly="{{y:0, duration:1000 }}">       
                     <a data-sveltekit-reload href="/portfolio/{project.attributes.slug}" class="zoomImg">      
                         {#if project.attributes.featuredImage.data != null}
-                        <img src="https://api.ulfbuilt.com/{project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}" >   
+                        <img src="{domain}{project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}" >   
                         {:else}
                         <img src="{noFeatured}" alt="{project.attributes.title}" >
                         {/if}

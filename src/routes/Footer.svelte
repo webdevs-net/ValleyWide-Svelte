@@ -5,13 +5,13 @@ import axios from "axios";
 // import Animate from "$lib/components/Animate.svelte"
 // import { fly } from "svelte/transition";
 import { fadeIn } from '$lib/GsapAnimation.js';
-const domain = "https://api.ulfbuilt.com"
+let domain = "https://vwapi.netdevs.net/"
 import { PUBLIC_STRAPI_API } from '$env/static/public';
 	// import { fadeIn } from '$lib/GsapAnimation';
 
 let promise = fetchCta();
 async function fetchCta(){
-    const url = 'https://api.ulfbuilt.com/api/footer?populate=deep,3';
+    const url = domain + 'api/footer?populate=deep,3';
     const headers = {
         Authorization: 'Bearer ' + PUBLIC_STRAPI_API
     };
@@ -26,7 +26,7 @@ async function fetchCta(){
 
 let promiseSite = fetchSiteSettings();
 async function fetchSiteSettings(){
-    const url = 'https://api.ulfbuilt.com/api/site-setting?populate=deep,3';
+    const url = domain + 'api/site-setting?populate=deep,3';
     const headers = {
         Authorization: 'Bearer ' + PUBLIC_STRAPI_API
     };

@@ -4,7 +4,7 @@
   import rightar from '$lib/img/right-ar.svg';
   import {Col} from 'sveltestrap';
 
-  const domain = "https://api.ulfbuilt.com"
+  let domain = "https://vwapi.netdevs.net/"
   export let preHeading; 
   export let heading; 
   export let btnTitle;

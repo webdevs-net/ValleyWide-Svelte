@@ -1,22 +1,10 @@
 <script lang="ts">
 import { fly, fade } from "svelte/transition";
-// import {
-//     MasonryGrid,
-//     JustifiedGrid,
-//     FrameGrid,
-//     PackingGrid,
-//   } from "@egjs/svelte-grid";
 import { paginate, LightPaginationNav } from 'svelte-paginate';
 import { PUBLIC_STRAPI_API } from '$env/static/public';
 import { onMount } from 'svelte'
 import noFeatured from "$lib/img/blog-empty.svg"
-
-// const gap = 10;
-// const defaultDirection = "end";
-// const align = "end";
-// const column = 0;
-// const columnSize = 0;
-// const columnSizeRatio = 0;
+let domain = "https://vwapi.netdevs.net/"
 import axios from "axios";
 import Animate from "./Animate.svelte";
 export let id;
@@ -35,7 +23,7 @@ import ImageLoader from './imageLazy/ImageLoader.svelte';
 
 let promise = fetchPortfolios();
 async function fetchPortfolios(){
-    const url = "https://api.ulfbuilt.com/api/portfolios?filters[categories][id][$eq]="+id+"&populate=deep,2";
+    const url = domain+"api/portfolios?filters[categories][id][$eq]="+id+"&populate=deep,2";
     const headers = {
         Authorization: 'Bearer ' + PUBLIC_STRAPI_API
     }  
@@ -69,11 +57,9 @@ onMount(async () => {
             <div class="masonry-items" in:fly="{{ y: 0, duration: 1000, delay:index * 1500}}" out:fly="{{y:0, duration:1000 }}"> 
                 <a data-sveltekit-reload href="/portfolio/{project.attributes.slug}" class="zoomImg">  
                     {#if project.attributes.featuredImage.data != null}
-                    <ImageLoader src="https://api.ulfbuilt.com/{project.attributes.featuredImage.data.attributes.url}" lowRes="https://api.ulfbuilt.com/{project.attributes.featuredImage.data.attributes.formats.small.url}" alt="{project.attributes.title}"></ImageLoader>
-                    <!-- <img src="https://api.ulfbuilt.com/{project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}" >    -->
+                    <ImageLoader src="{domain}{project.attributes.featuredImage.data.attributes.url}" lowRes="{domain}{project.attributes.featuredImage.data.attributes.formats.small.url}" alt="{project.attributes.title}"></ImageLoader>
                     {:else}
                     <ImageLoader src="{noFeatured}" lowRes="{noFeatured}" alt="{project.attributes.title}"></ImageLoader>
-                    <!-- <img src="{noFeatured}" alt="{project.attributes.title}" > -->
                     {/if}
                     <div class="masonry-items__text">
                         <span>{('0' + (index + 1)).slice(-2)}</span>
