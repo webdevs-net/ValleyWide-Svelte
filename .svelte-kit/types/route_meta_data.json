@@ -1,0 +1,77 @@
+{
+	"/": [
+		"src/routes/+page.server.ts",
+		"src/routes/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/about-us": [
+		"src/routes/about-us/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/articles": [
+		"src/routes/articles/+page.server.ts",
+		"src/routes/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/articles/[slug]": [
+		"src/routes/articles/[slug]/+page.server.ts",
+		"src/routes/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/clear": [
+		"src/routes/+layout.server.ts"
+	],
+	"/contact-us": [
+		"src/routes/contact-us/+page.server.ts",
+		"src/routes/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/home_old": [
+		"src/routes/home_old/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/our-process": [
+		"src/routes/our-process/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/our-team": [
+		"src/routes/our-team/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/our-team/[slug]": [
+		"src/routes/our-team/[slug]/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/page": [
+		"src/routes/page/+layout.js",
+		"src/routes/+layout.server.ts",
+		"src/routes/page/+layout.js",
+		"src/routes/+layout.server.ts"
+	],
+	"/page/[slug]": [
+		"src/routes/page/[slug]/+page.server.ts",
+		"src/routes/page/[slug]/+layout.ts",
+		"src/routes/page/+layout.js",
+		"src/routes/+layout.server.ts",
+		"src/routes/page/[slug]/+layout.ts",
+		"src/routes/page/+layout.js",
+		"src/routes/+layout.server.ts"
+	],
+	"/portfolio": [
+		"src/routes/portfolio/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/portfolio/[slug]": [
+		"src/routes/portfolio/[slug]/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/privacy": [
+		"src/routes/privacy/+page.server.ts",
+		"src/routes/+layout.server.ts",
+		"src/routes/+layout.server.ts"
+	],
+	"/services": [
+		"src/routes/services/+page.server.ts",
+		"src/routes/+layout.server.ts"
+	]
+}
