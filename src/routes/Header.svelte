@@ -91,7 +91,7 @@
   <Navbar expand="md">
 	<NavbarBrand href="/">
 		<div class="logo-container">
-			<img src={siteSettings.Header.Logo.data ? domain+siteSettings.Header.Logo.data.attributes.url : logo} alt="ULFBUILT" class="logo" width="330" height="170" />
+			<img src={siteSettings.Header.Logo.data ? domain+siteSettings.Header.Logo.data.attributes.url : logo} alt="ULFBUILT" class="logo"/>
 		</div>
 	</NavbarBrand>
 	{#if !isOpen}
