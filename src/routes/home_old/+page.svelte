@@ -1,12 +1,7 @@
 <script lang="ts">
 	export let data;
 	import { Col, Container, Row,  Accordion, AccordionItem } from "sveltestrap";
-	// import Animate from "$lib/components/Animate.svelte";
-	// import Carousel from "$lib/components/layout/Carousel.svelte";
 	import Carousel3 from "$lib/components/layout/Carousel3.svelte";
-	let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
-
-	import ArticleSection from "$lib/components/layout/ArticleSection.svelte";
 	import ParallaxImage from "$lib/components/parallaxImage.svelte";
 	import Cta from "$lib/components/layout/Cta.svelte";
 	import PageBanner from "$lib/components/layout/PageBanner.svelte";
@@ -18,9 +13,12 @@
 	let y=0;
 	let domain = "https://vwapi.netdevs.net/";
 	const home = data.home.data.attributes;
+	
 	let fallback = data.fallback.data.attributes.fallbackImage.data;
 	let propCount = 3;
+	//let listener = {};
 
+	// Function for portfolio masonry
 	let portfolioList = [];
 	let loading;
 
@@ -32,7 +30,7 @@
 	$: if (activeTab) { // Check if has new variable data
 		loading = true;
         (async () => {
-            const url = domain+"api/portfolios?filters[categories][id][$eq]="+activeTab+"&populate=deep,2";
+            const url = domain + "api/portfolios?filters[categories][id][$eq]="+activeTab+"&populate=deep,2";
             const headers = {
                 Authorization: 'Bearer ' + PUBLIC_STRAPI_API
             }
@@ -108,7 +106,7 @@ const handleBottomArrowClick = () => {
 	<meta name="description" content="ULF BUILT" />
 </svelte:head>
 
-<PageBanner title="{home.topBanner.heading ? home.topBanner.heading : 'Building Excellence'}" subTitle="{home.topBanner.paragraph ? home.topBanner.paragraph : ''}" banner="{domain}{home.topBanner.background.data.attributes.formats.large_x2.url ? home.topBanner.background.data.attributes.formats.large_x2.url : home.topBanner.background.data.attributes.url}" bannerMobile="{domain}{home.topBanner.background.data.attributes.formats.medium.url}" extraClass="homebanner" bannerheight="100" />
+<PageBanner title="{home.topBanner.heading ? home.topBanner.heading : 'Building Excellence'}" subTitle="{home.topBanner.paragraph ? home.topBanner.paragraph : ''}" banner="{domain}{home.topBanner.background.data.attributes.formats.large_x2.url ? home.topBanner.background.data.attributes.formats.large_x2.url : home.topBanner.background.data.attributes.url}" bannerMobile="{domain}{home.topBanner.background.data.attributes.formats.medium.url}" extraClass="homebanner" bannerheight="100" customtop="custom-top" />
 
 <section class="loc-gallery mvw-10" in:slowDownSection id="loc-gallery">
 	<Container>
@@ -128,99 +126,6 @@ const handleBottomArrowClick = () => {
 			</Col>
 		</Row>
 	</Container>
-</section>	
-
-
-{#if home.homeBuilderBanner.data}
-<section class="bannerOnly " id="bannerOnly">
-	<div class="bannerOnly--Container">
-		<div in:fadeIn id="bannerOnlyImg" gsap-duration="2" class="section--bannerOnly">
-			<!-- {home.homeBuilderBanner.data.attributes.formats.large_x2.url ? home.homeBuilderBanner.data.attributes.formats.large_x2.url : home.homeBuilderBanner.data.attributes.url} -->
-		<ParallaxImage imageHeight="80" imageUrl="{domain}{home.homeBuilderBanner.data.attributes.formats.large_x2.url ? home.homeBuilderBanner.data.attributes.formats.large_x2.url : home.homeBuilderBanner.data.attributes.url}"></ParallaxImage>
-		</div>
-	</div>
-</section>
-{/if}
-
-<section class="categories mvw-10" in:slowDownSection id="categories-section">
-	<Container class="categories_wrapper">
-		<Row>
-			<Col class="text-center">
-				<h2 class="text-animate secondary-font" in:textAnimate id="category_title" gsap-duration="1" >
-					{@html home.categoryGalleryTabHeading ? home.categoryGalleryTabHeading : ''}
-				</h2>
-				<div class="categories__tabs">
-					<div class="categories__tabs__heading">
-						{#if innerWidth > 767}
-						<ul in:fly id="categories" gsap-duration="1">
-							{#each home.categories.data as heading}
-								<li>
-									<!-- svelte-ignore a11y-click-events-have-key-events -->
-									<span
-									data-category="{heading.id}"
-									class:active="{activeTab === heading.id}"
-									on:click="{() => handleTabClick(heading.id)}">
-									{heading.attributes.Title ? heading.attributes.Title : ''}
-									</span>
-								</li>
-							{/each}
-						</ul>
-						{/if}
-						{#if innerWidth <= 767}
-
-						<div class="options-container">
-							<div class="options">
-								{#each home.categories.data as heading}
-								<div class="option" 
-									data-category="{heading.id}"
-									class:active="{activeTab === heading.id}"
-									on:click="{() => handleTabClick(heading.id)}">
-									{heading.attributes.Title ? heading.attributes.Title : ''}
-								</div>
-							{/each}
-							</div>
-							<div class="arrow-top" on:click={handleTopArrowClick}>
-							  <img src="{arrowtop}" alt="arrowtop" />
-							</div>
-							<div class="arrow-bottom" on:click={handleBottomArrowClick}>
-							  <img src="{arrowtop}" alt="arrowbottom" />
-							</div>
-						  </div>
-						{/if}
-					</div>
-					
-					<div class="categories__tabs__gallery" >
-						{#key activeTab}
-							{#if loading}  <!-- show load -->
-								<div class="col text-center list-text-details">Loading...</div>
-							{:else}
-								{#if portfolioList.length == 0} 
-									<div class="col text-center list-text-details">No Project Found...</div>
-								{:else}
-									<div class="container masonry_container">       
-										{#each portfolioList as project, index}				
-											{#if index < propCount}
-											<div class="masonry-items" in:fly id="masonry-items{index}" gsap-duration="1" gsap-delay={index/2} gsap-y="30" gsap-start="top center"> 
-												<!-- in:fly="{{ y: 0, duration: 1000, delay:index * 1500}}" out:fly="{{y:0, duration:1000 }}       -->
-												<a data-sveltekit-reload href="/portfolio/{project.attributes.slug}" class="zoomImg">      
-													{#if project.attributes.featuredImage.data != null}
-													<img src="{domain}{project.attributes.featuredImage.data.attributes.formats.large.url ? project.attributes.featuredImage.data.attributes.formats.large.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}" >   
-													{:else}
-													<img src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}" >
-													{/if}
-												</a>
-											</div>	                    
-											{/if}				
-										{/each}
-									</div>
-								{/if}
-							{/if}
-						{/key}
-					</div>					
-				</div>	
-			</Col>
-		</Row>
-	</Container>
 </section>
 
 <section class="featured-projects mvw-10" in:slowDownSection id="featured-section">	
@@ -234,7 +139,7 @@ const handleBottomArrowClick = () => {
 	</Container>
 </section>
 
-<section class="" id="tnr">
+<section class="flex-column-center" id="tnr">
 	<div class="tnr">
 		<ParallaxImage imageHeight="80" imageUrl="{domain}{home.midBanner.background.data.attributes.formats.large_x2.url ? home.midBanner.background.data.attributes.formats.large_x2.url : home.midBanner.background.data.attributes.url}" overlay="1">
 		</ParallaxImage>
@@ -343,9 +248,9 @@ const handleBottomArrowClick = () => {
 		</Container>
 </section>
 
-<section class="m-0 article-wrapper" id="article-wrapper">
+<!-- <section class="m-0 article-wrapper" id="article-wrapper">
 	<ArticleSection />
-</section>
+</section> -->
 
 <section class="m-0 cta-wrapper" id="cta-wrapper">
 	<Cta />
@@ -353,7 +258,6 @@ const handleBottomArrowClick = () => {
 
 <style lang="scss">
 	//new slide up down
-
 .options-container{
   height: 100px;
   overflow: hidden;
@@ -407,6 +311,7 @@ align-items: end;
           transform: rotateX(180deg);
 }
 	//new slide up down
+
 	.homebanner{
 		background-image: var(--banner);
 		background-size: cover;
@@ -702,9 +607,8 @@ align-items: end;
 				position: relative;
 				display: flex;
 				align-items: center;
-				@include media-max(default){
-
-				}
+				justify-content: end;
+    			text-align: right;
 			}
 			@include media-max(sm){
 				// height: 80vh;
@@ -738,6 +642,11 @@ align-items: end;
 					}
 					@include media-max(sm){
 						padding: 1rem;
+					}
+					#tnr-preheading{
+						max-width: 42rem;
+						margin-bottom: 2rem;
+						line-height: 1.75;
 					}
 				}
 				p{
