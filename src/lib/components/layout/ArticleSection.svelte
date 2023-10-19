@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { Col, Container, Row,  Accordion, AccordionItem } from "sveltestrap";
+	import { Col, Container, Row } from "sveltestrap";
 	import { onMount } from "svelte";
 	import axios from "axios";
 	import { PUBLIC_STRAPI_API } from '$env/static/public';
-	// import { fade, fly } from 'svelte/transition';
-	// import Animate from "$lib/components/Animate.svelte";
 	import { textAnimate, fly, fadeIn, slide } from '$lib/GsapAnimation.js';
 
 	let domain = "https://vwapi.netdevs.net/"
@@ -49,8 +47,7 @@
 				<Col md="6" class="my-auto">
 					<div class="insight__content">
 						<div class="insight__content__wrapper">
-							<!-- <div class="insight__content__wrapper__pre-heading">{insight.rightPreHeading ? insight.rightPreHeading : ''}</div> -->
-							<h2 class="text-animate secondary-font" in:textAnimate id="global_article_title" gsap-duration="1.5">{insight.Heading ? insight.Heading : ''}</h2>
+							<h2 class="text-animate primary-font stc" in:textAnimate id="global_article_title" gsap-duration="1.5">{insight.Heading ? insight.Heading : ''}</h2>
 							<div in:fly id="global_article_cont" gsap-delay="0.5" gsap-duration="1.2"  gsap-y="30">
 								{@html insight.paragprah ? insight.paragprah : ''}
 								<div class="insight__content__wrapper__btns">
@@ -68,8 +65,7 @@
 
 <style lang="scss">
 	.insight{
-		background-color: #F2F2F2;
-		// padding: 12rem 0;
+		background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
 		padding: 8rem 0;
 		margin-bottom: 0;
 		min-height: 100vh;
@@ -95,7 +91,7 @@
 		}
 		&__content{
 			&__wrapper{
-				padding-left: 4rem;		
+				padding-left: 5vw;		
 				@include media-max(ipadmini){
 					// padding: 1rem 0 0;
 					padding: 0;

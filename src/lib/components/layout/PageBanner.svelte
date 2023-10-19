@@ -52,7 +52,7 @@
 		}
         .banner_overlay{
             content: "";
-            background-color: $darkgray;
+            background-color: $darkgray;//#ffeed7
             left: 0;
             top: 0;
             height: 100%;

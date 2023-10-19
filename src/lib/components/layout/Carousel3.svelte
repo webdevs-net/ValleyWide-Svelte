@@ -394,6 +394,7 @@ margin: 40px 0;
 }
 .left-right img{
   height: 30px;
+  filter: invert(22%) sepia(15%) saturate(2150%) hue-rotate(338deg) brightness(88%) contrast(102%);
 }
 
 
@@ -455,7 +456,7 @@ white-space: nowrap;
   display: inline-block;
   &:hover{
       .slider-container__carousel-cell__text{
-        background: $primary-color;
+        background: #504F4F;
         transition: 1.5s;
         span {
           color: $white-color;
@@ -472,7 +473,7 @@ white-space: nowrap;
     height: 50vh;
   }   
   &__text{
-        background-color: $secondary-color;
+        background-color:rgba(80,79,79,0.7);
         color: #fff;
         padding: 0.5rem 3rem 0.5rem 0.5rem;
         position: absolute;
@@ -492,7 +493,7 @@ white-space: nowrap;
               gap: 10px;
           } 
           span{
-              color: $primary-color;
+              color: #CF9B14;
               font-size: 1.2rem;
               margin: 0 0.8rem 0;
               @include media-max(sm){
@@ -504,6 +505,9 @@ white-space: nowrap;
             position: absolute;
             top: 20%;
             right: 1rem;
+            path{
+              stroke:#CF9B14;
+            }
           }
   }      
   img {

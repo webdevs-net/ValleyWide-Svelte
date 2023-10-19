@@ -4,6 +4,7 @@
 	// import Animate from "$lib/components/Animate.svelte";
 	// import Carousel from "$lib/components/layout/Carousel.svelte";
 	import Carousel3 from "$lib/components/layout/Carousel3.svelte";
+	import pagebreak from "$lib/img/pagebreaker.svg";
 	let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
 
 	import ArticleSection from "$lib/components/layout/ArticleSection.svelte";
@@ -241,8 +242,8 @@ const handleBottomArrowClick = () => {
 		<div class="tnr__wrapper">
 			<Container>
 				<div class="tnr__wrapper__captions">
-					<h2 class="text-animate" in:textAnimate id="tnr-heading" gsap-duration="1.5">{home.midBanner.heading ? home.midBanner.heading : ''}</h2>
 					<p in:slide id="tnr-preheading" gsap-duration="1">{home.midBanner.paragraph ? home.midBanner.paragraph : ''}</p>
+					<h2 class="text-animate" in:textAnimate id="tnr-heading" gsap-duration="1.5">{home.midBanner.heading ? home.midBanner.heading : ''}</h2>
 					<div in:fly id="tnr-button" gsap-delay="0.5" gsap-duration="1.2"  gsap-y="50">
 						<a href="{home.midBanner.btnUrl ? home.midBanner.btnUrl : '#'}" class="btn btn-secondary">
 							{home.midBanner.btnTitle ? home.midBanner.btnTitle : 'Button'}
@@ -262,7 +263,7 @@ const handleBottomArrowClick = () => {
 						<div class="reputation__content">
 							<div class="reputation__content__wrapper">
 								<p class="pre-head" in:slide id="reputation-preheading" gsap-duration="1.5">{home.reputation.preHeading ? home.reputation.preHeading : ''}</p>
-								<h2 class="text-animate secondary-font" gsap-duration="1" in:textAnimate id="reputation-heading">{home.reputation.heading ? home.reputation.heading : ''}</h2>
+								<h2 class="text-animate primary-font stc" gsap-duration="1" in:textAnimate id="reputation-heading">{home.reputation.heading ? home.reputation.heading : ''}</h2>
 								<div in:fly id="reputation-cont" gsap-delay="1" gsap-duration="1.2"  gsap-y="30">
 									<p>{@html home.reputation.content ? home.reputation.content : ''}</p>
 									<a href="{home.reputation.btnUrl ? home.reputation.btnUrl : '#'}" class="btn btn-secondary">{home.reputation.btnTitle ? home.reputation.btnTitle : 'Button'}</a>
@@ -297,7 +298,7 @@ const handleBottomArrowClick = () => {
 					<div class="process__content containerimg2">
 						<div class="process__content__wrapper">
 							<p class="pre-head" in:slide id="process-preheading" gsap-duration="1.5">{home.ourProcessPreHeading ? home.ourProcessPreHeading : ''}</p>
-							<h2 class="text-animate secondary-font" in:textAnimate gsap-duration="1" id="process-heading">{home.ourProcessHeading ? home.ourProcessHeading : ''}</h2>
+							<h2 class="text-animate primary-font stc" in:textAnimate gsap-duration="1" id="process-heading">{home.ourProcessHeading ? home.ourProcessHeading : ''}</h2>
 							<div in:fly id="process-cont" gsap-duration="1.2"  gsap-delay="1" gsap-y="30">
 								{@html home.ourProcessParagraph ? home.ourProcessParagraph : ''}
 								<a href="{home.ourProcessButtonUrl ? home.ourProcessButtonUrl : '#'}" class="btn btn-secondary">{ home.ourProcessButtonTitle ? home.ourProcessButtonTitle : 'Button' }</a>
@@ -324,7 +325,7 @@ const handleBottomArrowClick = () => {
 					<div class="story__content">
 						<div class="story__content__wrapper">
 							<p class="pre-head" in:slide id="story-preheading" gsap-duration="1.5">{home.ourStoryPreHeading ? home.ourStoryPreHeading : ''}</p>
-							<h2 class="text-animate secondary-font" in:textAnimate id="story-heading" gsap-duration="1">{home.ourStoryHeading ? home.ourStoryHeading : ''}</h2>
+							<h2 class="text-animate primary-font stc" in:textAnimate id="story-heading" gsap-duration="1">{home.ourStoryHeading ? home.ourStoryHeading : ''}</h2>
 							<div in:fly id="story-cont" gsap-delay="1" gsap-duration="1.2"  gsap-y="30">
 								{@html home.ourStoryParagraph ? home.ourStoryParagraph : ''}
 							</div>
@@ -342,7 +343,9 @@ const handleBottomArrowClick = () => {
 			</Row>
 		</Container>
 </section>
-
+<div class="pagebreak">
+	<img src="{pagebreak}" alt="page breaker">
+</div>
 <section class="m-0 article-wrapper" id="article-wrapper">
 	<ArticleSection />
 </section>
@@ -353,7 +356,9 @@ const handleBottomArrowClick = () => {
 
 <style lang="scss">
 	//new slide up down
-
+.pagebreak{
+	
+}
 .options-container{
   height: 100px;
   overflow: hidden;
@@ -457,8 +462,8 @@ align-items: end;
 		color: $primary-color;
 	}	
 	.loc-gallery{
-			padding:10vh 0;
-			min-height: 200vh;
+		padding-top: 10vw;
+		margin-bottom: 30vw;
 		h2{
 			font-family: $primary-font;
 			margin-bottom: 1rem;
@@ -654,6 +659,7 @@ align-items: end;
                     img{
                         height: 100%;
                         object-fit: cover;
+						max-height: 30rem;
                     }   
                 }      
                 &__text{
@@ -681,6 +687,10 @@ align-items: end;
 	}
 
 	#tnr {
+
+		display: flex;
+    flex-direction: column;
+    justify-content: center;
 		// display: grid;
 		// align-items: center;
 
@@ -746,6 +756,7 @@ align-items: end;
 				p{
 					font-size: 1.25rem;
 					opacity: 0;
+					margin-bottom: 0;
 					@include media-max(ipadmini){
 						font-size: 1rem;
 					}
@@ -818,7 +829,7 @@ align-items: end;
 			position: relative;		
 			&:after{
 				position: absolute;
-				background: #E5EEF2;
+				background: #f2f2f2;
 				width: 135%;
 				top: 5%;
 				content: "";
@@ -841,7 +852,7 @@ align-items: end;
 			&__wrapper{
 				max-width: 38rem;
 				z-index: 2;
-				padding-left: 10rem;
+				padding-left: 7rem;
 				@include media-max(lg){
 					padding-left: 5rem;
 				}	
@@ -1077,7 +1088,7 @@ align-items: end;
 			position: relative;						
 			&:after{
 				position: absolute;
-				background: #E5EEF2;
+				background: #f2f2f2;
 				width: 135%;
 				content: "";
 				height: 90%;	

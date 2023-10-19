@@ -618,7 +618,7 @@ export function bgZoom(node) {
     const targetElementID = targetElement.id;
     const bg = targetElement.querySelector('.bg');
     const start = targetElement.getAttribute("gsap-start") ? targetElement.getAttribute("gsap-start") : 'center center';
-    const scale = targetElement.getAttribute("gsap-scale") ? targetElement.getAttribute("gsap-scale") : 1.3;
+    const scale = targetElement.getAttribute("gsap-scale") ? targetElement.getAttribute("gsap-scale") : 1.2;
 
     // const masterTL = gsap.timeline({
     //     ease: "none",

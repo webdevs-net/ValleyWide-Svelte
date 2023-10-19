@@ -114,10 +114,10 @@ section{
     margin: 3.75rem 0;
     // overflow: hidden;
     min-height: 100vh;
-    @include media-max(lg){
-        padding-left: 3rem;
-        padding-right: 3rem;
-    }
+    // @include media-max(lg){
+    //     padding-left: 3rem;
+    //     padding-right: 3rem;
+    // }
     @include media-max(md){
         padding-left: 3rem;
         padding-right: 3rem;
@@ -233,8 +233,9 @@ img{
 .btn-secondary{
     background-color: $btn-color;
     border: 1px solid $btn-color;
-    color: #fff;  
+    color: $secondary-color;  
     width: fit-content;
+    font-family: $secondary-font;
     &:hover{
         background-color: $btn-hovercolor;
         border: 1px solid $btn-hovercolor;
