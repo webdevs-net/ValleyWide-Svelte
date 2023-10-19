@@ -110,7 +110,7 @@ const handleBottomArrowClick = () => {
 
 <PageBanner title="{home.topBanner.heading ? home.topBanner.heading : 'Building Excellence'}" subTitle="{home.topBanner.paragraph ? home.topBanner.paragraph : ''}" banner="{domain}{home.topBanner.background.data.attributes.formats.large_x2.url ? home.topBanner.background.data.attributes.formats.large_x2.url : home.topBanner.background.data.attributes.url}" bannerMobile="{domain}{home.topBanner.background.data.attributes.formats.medium.url}" extraClass="homebanner" bannerheight="100" />
 
-<section class="loc-gallery mvw-10" in:slowDownSection id="loc-gallery">
+<section class="loc-gallery" in:slowDownSection id="loc-gallery">
 	<Container>
 		<Row>
 			<Col xs="12" class="pb-4">
