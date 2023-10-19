@@ -1038,7 +1038,7 @@ align-items: end;
 						color: #000;
 					}
 					span{
-						font-family: 'Raleway';
+						font-family: $primary-font;
 						font-style: normal;
 						font-weight: 600;
 						font-size: 2rem;

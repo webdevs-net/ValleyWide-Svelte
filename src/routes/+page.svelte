@@ -146,7 +146,7 @@ const handleBottomArrowClick = () => {
 	<Container class="categories_wrapper">
 		<Row>
 			<Col class="text-center">
-				<h2 class="text-animate secondary-font" in:textAnimate id="category_title" gsap-duration="1" >
+				<h2 class="text-animate" in:textAnimate id="category_title" gsap-duration="1" >
 					{@html home.categoryGalleryTabHeading ? home.categoryGalleryTabHeading : ''}
 				</h2>
 				<div class="categories__tabs">
@@ -447,21 +447,24 @@ align-items: end;
 		}
 	}
 	:global(.loc-gallery p){
+		font-size: 1.25rem;
+				line-height: 2;
 		@include media-max(sm){
 			text-align: left;
-			
 		}	
 	}
 	:global(.loc-gallery .h3 span){
 		color: $primary-color;
 	}	
 	.loc-gallery{
+			padding:10vh 0;
+			min-height: 200vh;
 		h2{
-			font-family: $secondary-font;
+			font-family: $primary-font;
 			margin-bottom: 1rem;
 			color: $secondary-color;
 			margin-bottom: 3rem;
-			font-size: 3rem;
+			font-size: 2.75rem;
 			justify-content: center;
 			@include media-max(sm){
 				text-align: center;
@@ -469,12 +472,13 @@ align-items: end;
 			}
 		}		
 		&__cwrapper{
-			max-width: 42rem;
+			max-width: 48rem;
 			margin: auto;
 			.h3{
-				text-transform: uppercase;
+				// text-transform: uppercase;
 				font-size: 2.5rem;
 				font-weight: 600;
+				margin-bottom: 2rem;
 				@include media-max(sm){
 					font-size: 2rem;
 				}
@@ -485,7 +489,7 @@ align-items: end;
 			p{
 				max-width: 36rem;
 				margin: 0 auto;
-				text-align: left;						
+				text-align: left;					
 			}
 			:global(a) {
 				color: $primary-color;
@@ -513,6 +517,8 @@ align-items: end;
 		h2{
 			margin-bottom: 1rem;
 			justify-content: center;
+			font-family: $primary-font;
+			color: $primary-color;
 		}
 		.view-all{
 			margin-bottom: 2rem;
@@ -552,7 +558,7 @@ align-items: end;
 						list-style: none;
 						width: 25%;
 						border-right: 1px solid $gray;	
-						transition: 0.3s all;						
+						transition: 0.3s all;					
 						@include media-max(sm){
 							width: 15rem;
 							padding: 0 1rem;
@@ -561,28 +567,25 @@ align-items: end;
 							border: none;
 						}
 						&:hover{
-							background-color: rgba(32, 36, 41, 0.561);	
+							// background-color: rgba(32, 36, 41, 0.561);	
 							transition: 0.3s all;
 							span{
-								color: #fff;
-								&.active{
-									color: #fff;
-								}
+								color: $primary-color;
 							}
 						}						
 						span{				
-							font-family: $secondary-font;
+							font-family: $primary-font;
 							font-size: 1.75rem;
-							color: #D8D7D7;
+							color: #E0D1A3;
 							text-transform: uppercase;
 							margin-bottom: 2em;
 							font-weight: 500;
 							cursor: pointer;
 							@include media-max(lg){
-								font-size: 1.2rem;
+								font-size: 1.25rem;
 							}
 							&.active{
-								color: $secondary-color;
+								color: $primary-color;
 								border-bottom-color: $secondary-color;
 							}
 						}
@@ -666,7 +669,7 @@ align-items: end;
                 
                     span{
                         color: $primary-color;
-                        font-size: 1.2rem;
+                        font-size: 1.25rem;
                         margin: 0 0.8rem 0;
                         @include media-max(sm){
                             font-size: 0.8rem;
@@ -741,7 +744,7 @@ align-items: end;
 					}
 				}
 				p{
-					font-size: 1.2rem;
+					font-size: 1.25rem;
 					opacity: 0;
 					@include media-max(ipadmini){
 						font-size: 1rem;
@@ -1129,7 +1132,7 @@ align-items: end;
 						color: #000;
 					}
 					span{
-						font-family: 'Raleway';
+						font-family: $primary-font;
 						font-style: normal;
 						font-weight: 600;
 						font-size: 2rem;
@@ -1174,6 +1177,9 @@ align-items: end;
 	.bannerOnly {
 		// display: grid;
     	// align-items: center;
+		display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 		@include media-max(laptopS){
 			padding-left: unset;

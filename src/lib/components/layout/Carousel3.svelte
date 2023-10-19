@@ -154,7 +154,7 @@ let clientY = e.touches[0].clientY;
     <div class="slider-caption">
       <div class="slider-caption__heading">
         <p in:slide id="carousel-preheading" gsap-duration="1.5">{preHeading ? preHeading : ''}</p>
-        <h2 class="text-animate secondary-font" in:textAnimate gsap-duration="1.5" id="carousel-heading">{heading ? heading : ''}</h2>
+        <h2 class="text-animate primary-font stc" in:textAnimate gsap-duration="1.5" id="carousel-heading">{heading ? heading : ''}</h2>
       </div>
     <div class="left-right desktop">
         <button class="left" on:click={left}>
@@ -163,7 +163,6 @@ let clientY = e.touches[0].clientY;
         <button class="right" on:click={right}>
             <img src="{rightar}">
         </button>
-        
     </div>
     </div>
   </Col>
@@ -389,7 +388,7 @@ margin: 40px 0;
 }
 .left, .right{
   border: 0px;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
   background-color: transparent;
   margin: 0px;
 }

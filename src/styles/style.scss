@@ -17,6 +17,7 @@ html{
 }
 body {
     background-color: #fff9f1;
+    font-family: 'Inter';
 }
 
 h1,.h1{
@@ -626,11 +627,11 @@ header{
         .dropdown.show{
             // background-color: rgb(216 215 215 / 50%);
             // background-color: rgba(242, 237, 237, 0.20);
-            background-color: $darkbluegreen;
+            background-color: rgba(255, 255, 255, 0.3);
             .dropdown-toggle{
                 &:hover, &:focus,&:active{
                     background-color: unset;
-                    color: $primary-color;
+                    color: $white-color;
                 }
             }
         }
