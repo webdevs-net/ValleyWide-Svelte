@@ -45,7 +45,7 @@
 	
 </script>
 <section class="our_client_say">
-    <h2 class="text-animate secondary-font" in:textAnimate id="testimonial-heading" gsap-duration="1" >{testimonialHeading ? testimonialHeading : 'Our Clients say...'}</h2>
+    <h2 class="text-animate primary-font stc" in:textAnimate id="testimonial-heading" gsap-duration="1" >{testimonialHeading ? testimonialHeading : 'Our Clients say...'}</h2>
 <Container>
 <div class="siema">
     {#each clientTestimonials as testimonial}
@@ -82,7 +82,7 @@
         overflow: visible !important;
     }
     .our_client_say{
-    background:  linear-gradient(180deg, rgba(255, 255, 255, 0) -40.92%, rgba(239, 239, 240, 0.83) 36.13%, #FFFFFF 76.97%, rgba(255, 255, 255, 0) 137.31%); ;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
     mix-blend-mode: normal;
     display: flex;
     height: 100vh;

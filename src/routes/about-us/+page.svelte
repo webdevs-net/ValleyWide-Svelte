@@ -52,75 +52,10 @@
 <section class="mw-1000 text-center about-heading" id="about-heading">
     <!-- <Animate> -->
         <Container>
-                <h2 class="pb-2 text-animate secondary-font" in:textAnimate id="about_heading" gsap-duration="1.5">{@html about.AboutHeading ? about.AboutHeading : ''}</h2>
+                <h2 class="pb-2 text-animate primary-font" in:textAnimate id="about_heading" gsap-duration="1.5">{@html about.AboutHeading ? about.AboutHeading : ''}</h2>
                 <p in:fly id="about_heading_cont" gsap-duration="2"  gsap-y="80">{@html about.abouttext ? about.abouttext : ''}</p>
         </Container>
     <!-- </Animate> -->
-</section>
-<section class="contractor-details" in:slowDownSection id="cd-section1" gsap-start="top">
-    <!-- <Animate> -->
-        <Container>
-            <Row class="flex-md-row flex-column-reverse">
-                <Col md="5" class="align-self-center">
-                    <div>
-                        <h3 class="mb-4 mr-t text-animate secondary-font" in:textAnimate id="cd-heading1" gsap-duration="1" >{@html about.Section1heading ? about.Section1heading : ''}</h3>
-                        <p in:fadeIn id="cd-cont1" gsap-duration="1" gsap-delay="0.5" >{@html about.Section1text ? about.Section1text : ''}</p>
-                    </div>
-                </Col>
-                <Col md="6">
-                    
-                        {#if about.Section1image.data}
-                        <div class="imgcont">
-                            <img in:fly2 id="cd-image1" gsap-y="-75" src="{about.Section1image.data.attributes.formats.large.url ? url+about.Section1image.data.attributes.formats.large.url : url+about.Section1image.data.attributes.url}" alt="{about.Section1heading}" class="w-100" width="{about.Section1image.data.attributes.width}" height="{about.Section1image.data.attributes.height}">
-                        </div>
-                        {/if}
-                    
-                </Col>
-            </Row>
-        </Container>
-    <!-- </Animate> -->
-</section>
-<section class="contractor-details" in:slowDownSection id="cd-section2" gsap-start="top">
-    <!-- <Animate> -->
-        <Container>
-            <Row>
-                <Col md="6">
-                    {#if about.Section2image.data}
-                    <div class="imgcont">
-                        <img in:fly2 id="cd-image2" gsap-y="-75" src="{about.Section2image.data.attributes.formats.large.url ? url+about.Section2image.data.attributes.formats.large.url : url+about.Section2image.data.attributes.url}" alt="{about.Section2heading}" class="w-100" width="{about.Section2image.data.attributes.width}" height="{about.Section2image.data.attributes.height}">
-                    </div>
-                    {/if}
-                </Col>
-                <Col md="5" class="align-self-center">
-                    <div>
-                        <h3 class="mb-4 mr-t text-animate secondary-font" in:textAnimate id="cd-heading2" gsap-duration="1" >{@html about.Section2heading ? about.Section2heading : ''}</h3>
-                        <p in:fadeIn id="cd-cont2" gsap-delay="0.5" gsap-duration="1" >{@html about.Section2text ? about.Section2text : ''}</p>
-                    </div>
-                </Col>
-            </Row>
-        </Container> 
-    <!-- </Animate>   -->
-</section>
-<section class="contractor-details" in:slowDownSection id="cd-section3" gsap-start="top">
-    <!-- <Animate> -->
-        <Container>
-            <Row class="flex-md-row flex-column-reverse">
-                <Col md="5" class="align-self-center">
-                    <div>
-                        <h3 class="mb-4 mr-t text-animate secondary-font" in:textAnimate id="cd-heading3" gsap-duration="1" >{@html about.Section3heading ? about.Section3heading : ''}</h3>
-                        <p in:fadeIn id="cd-cont3" gsap-delay="0.5" gsap-duration="1" > {@html about.Section3text ? about.Section3text : ''}</p>
-                    </div>
-                </Col>
-                <Col md="6">
-                    {#if about.Section3image.data}
-                    <div class="imgcont">
-                        <img in:fly2 id="cd-image3"  gsap-y="-75" src="{about.Section3image.data.attributes.formats.large.url ? url+about.Section3image.data.attributes.formats.large.url : url+about.Section3image.data.attributes.url}" alt="{about.Section3heading}" class="w-100 2col-image" width="{about.Section3image.data.attributes.width}" height="{about.Section3image.data.attributes.height}">
-                    </div>
-                    {/if}
-                </Col>
-            </Row>
-        </Container> 
-    <!-- </Animate>   -->
 </section>
 
 <!-- <Animate> mx-8 -->
@@ -137,16 +72,6 @@
 <section class="certificate mx-8">
     <!-- <Animate>-->
         <Container>
-            
-                <!-- <div class="certificate-container" style="--cta-banner: url({about.Section5image.data ? url+about.Section5image.data.attributes.url : certBG}); --cta-banner-mobile: url({about.Section5MobileImage.data ? url+about.Section5MobileImage.data.attributes.url : certBGMobile})">
-                    <div class="certificate-inner-container">
-                        <h2 class="certificate-title">{about.certTitle ? about.certTitle : ''}</h2>
-                        <div class="certificate-content">
-                            {@html about.certContent ? about.certContent : ''}
-                        </div>
-                    </div>
-                </div> -->
-
                 {#if about.certTitle}
                 <div class="certificate-container" in:fly id="cert-img" gsap-duration="1.5" style="--cta-banner: url({certBG}); --cta-banner-mobile: url({certBGMobile})">
                     <div class="certificate-inner-container">
@@ -164,12 +89,12 @@
     <!-- <Animate> -->
         <Container>
             <Row>
-                <Col md="12"><h2 class="text-center mb-5 text-animate secondary-font" in:textAnimate id="sp-heading" gsap-duration="1" >{@html about.Section6heading ? about.Section6heading : ''}</h2></Col>
+                <Col md="12"><h2 class="text-center mb-5 text-animate primary-font stc" in:textAnimate id="sp-heading" gsap-duration="1" >{@html about.Section6heading ? about.Section6heading : ''}</h2></Col>
             </Row>
             <Row class="flex-md-row flex-column-reverse sets-parts__row">  
-                <Col md="6" class="align-self-center blue-color-background sets-parts__content p-5">
+                <Col md="6" class="align-self-center silver-color-background sets-parts__content p-5">
                     <div >
-                        <h3 class="mb-4 text-right text-animate secondary-font" in:textAnimate id="sp-heading1" gsap-duration="1">{@html about.Section6subheading ? about.Section6subheading : ''}</h3>
+                        <h3 class="mb-4 text-right text-animate primary-font" in:textAnimate id="sp-heading1" gsap-duration="1">{@html about.Section6subheading ? about.Section6subheading : ''}</h3>
                         <p class="text-right" in:fadeIn id="sp-cont1" gsap-delay="0.5" gsap-duration="1">{@html about.Section6text ? about.Section6text : ''}</p>
                     </div>
                 </Col>
@@ -203,7 +128,7 @@
                 </Col>
                 <Col md="6" class="align-self-center silver-color-background sets-parts__content sets-parts__mrl-30 p-5">
                     <div>
-                        <h3 class="mb-4 rp-fontsize text-animate secondary-font" in:textAnimate id="sp-heading2" gsap-duration="1">{@html about.Section7heading ? about.Section7heading : ''}</h3>
+                        <h3 class="mb-4 rp-fontsize text-animate primary-font" in:textAnimate id="sp-heading2" gsap-duration="1">{@html about.Section7heading ? about.Section7heading : ''}</h3>
                         <p in:fadeIn id="sp-cont2" gsap-delay="0.5" gsap-duration="1">{@html about.Section7text ? about.Section7text : ''}</p>
                     </div>
                 </Col>
@@ -215,9 +140,9 @@
     <!-- <Animate> -->
         <Container class="mx-10">
             <Row class="flex-md-row flex-column-reverse sets-parts__row">
-                <Col md="6" class="align-self-center blue-color-background sets-parts__content p-5">
+                <Col md="6" class="align-self-center silver-color-background sets-parts__content p-5">
                     <div>
-                        <h3 class="mb-4 text-right text-animate secondary-font" in:textAnimate id="sp-heading3" gsap-duration="1">{@html about.Section8heading ? about.Section8heading : ''}</h3>
+                        <h3 class="mb-4 text-right text-animate primary-font stc" in:textAnimate id="sp-heading3" gsap-duration="1">{@html about.Section8heading ? about.Section8heading : ''}</h3>
                         <p class="text-right" in:fadeIn id="sp-cont3" gsap-delay="0.5" gsap-duration="1">{@html about.Section8text ? about.Section8text : ''}</p>
                     </div>
                 </Col>
@@ -245,7 +170,7 @@
 <section class="talktous">
     <!-- <Animate> -->
         <Container>
-            <h2 class="text-animate secondary-font" in:textAnimate id="talktous-heading" gsap-duration="1">{about.talkTous.talkTous_title ? about.talkTous.talkTous_title : ''}</h2>
+            <h2 class="text-animate primary-font" in:textAnimate id="talktous-heading" gsap-duration="1">{about.talkTous.talkTous_title ? about.talkTous.talkTous_title : ''}</h2>
             <p in:fly id="talktous-cont" gsap-duration="1.2">{about.talkTous.talkTous_content ? about.talkTous.talkTous_content : ''}</p>
             <div class="talktous__btns" in:fly id="talktous-buttons" gsap-delay="0.5" gsap-duration="1.2">
                 <a href="{about.talkTous.talkTous_btn1Link ? about.talkTous.talkTous_btn1Link : '#'}" class="btn btn-secondary">{about.talkTous.talkTous_btn1 ? about.talkTous.talkTous_btn1 : 'Button'}</a>
@@ -314,7 +239,7 @@
 	}
 
     // @import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
-    $darkgrey-color: #3E3636;   
+    // $darkgrey-color: #3E3636;   
     :global(.banner.about) {
         background-position: top !important;
     } 
@@ -330,7 +255,7 @@
         }
 			
         h2 {
-            color:$secondary-color;
+            color:$primary-color;
             justify-content: center;
         }
         p{
@@ -338,9 +263,7 @@
         }
     }
     .mw-1000{
-        h2{
-            color:#263A63;
-        }
+
     }
     .mx-8{
         margin:8rem auto;
@@ -520,7 +443,6 @@
 		// 	min-height: unset;
 		// }
         h2{
-            color:$darkgrey-color;
             justify-content: center;
             padding-bottom: 2rem;
         }

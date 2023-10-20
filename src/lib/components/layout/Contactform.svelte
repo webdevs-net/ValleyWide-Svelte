@@ -100,7 +100,7 @@
 			<Col md="6">
 				<div class="contact__content">
 					<div class="contact__content__wrapper">
-						<h2 class="text-animate secondary-font" in:textAnimate id="global_contact_heading" gsap-duration="1">{contactSettings.heading ? contactSettings.heading : ''}</h2>
+						<h2 class="text-animate primary-font" in:textAnimate id="global_contact_heading" gsap-duration="1">{contactSettings.heading ? contactSettings.heading : ''}</h2>
 						<p in:fly id="global_contact_cont" gsap-delay="0.5" gsap-duration="1.2">{contactSettings.subheading ? contactSettings.subheading : ''}</p>
 					</div>
 				</div>

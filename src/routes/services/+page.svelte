@@ -121,7 +121,7 @@
                     <Col md="6" class="sets-us-apart__content">
                         <div>
                             <h4 class="text-right pfont py-3 text-animate" in:textAnimate id="about_sua_title1" gsap-duration="1.5">{@html page.section2heading ? page.section2heading : ''}</h4>
-                            <div class="blue-color-background">
+                            <div class="silver-color-background">
                                 <p class="text-right px-5 py-5" gsap-delay="1" in:fly id="about_sua_cont1" gsap-duration="2" gsap-y="20">
                                     {@html page.section2text ? page.section2text : ''}
                                 </p>
@@ -149,8 +149,7 @@
                 <Col md="6" class="sets-us-apart__content">
                     <div >
                         <h4 class="txt-center py-3 pfont text-animate" in:textAnimate id="about_sua_title2" gsap-duration="1.5">{@html page.section3heading ? page.section3heading : ''}</h4>
-                        <!-- <p class="px-5 txt-center py-5 blue-color-background">{@html page.section3text ? page.section3text : ''}</p> -->
-                        <div class="blue-color-background">
+                        <div class="silver-color-background">
                             <p class="txt-center px-5 py-5" in:fly id="about_sua_cont2" gsap-delay="1"  gsap-duration="2" gsap-y="20">
                                 {@html page.section3text ? page.section3text : ''}
                             </p>
@@ -168,8 +167,7 @@
                 <Col md="6" class="sets-us-apart__content">
                     <div>
                         <h4 class="text-right pfont py-3 text-animate" in:textAnimate id="about_sua_title3" gsap-duration="1.5">{@html page.section4heading ? page.section4heading : ''}</h4>
-                        <!-- <p class="text-right px-5 py-5 blue-color-background">{@html page.section4text ? page.section4text : ''}</p> -->
-                        <div class="blue-color-background">
+                        <div class="silver-color-background">
                             <p class="text-right px-5 py-5" in:fly id="about_sua_cont3" gsap-duration="2" gsap-delay="1" gsap-y="20">
                                 {@html page.section4text ? page.section4text : ''}
                             </p>
@@ -518,20 +516,7 @@
             &.txt-center {
                 padding-right: 7rem !important;
             }
-            // @include media-between(xs, md){
-            //     &.text-right {
-            //         padding-left: 3rem !important;
-            //     }
-            //     &.txt-center {
-            //         padding-right: 3rem !important;
-            //     }
-            // }
             @include media-max(ipadmini){ 
-                // &.blue-color-background {
-                //     padding-left: 2rem !important;
-                //     padding-right: 2rem !important;
-                // }
-                
                 text-align: left;
 
                 &.text-right {
