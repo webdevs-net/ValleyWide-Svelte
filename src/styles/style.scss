@@ -682,9 +682,9 @@ header{
 }
 .footer{
     font-weight: 300;
-    background:#262626;
+    background:#49443C;
     color: #fff;
-    padding: 3vw 7vw;
+    padding: 7vw 7vw 3vw 7vw;
     @include media-max(laptopS){
         padding: 3vw 1.5vw;
     }	
@@ -712,15 +712,18 @@ header{
     &__col {
         &:first-child {
             flex: 0 0 auto;
-            width: 35%;
+            width: 25%;
         }
         &:nth-child(2) {
             flex: 0 0 auto;
-            width: 15rem;
+            width: 50%;
+            .footer__widget--item{
+                text-align: center;
+            }
         }
         &:nth-child(3) {
             flex: 0 0 auto;
-            width: 11rem;
+            width: 25%;
         }
         @include media-max(ipadmini){
             flex: 1 0 0% !important;
@@ -835,30 +838,45 @@ header{
     align-self: center;
 }
 .pre-footer{
-    background-color: #ACA7A7;
+    background-color: #F2F2F2;
     margin: 0;
     padding: 0.5rem 0;
     min-height: 0;
     z-index: 9;
-    position: relative;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 0;
+    display: flex;
+    left: 50%;
+    margin-left: -40px;
+    margin-top: -40px;
+    border-radius: 40px;
+    color: #592A0F;
+    cursor: pointer;
+    &:hover{
+        background-color: #ddd;
+    }
     &__btt{
         text-align: center;
         cursor: pointer;
-        width: 10%;
         margin: auto;
         svg{
             display: inline-block;
             // margin-bottom: 0.5rem;
+            path{
+                stroke: #592A0F;
+            }
         }
         span{
-            color: #fff;
+            color: #592A0F;
             display: block;
             letter-spacing: 0.1rem;
         }
     }
 }
 .footer{
-    // min-height: 100vh;
+    position: relative;
     &__widget{
         &__heading{
             h4{

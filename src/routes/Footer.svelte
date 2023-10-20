@@ -2,6 +2,7 @@
 import { Col, Container, Row } from 'sveltestrap';
 import { onMount } from "svelte";
 import axios from "axios";
+import credit from "$lib/img/homebuilder.svg";
 // import Animate from "$lib/components/Animate.svelte"
 // import { fly } from "svelte/transition";
 import { fadeIn } from '$lib/GsapAnimation.js';
@@ -49,21 +50,15 @@ function scrollToTop() {
 }
 
 </script>
-<div class="pre-footer">
-    <Container>
-        <Row>
-            <Col>
-                <div class="pre-footer__btt" on:click="{scrollToTop}">
-                    <svg width="30" height="11" viewBox="0 0 30 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.44043 8.96631L15.4066 1.71729L28.5605 8.96631" stroke="white" stroke-width="2" stroke-linecap="square"/>
-                    </svg>
-                    <span>TOP</span>    
-                </div>
-            </Col>
-        </Row>
-    </Container>
-</div>
 <footer class="footer">
+    <div class="pre-footer">
+        <div class="pre-footer__btt" on:click="{scrollToTop}">
+            <svg width="30" height="11" viewBox="0 0 30 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.44043 8.96631L15.4066 1.71729L28.5605 8.96631" stroke="white" stroke-width="2" stroke-linecap="square"/>
+            </svg>
+            <span>TOP</span>    
+        </div>
+</div>
     <!-- <Animate> -->
         <Container>
             <Row>
@@ -119,14 +114,19 @@ function scrollToTop() {
                         </div>
                         <div class="footer__post-footer__paragraph">
                             <p>{siteSettings.SiteDetails.OperatingHours ? siteSettings.SiteDetails.OperatingHours.replace(/(<([^>]+)>)/gi, "") : ''}</p>
+                            <p></p>
                         </div>
                     </div>
                     {/await}
                 </Col>
             </Row>
         </Container>
-    <!-- </Animate> -->
 </footer>
+<div class="copyright">
+    <Container>
+        <a href="https://homebuilder.app" target="_blank"><img src="{credit}" alt="homebuilder"></a>
+    </Container>
+</div>
 <style lang="scss">
     :global(.col.footer__col){
         @include media-max(sm){
@@ -145,5 +145,13 @@ function scrollToTop() {
     }
     :global(.footer__widget--item p br) {
         display: none;
+    }
+    .copyright{
+        background-color: #333333;
+        padding: 1.2rem 0;
+        img{
+            height: 30px;
+            width: auto;
+        }
     }
 </style>
