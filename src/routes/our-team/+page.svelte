@@ -38,17 +38,19 @@
 <section class="our-team mvw-10" in:slowDownSection id="our-team">
         <Container>
             <Row>
-                <Col md="10" class="mx-auto">
-                    <h2 class="stc pb-4 text-center text-animate secondary-font" in:textAnimate id="team_heading" gsap-duration="1.5">{ourTeam.SecondSectionTitle ? ourTeam.SecondSectionTitle : ''}</h2>
-                    <p class="two-columns" in:fadeIn id="team_content" gsap-duration="1" gsap-delay="0.5">{@html ourTeam.content ? ourTeam.content : ''}</p>
-                    {#if ourTeam.SecondSectionImage.data}
-                        <div class="heading-image">
-                            <img in:fadeIn id="team_image" gsap-duration="1.5" gsap-start="top center" src="{domain}{ourTeam.SecondSectionImage.data.attributes.formats.large.url ? ourTeam.SecondSectionImage.data.attributes.formats.large.url : ourTeam.SecondSectionImage.data.attributes.url}" placeholder="{domain}{ourTeam.SecondSectionImage.data.attributes.url}" alt="Team Philosophy" width="{ourTeam.SecondSectionImage.data.attributes.width}" height="{ourTeam.SecondSectionImage.data.attributes.height}"/>
-                        </div>
-                    {/if}
+                <Col md="7" class="mx-auto">
+                    <h2 class="stc pb-4 text-center text-animate primary-font" in:textAnimate id="team_heading" gsap-duration="1.5">{ourTeam.SecondSectionTitle ? ourTeam.SecondSectionTitle : ''}</h2>
+                    <p in:fadeIn id="team_content" gsap-duration="1" gsap-delay="0.5">{@html ourTeam.content ? ourTeam.content : ''}</p>
                 </Col>
             </Row>
         </Container>
+</section>
+<section>
+    {#if ourTeam.SecondSectionImage.data}
+    <div class="heading-image">
+        <img in:fadeIn id="team_image" gsap-duration="1.5" gsap-start="top center" src="{domain}{ourTeam.SecondSectionImage.data.attributes.formats.large.url ? ourTeam.SecondSectionImage.data.attributes.formats.large.url : ourTeam.SecondSectionImage.data.attributes.url}" placeholder="{domain}{ourTeam.SecondSectionImage.data.attributes.url}" alt="Team Philosophy" width="{ourTeam.SecondSectionImage.data.attributes.width}" height="{ourTeam.SecondSectionImage.data.attributes.height}"/>
+    </div>
+{/if}
 </section>
 <section class="owner">
         <Container>
@@ -160,18 +162,6 @@
             font-size: 1.25rem;
             line-height: 2rem;
         }
-        .heading-image {
-            margin: 2rem 0;
-            position: relative;
-            height: 35.625rem;
-            @include media-max(ipadmini){
-                height: auto;
-            }
-            overflow: hidden;
-            img {
-                height: inherit;
-            }
-        }
         img{
             width: 100%;
             max-width: 100%;
@@ -242,6 +232,19 @@
 		// 	min-height: unset;
         // }
     }
+    :global(.heading-image) {
+            margin: 2rem 0;
+            position: relative;
+            height: 35.625rem;
+            @include media-max(ipadmini){
+                height: auto;
+            }
+            overflow: hidden;
+            img {
+                object-fit: cover;
+                height: inherit;
+            }
+        }
 .tm-box{
     position: absolute;
     z-index: 6;

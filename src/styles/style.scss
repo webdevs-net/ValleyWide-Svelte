@@ -112,23 +112,17 @@ input:focus{
 }
 section{
     margin: 3.75rem 0;
-    // overflow: hidden;
-    min-height: 100vh;
-    // @include media-max(lg){
-    //     padding-left: 3rem;
-    //     padding-right: 3rem;
-    // }
     @include media-max(md){
         padding-left: 3rem;
         padding-right: 3rem;
     }
-    // @include media-max(ipadmini){	
-    //     min-height: auto;
-    // }
     @include media-max(sm){
         padding-left: 1rem;
         padding-right: 1rem;
     }
+}
+.section-100{
+    min-height: 100vh;
 }
 .mvw-10 {
     margin: 10vw 0;

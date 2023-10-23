@@ -170,7 +170,7 @@
 		&__wrapper{
 			h2{
 				margin-bottom: 1rem;
-				// flex-wrap: wrap;
+				color: #fff;
 				width: 27rem;
 				@include media-max(laptopS){
 					width: unset;

@@ -1,8 +1,6 @@
 <script lang="ts">
 	export let data;
 	import { Col, Container, Row,  Accordion, AccordionItem } from "sveltestrap";
-	// import Animate from "$lib/components/Animate.svelte";
-	// import Carousel from "$lib/components/layout/Carousel.svelte";
 	import Carousel3 from "$lib/components/layout/Carousel3.svelte";
 	import pagebreak from "$lib/img/pagebreaker.svg";
 	let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
@@ -143,7 +141,7 @@ const handleBottomArrowClick = () => {
 </section>
 {/if}
 
-<section class="categories mvw-10" in:slowDownSection id="categories-section">
+<section class="categories section-100 mvw-10" in:slowDownSection id="categories-section">
 	<Container class="categories_wrapper">
 		<Row>
 			<Col class="text-center">
@@ -224,7 +222,7 @@ const handleBottomArrowClick = () => {
 	</Container>
 </section>
 
-<section class="featured-projects mvw-10" in:slowDownSection id="featured-section">	
+<section class="featured-projects section-100 mvw-10" in:slowDownSection id="featured-section">	
 	<Container class="featured-container">
 		<Carousel3 preHeading={home.featuredProjectsPreHeading ? home.featuredProjectsPreHeading : ''} 
 		heading={home.featuredProjectsHeading ? home.featuredProjectsHeading : ''} 
@@ -235,7 +233,7 @@ const handleBottomArrowClick = () => {
 	</Container>
 </section>
 
-<section class="" id="tnr">
+<section class="section-100" id="tnr">
 	<div class="tnr">
 		<ParallaxImage imageHeight="80" imageUrl="{domain}{home.midBanner.background.data.attributes.formats.large_x2.url ? home.midBanner.background.data.attributes.formats.large_x2.url : home.midBanner.background.data.attributes.url}" overlay="1">
 		</ParallaxImage>
@@ -715,24 +713,11 @@ align-items: end;
 				position: relative;
 				display: flex;
 				align-items: center;
-				@include media-max(default){
-
-				}
 			}
 			@include media-max(sm){
 				// height: 80vh;
 				margin-bottom: 0;
 			}
-			// &::before{
-			// 	content: "";
-			// 	position: absolute;
-			// 	top: 0;
-			// 	left: 0;
-			// 	right: 0;
-			// 	bottom: 0;
-			// 	background-color: rgba(0, 0, 0, 0.5);			
-			// 	z-index: 1;
-			// }
 			.tnr__wrapper{
 				z-index: 2;
 				position: absolute;
