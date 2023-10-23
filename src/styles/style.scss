@@ -277,8 +277,7 @@ header.container-fluid{
     padding: 5px 5px 5px 25px;
 }
 header{
-    transition: top 1s ease-in-out; /* Smooth transition for top property */
-
+    transition: top 1s ease-in-out;
 }
 @keyframes slideInFromTop {
     0% {
@@ -293,24 +292,6 @@ header{
       opacity: 1;
     }
 }
-.portfolio-page{
-    // .changeBG{
-    //     nav li.nav-item a.nav-link{
-    //         color: #fff;
-    //     }
-    // }
-    // header nav li a.nav-link{
-    //     color: $secondary-color;
-    // }
-    // .hamburger {
-    //     .dark-hamburger {
-    //         display: block;
-    //     }
-    //     .light-hamburger {
-    //         display: none;
-    //     }
-    // }
-} 
 header{
     display: flex;
     justify-content: space-between;
@@ -331,11 +312,10 @@ header{
             position: relative;
         }
         background:$newheader;
-        .dropdown.show, .dropdown-menu  {
-            // background-color: $gray;
+        .dropdown.show, .dropdown-menu{
             background-color: $white-color;
             a {
-                color: $white-color;
+                color: $primary-color !important;
             }
         }
         .navbar-brand {
