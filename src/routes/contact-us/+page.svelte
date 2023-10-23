@@ -110,7 +110,7 @@
     </div>
     <div class="contact-img" style="background-image: url({domain}{data.contact.data.attributes.formcover.data.attributes.formats.large.url ? data.contact.data.attributes.formcover.data.attributes.formats.large.url : data.data.attributes.formcover.data.attributes.url});">
     <div class="contact-box container">
-                <div class="contact-form border-radius">
+                <div class="contact-form">
                     <h2 class="text-center pb-4 stc text-animate primary-font" in:textAnimate id="contact_form_heading" gsap-start="center bottom" gsap-duration="1.5">{data.contact.data.attributes.contact_form_title ? data.contact.data.attributes.contact_form_title : ''}</h2>
                     <div in:fadeIn id="form_cont" gsap-start="center bottom" gsap-duration="1.5">
                         <Form method="post">
@@ -153,6 +153,8 @@
     :global(.container.contact_inner__details) {
         @include media-max(sm) {
             text-align: center;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
         }
     }
     :global(.contact_inner__content h2) {
@@ -203,6 +205,7 @@
             @include media-max(ipadmini) { 
                 max-width: 45rem;
                 padding: 4rem;
+                margin: auto;
             }
         }
         :global(.contact-form form) {
@@ -224,6 +227,9 @@
             margin: auto;
         }
     }
+    :global(.contact-form input, .contact-form textarea, .contact-form .form-control){
+        border-radius: 0;
+    }
     .contact-img {
         margin-top: 0vw;
         min-height: 100vh;
@@ -241,9 +247,15 @@
     .map-iframe{
         margin: -2rem 0;
         padding: 0px 1.25rem;
+        @include media-max(sm) {
+            margin:0;
+        }
     }
     #contact_detail{
         padding-left: 1rem;
         padding-right: 1rem;
+        @include media-max(sm) {
+            padding-top: 2.5rem;
+        }
     }
 </style>
