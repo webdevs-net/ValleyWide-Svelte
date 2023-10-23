@@ -72,10 +72,10 @@
 
 <section class="mx-10 contact_inner">
     <!-- <Animate> -->
-        <Container class="mb-5 contact_inner__content">
+        <Container class="contact_inner__content">
             <Row>
                 <Col md="12">
-                    <h2 class="text-center text-animate secondary-font" in:textAnimate id="contact_heading" gsap-duration="1.5" gsap-start="top center">{data.contact.data.attributes.section1Title ? data.contact.data.attributes.section1Title : ''}</h2>
+                    <h2 class="text-center text-animate primary-font stc" in:textAnimate id="contact_heading" gsap-duration="1.5" gsap-start="top center">{data.contact.data.attributes.section1Title ? data.contact.data.attributes.section1Title : ''}</h2>
                     <h4 class="text-center pfont">{data.contact.data.attributes.Section1SubAuthor ? '-' : ''} <span class="ptc"><i>{data.contact.data.attributes.Section1SubAuthor ? data.data.attributes.Section1SubAuthor : ''}</i></span></h4>
                     <p class="two-columns pt-3" in:fadeIn id="contact_content" gsap-duration="1.5" gsap-delay="0.5" gsap-start="top center">{@html data.contact.data.attributes.Subheading2 ? data.contact.data.attributes.Subheading2 : ''}</p>
                 </Col>
@@ -110,7 +110,7 @@
     <div class="contact-img" style="background-image: url({domain}{data.contact.data.attributes.formcover.data.attributes.formats.large.url ? data.contact.data.attributes.formcover.data.attributes.formats.large.url : data.data.attributes.formcover.data.attributes.url});">
     <div class="contact-box container-fluid">
                 <div class="contact-form border-radius">
-                    <h2 class="text-center pb-4 text-animate secondary-font" in:textAnimate id="contact_form_heading" gsap-start="center bottom" gsap-duration="1.5">{data.contact.data.attributes.contact_form_title ? data.contact.data.attributes.contact_form_title : ''}</h2>
+                    <h2 class="text-center pb-4 text-animate primary-font" in:textAnimate id="contact_form_heading" gsap-start="center bottom" gsap-duration="1.5">{data.contact.data.attributes.contact_form_title ? data.contact.data.attributes.contact_form_title : ''}</h2>
                     <div in:fadeIn id="form_cont" gsap-start="center bottom" gsap-duration="1.5">
                         <Form method="post">
                             <FormGroup class="input-icon-box">
@@ -154,19 +154,18 @@
             text-align: center;
         }
     }
+    :global(.contact_inner__content h2) {
+        margin-bottom: 2rem;
+    }
     .contact_inner {
-
+        min-height: 50vh;
         margin-top: 10vw;
-        
-        .contact_inner__content {
-            h2 {
-                font-size: 2.813rem;
-                justify-content: center;
-            }
-            p {
-                font-size: 1.25rem;
-                line-height: 2.125rem;
-            }
+        :global(.contact_inner__content) {
+            margin-bottom: 5rem;
+            // p {
+            //     font-size: 1.25rem;
+            //     line-height: 2.125rem;
+            // }
         }
         .contact_inner__details {
             
@@ -222,7 +221,7 @@
         }
     }
     .contact-img {
-        margin-top: 15vw;
+        margin-top: 0vw;
         min-height: 100vh;
         background-position: center;
         background-size: cover;

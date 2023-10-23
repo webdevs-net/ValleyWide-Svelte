@@ -111,7 +111,6 @@
             margin: 0 2vw;
             display:flex;
             justify-content:center;
-            align-items:center;
             flex-direction: column;
             p {
                 font-size: 1.25rem;

@@ -85,7 +85,7 @@
         </Container>
     <!-- </Animate> -->
 </section>
-<section class="sets-parts" in:slowDownSection id="sp-section1" gsap-start="top">
+<section class="sets-parts" in:slowDownSection id="sp-section1" gsap-start="top 90%">
     <!-- <Animate> -->
         <Container>
             <Row>
@@ -112,7 +112,7 @@
         </Container>  
     <!-- </Animate> -->
 </section>
-<section class="sets-parts"  in:slowDownSection id="sp-section2" gsap-start="top"> 
+<section class="sets-parts"  in:slowDownSection id="sp-section2" gsap-start="top 90%"> 
     <!-- <Animate> -->
         <Container class="mx-10">
             <Row class="sets-parts__row">
@@ -136,7 +136,7 @@
         </Container> 
     <!-- </Animate> -->
 </section>
-<section class="sets-parts"  in:slowDownSection id="sp-section3" gsap-start="top">
+<section class="sets-parts"  in:slowDownSection id="sp-section3" gsap-start="top 90%">
     <!-- <Animate> -->
         <Container class="mx-10">
             <Row class="flex-md-row flex-column-reverse sets-parts__row">
