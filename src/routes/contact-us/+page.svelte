@@ -82,35 +82,36 @@
             </Row>
         </Container>
     <!-- </Animate> -->
-
+</section>
+<div class="map-section">
     <!-- <Animate> -->
         <Container class="contact_inner__details">
             <Row>
-                <Col md="4" class="flex-vcenter">
+                <Col md="7">
                     <!-- <Animate> -->
-                    <div in:slide id="contact_detail" gsap-duration="1.5" gsap-x="-5" gsap-start="top center">
-                        <h4 class="ptc pfont">{data.contact.data.attributes.office_address_title ? data.contact.data.attributes.office_address_title : ''}</h4>
-                        <h4 class="stc pb-5">{@html office_address ? office_address : ''}</h4>
-                        <h4 class="ptc pfont">{data.contact.data.attributes.mailing_address_title ? data.contact.data.attributes.mailing_address_title : ''}</h4>
-                        <h4 class="stc pb-5">{@html mailing_address ? mailing_address : ''}</h4>
-                        <h4 class="ptc pfont">{data.contact.data.attributes.phone_title ? data.contact.data.attributes.phone_title : ''}</h4>
-                        <h4 class="stc pb-5">{@html phone ? phone : ''}</h4>
-                    </div>
+                        <iframe title="ULF BUILT" gsap-start="top center" in:fadeIn id="contact_map" gsap-duration="1.5" src="{data.contact.data.attributes.map_url ? data.contact.data.attributes.map_url : 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12289.756932100185!2d-106.59873028576666!3d39.63982841472373!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8741d9050f708981%3A0x28a8cd6309f12845!2sULFBUILT!5e0!3m2!1sen!2sin!4v1681880274611!5m2!1sen!2sin'}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
                     <!-- </Animate> -->
                 </Col>
-                <Col md="8">
+                <Col md="5" class="flex-vcenter">
                     <!-- <Animate> -->
-                        <iframe title="ULF BUILT" gsap-start="top center" in:fadeIn id="contact_map" gsap-duration="1.5" src="{data.contact.data.attributes.map_url ? data.contact.data.attributes.map_url : 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12289.756932100185!2d-106.59873028576666!3d39.63982841472373!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8741d9050f708981%3A0x28a8cd6309f12845!2sULFBUILT!5e0!3m2!1sen!2sin!4v1681880274611!5m2!1sen!2sin'}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div in:slide id="contact_detail" gsap-duration="1.5" gsap-x="-5" gsap-start="top center">
+                        <h5 class="ptc sfont">{data.contact.data.attributes.office_address_title ? data.contact.data.attributes.office_address_title : ''}</h5>
+                        <h5 class="stc sfont pb-4 mb-4">{@html office_address ? office_address : ''}</h5>
+                        <h5 class="ptc sfont">{data.contact.data.attributes.mailing_address_title ? data.contact.data.attributes.mailing_address_title : ''}</h5>
+                        <h5 class="stc sfont pb-4 mb-4">{@html mailing_address ? mailing_address : ''}</h5>
+                        <h5 class="ptc sfont">{data.contact.data.attributes.phone_title ? data.contact.data.attributes.phone_title : ''}</h5>
+                        <h5 class="stc sfont">{@html phone ? phone : ''}</h5>
+                    </div>
                     <!-- </Animate> -->
                 </Col>
             </Row>
         </Container>
     <!-- </Animate> -->
-</section>
+    </div>
     <div class="contact-img" style="background-image: url({domain}{data.contact.data.attributes.formcover.data.attributes.formats.large.url ? data.contact.data.attributes.formcover.data.attributes.formats.large.url : data.data.attributes.formcover.data.attributes.url});">
-    <div class="contact-box container-fluid">
+    <div class="contact-box container">
                 <div class="contact-form border-radius">
-                    <h2 class="text-center pb-4 text-animate primary-font" in:textAnimate id="contact_form_heading" gsap-start="center bottom" gsap-duration="1.5">{data.contact.data.attributes.contact_form_title ? data.contact.data.attributes.contact_form_title : ''}</h2>
+                    <h2 class="text-center pb-4 stc text-animate primary-font" in:textAnimate id="contact_form_heading" gsap-start="center bottom" gsap-duration="1.5">{data.contact.data.attributes.contact_form_title ? data.contact.data.attributes.contact_form_title : ''}</h2>
                     <div in:fadeIn id="form_cont" gsap-start="center bottom" gsap-duration="1.5">
                         <Form method="post">
                             <FormGroup class="input-icon-box">
@@ -178,7 +179,7 @@
         }
     }
 
-    :global(.contact_inner__details h4 a) {
+    :global(.contact_inner__details h5 a) {
         color: $secondary-color;
         text-decoration: none;
     }
@@ -193,9 +194,12 @@
             justify-content: center;
         }
         :global(.contact-form) {
-            max-width: 44rem;
+            max-width: 32rem;
             width: 100%;
-            padding: 4rem 6rem;
+            padding: 4rem 4rem;
+            margin-top: 10rem;
+            margin-bottom: 10rem;
+            margin-right: 0;
             @include media-max(ipadmini) { 
                 max-width: 45rem;
                 padding: 4rem;
@@ -231,6 +235,15 @@
         //     height: 18.75rem;
         // }
     }
-    
-    
+    .map-section{
+        background-color:#FFF3E8;
+    }
+    .map-iframe{
+        margin: -2rem 0;
+        padding: 0px 1.25rem;
+    }
+    #contact_detail{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 </style>
