@@ -24,6 +24,7 @@
 
     import { onMount } from "svelte";
 	import { loadingCursor } from '$lib/cursorChange.js';
+	import PageBreak from "$lib/components/layout/PageBreak.svelte";
 	onMount(() => {
 		loadingCursor();
 	});
@@ -39,7 +40,7 @@
         <Container>
             <Row>
                 <Col md="7" class="mx-auto">
-                    <h2 class="stc pb-4 text-center text-animate primary-font" in:textAnimate id="team_heading" gsap-duration="1.5">{ourTeam.SecondSectionTitle ? ourTeam.SecondSectionTitle : ''}</h2>
+                    <h2 class="stc pb-4 text-center text-animate pfont" in:textAnimate id="team_heading" gsap-duration="1.5">{ourTeam.SecondSectionTitle ? ourTeam.SecondSectionTitle : ''}</h2>
                     <p in:fadeIn id="team_content" gsap-duration="1" gsap-delay="0.5">{@html ourTeam.content ? ourTeam.content : ''}</p>
                 </Col>
             </Row>
@@ -53,33 +54,36 @@
 {/if}
 </section>
 <section class="owner">
-        <Container>
-            <Row noGutters>
-                <Col md=6 class="tm-img">
-                    <div>
-                        <img in:fadeIn id="owner_image" gsap-duration="1.5" alt="{ourTeam.team_member_owner.data.attributes.name}" src="{domain}{ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url ? ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url : ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.url}">
-                        <div class="tm-box wtc">
-                            <h3 class="pfont" in:slide id="owner_name" gsap-duration="1.5" gsap-x="-5">{ourTeam.team_member_owner.data.attributes.name ? ourTeam.team_member_owner.data.attributes.name : ''}</h3>
-                            <h4 class="pfont" in:slide id="owner_title" gsap-duration="1.5" gsap-x="-5">{ourTeam.team_member_owner.data.attributes.position ? ourTeam.team_member_owner.data.attributes.position : ''}</h4>
-                        </div>
-                    </div>
-                </Col>
-                <Col md=6 class="owner-quote-container">
-                <div class="owner-quote" in:fadeIn id="owner-quote-wrapper" gsap-duration="1.5"><h3 class="stc line-height-2 text-center" in:fly id="owner_quote" gsap-duration="1.5" gsap-y="20">{@html ourTeam.ownerquote ? ourTeam.ownerquote : ''}</h3></div>
-                </Col>
-            </Row>
-        </Container>
+    <Container>
+        <Row noGutters>
+            <Col md=6 class="owner-quote-container">
+            <div class="owner-quote" in:fadeIn id="owner-quote-wrapper" gsap-duration="1.5"><h3 class="stc line-height-2 text-center" in:fly id="owner_quote" gsap-duration="1.5" gsap-y="20">{@html ourTeam.ownerquote ? ourTeam.ownerquote : ''}</h3></div>
+            </Col>
+            <Col md=6 class="tm-img">
+                <div>
+                    <img in:fadeIn id="owner_image" gsap-duration="1.5" alt="{ourTeam.team_member_owner.data.attributes.name}" src="{domain}{ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url ? ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url : ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.url}">
+
+                </div>
+            </Col>
+            <Col md="12" class="tm-box-col">
+                <div class="tm-box wtc">
+                    <h3 class="sfont" id="owner_name" gsap-duration="1.5" gsap-x="-5">ULF LINDROTH</h3>
+                    <h4 class="sfont" id="owner_title" gsap-duration="1.5" gsap-x="-5" >Owner</h4>
+                </div>
+            </Col>
+        </Row>
+    </Container>
 </section>
 <section class="paragraph1 mvw-10" in:slowDownSection id="paragraph1">
         <Container>
             <h4>{@html ourTeam.team_member_owner.data.attributes.content ? ourTeam.team_member_owner.data.attributes.content : ''}</h4>
-            <!-- <h4>{@html ourTeam.para1 ? ourTeam.para1 : ''}</h4> -->
         </Container>
 </section>
+<PageBreak/>
 <section class="team-members">
     <Container>
         <Row>
-                <h2 class="sfont stc mb-5 text-center text-animate secondary-font" in:textAnimate id="member_heading" gsap-duration="1.5">{ourTeam.title ? ourTeam.title : ''}</h2>
+                <h2 class="pfont ptc mb-5 text-center text-animate" in:textAnimate id="member_heading" gsap-duration="1.5">{ourTeam.title ? ourTeam.title : ''}</h2>
             <Col md={{ size: 8, offset: 2 }} class="inner-col">
                 <Row>
                     {#each ourTeam.team_members.data as member,index}
@@ -92,10 +96,10 @@
                             >
                                 <img in:fadeIn id="member_image{index}" gsap-duration="1.5" width="{member.attributes.memberPhoto.data.attributes.width}" height="{member.attributes.memberPhoto.data.attributes.height}" src="{domain}{member.attributes.memberPhoto.data.attributes.formats.large.url ? member.attributes.memberPhoto.data.attributes.formats.large.url : member.attributes.memberPhoto.data.attributes.url}" alt="member">
                                 
-                                    <div class="tm-box wtc px-5 py-3" style="bottom: 1rem;">
+                                    <div class="tm-box2 wtc px-5 py-3" style="bottom: 1rem;">
                                         <!-- our-team__member_caption class removed -->
-                                        <h5 class="pfont" in:slide id="member_name{index}" gsap-duration="2" gsap-x="-10">{member.attributes.name}</h5>
-                                        <p class="pfont gtc" in:slide id="member_title{index}" gsap-duration="2" gsap-x="-10">{member.attributes.position}</p>
+                                        <h5 class="sfont" in:slide id="member_name{index}" gsap-duration="2" gsap-x="-10">{member.attributes.name}</h5>
+                                        <p class="sfont gtc" in:slide id="member_title{index}" gsap-duration="2" gsap-x="-10">{member.attributes.position}</p>
                                     </div>
                                 
                             </div>
@@ -125,36 +129,20 @@
         </Row>
     </Container>
 </section>
-<section class="ourteam5 mvw-10" in:slowDownSection id="ourteam5">
-   
+<PageBreak/>
+<section class="ourteam5 mvw-10 section-100" in:slowDownSection id="ourteam5">
     <Container>
         <div >
-            <h4>{ourTeam.para2 ? ourTeam.para2 : ''}</h4>
-            <h4>{ourTeam.para3 ? ourTeam.para3 : ''}</h4>
-            <h4>{ourTeam.team_member_owner.data.attributes.name ? ourTeam.team_member_owner.data.attributes.name : ''}</h4>
+            <h4 class="sfont">{ourTeam.para2 ? ourTeam.para2 : ''}</h4>
+            <h4 class="sfont">{ourTeam.para3 ? ourTeam.para3 : ''}</h4>
+            <h4 class="pfont ptc">- {ourTeam.team_member_owner.data.attributes.name ? ourTeam.team_member_owner.data.attributes.name : ''}</h4>
         </div>
     </Container>
-  
 </section>
-
   <Contactform/>
 
 <style lang="scss">
-    // section{
-    //     margin: 10rem 0;
-    //         @include media-max(sm){
-    //             margin: 5rem 0;
-    //         }
-    // }
     .our-team{
-        // margin-top: 5rem;
-        // min-height: 80rem;
-		// display: flex;
-		// align-items: center;
-        // justify-content: center;
-		// @include media-max(ipadmini){
-		// 	min-height: unset;
-        // }
         #team_heading {
             justify-content: center;
         }
@@ -176,21 +164,26 @@
             @include media-max(ipadmini){
                 min-height: 26vh;
             }
+            .tm-box2{
+                position: absolute;
+                background-color: rgba(80, 79, 79, 0.8);
+                min-width: 85%;
+                h5{
+                    font-size: 1.5rem;
+                }
+                p{
+                    color: #CF9B14;
+                }
+            }  
             &:hover{
                 a{
                     opacity: 1;
                     background-color: rgb(8, 161, 216, 0.3);
                     transition: 1.5s;
                 }
-               
-                .tm-box{
-                    background: $primary-color;
-                    transition: 1.5s;
-                    h5, span {
-                        color: $white-color;
-                    }
-                }  
-
+                .tm-box2{
+                    background-color: rgba(80, 79, 79, 1);
+                }
             }
             a{
                 opacity: 0;
@@ -222,15 +215,15 @@
     }
     :global(.tm-img){
         position: relative;
+            @include media-max(sm){
+                order: 1;
+            }
     }
     .owner {
         min-height: 100vh;
 		display: flex;
 		align-items: center;
         justify-content: center;
-		// @include media-max(ipadmini){
-		// 	min-height: unset;
-        // }
     }
     :global(.heading-image) {
             margin: 2rem 0;
@@ -245,12 +238,19 @@
                 height: inherit;
             }
         }
+:global(.tm-box-col){
+    display: flex;
+    justify-content: center;
+    margin-top: -2rem;
+    @include media-max(sm){
+        order: 3;
+    }
+}
 .tm-box{
-    position: absolute;
     z-index: 6;
     bottom:2rem;
-    background-color: #1E2D39;
-    padding: 1rem 2rem;
+    background-color: $secondary-color;
+    padding: 1.5rem 2rem;
     @include media-max(sm){
         position: relative;
         text-align: center;
@@ -263,20 +263,30 @@
 }
 :global(.owner-quote-container){
     padding: 2rem 0;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
     @include media-max(sm){
         padding: 0;
+        order: 2;
     }
 }
 .owner-quote{
     background-color: #E3CEB5;
-    height: 100%;
     display: flex;
+    height: 300px;
+    @include media-max(sm){
+        height: 180px;
+        margin-left: -1.7rem;
+        margin-right: -1.7rem;
+    }
     h3{
         display: flex;
         justify-content: center;
         flex-direction: column;
+        padding:3rem;
         @include media-max(sm){
-            padding: 2rem 1rem;
+            padding: 2rem;
         }
     }
 }
@@ -315,7 +325,6 @@
     //     min-height: unset;
     // }
     h4{
-        font-family: $primary-font;
         font-weight: 400;
         padding-bottom: 2rem;
         line-height: 2.375rem;

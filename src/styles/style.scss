@@ -640,7 +640,6 @@ header{
 
 .svelte-1ql6gaa {
     opacity: 1;
-    // transition: all 0.5s ease !important;
 }
 
 .svelte-headroom--unpin {
@@ -658,14 +657,10 @@ header{
     font-weight: 300;
     background:#49443C;
     color: #fff;
-    padding: 7vw 7vw 3vw 7vw;
-    @include media-max(laptopS){
-        padding: 3vw 1.5vw;
-    }	
-    @include media-max(sm){
-        padding: 3rem 1rem;
-    }	
-    margin: 0;
+    padding: 5rem 1rem 2rem 1rem;
+    // @include media-max(sm){
+    //     padding: 3rem 1rem;
+    // }	
     a{
         color: #fff;
     }
@@ -687,6 +682,11 @@ header{
         &:first-child {
             flex: 0 0 auto;
             width: 25%;
+            @include media-max(sm){
+                .footer__widget--item{
+                    text-align: center;
+                }
+            }
         }
         &:nth-child(2) {
             flex: 0 0 auto;
@@ -699,17 +699,35 @@ header{
             flex: 0 0 auto;
             width: 25%;
         }
+        &:nth-child(4) {
+            display: none;
+        }
         @include media-max(ipadmini){
             flex: 1 0 0% !important;
             width: 100% !important;
         }	
         @include media-max(sm){
             flex: 100% !important;
+            &:nth-child(1) {
+                order: 2;
+                max-width: 280px;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 1.5rem;
+            }
             &:nth-child(2) {
-                flex: 50% !important;
+                order: 1;
+                margin-bottom: 1.5rem;
             }
             &:nth-child(3) {
-                flex: 50% !important;
+                order: 4;
+                margin-bottom: 1.5rem;
+            }
+            &:nth-child(4) {
+                display: block;
+                order: 3;
+                margin-bottom: 1.5rem;
             }
         }	
 
@@ -879,12 +897,6 @@ header{
             font-feature-settings: 'pnum' on, 'lnum' on;
             font-size: 1.125rem;
 
-            img{
-                width: auto;
-                @include media-max(sm){
-                    width: 20%;
-                }	
-            }
             p{
                 line-height: 1.5rem;
                 font-weight: 400;

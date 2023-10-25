@@ -2,9 +2,9 @@
 	export let data;
 	import { Col, Container, Row,  Accordion, AccordionItem } from "sveltestrap";
 	import Carousel3 from "$lib/components/layout/Carousel3.svelte";
-	import pagebreak from "$lib/img/pagebreaker.svg";
 	let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
 
+	import PageBreak from "$lib/components/layout/PageBreak.svelte";
 	import ArticleSection from "$lib/components/layout/ArticleSection.svelte";
 	import ParallaxImage from "$lib/components/parallaxImage.svelte";
 	import Cta from "$lib/components/layout/Cta.svelte";
@@ -52,7 +52,7 @@
 	import { loadingCursor } from '$lib/cursorChange.js';
 	onMount(() => {
 		loadingCursor();
-		stopSection();
+		// stopSection();
 	});
 
 
@@ -341,9 +341,7 @@ const handleBottomArrowClick = () => {
 			</Row>
 		</Container>
 </section>
-<div class="pagebreak">
-	<img src="{pagebreak}" alt="page breaker">
-</div>
+<PageBreak />
 <section class="m-0 article-wrapper" id="article-wrapper">
 	<ArticleSection />
 </section>
@@ -353,10 +351,6 @@ const handleBottomArrowClick = () => {
 </section>
 
 <style lang="scss">
-	//new slide up down
-.pagebreak{
-	
-}
 .options-container{
   height: 100px;
   overflow: hidden;

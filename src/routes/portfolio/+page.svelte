@@ -1,38 +1,29 @@
 <script lang="ts">
 	import { Col, Container, Row } from "sveltestrap";
 	export let data;
-    // import LazyImage from "$lib/LazyImage.svelte";
-    // import Masonry from "$lib/components/Masonry.svelte";
 	import ArticleSection from "$lib/components/layout/ArticleSection.svelte";
 	import Cta from "$lib/components/layout/Cta.svelte";
 	import PageBanner from "$lib/components/layout/PageBanner.svelte";
 	import Animate from "$lib/components/Animate.svelte";
     import { PUBLIC_STRAPI_API } from '$env/static/public';
     import axios from "axios";
-    // import ImageLoader from '$lib/components/imageLazy/ImageLoader.svelte';
-    // import { onMount } from 'svelte';
     import noFeatured from "$lib/img/blog-empty.svg"
-    // import { fade } from "svelte/transition";
     import { paginate, LightPaginationNav } from 'svelte-paginate';
     import { textAnimate, fly, fadeIn, slide } from '$lib/GsapAnimation.js';
 
 	let domain = "https://vwapi.netdevs.net/";
 	let portfolio =  data.portfolio.data.attributes; 
     let fallback = data.fallback.data.attributes.fallbackImage.data;
-    // let propCount = 10;
     let portfolioList = [];
     let pageSize = 9;
     let currentPage = 1;
     let loading;
-    // let properties = data.properties.data;
-    // console.log(portfolio);
 
     let activeTab = portfolio.masonryGallery.masonryItems.data[0].id;
     function handleTabClick(category) {
 		activeTab = category;
 	}
 
-    // Determine first even and last odd
     let start;
     let firstEven = null;
     let lastOdd = null;
@@ -96,15 +87,16 @@
     <Container>
         <Row>
             <Col class="text-center">
-                <h2 class="text-animate secondary-font" in:textAnimate id="portfolio_heading" gsap-duration="1" gsap-start="top center">{portfolio.masonryGallery.masonryHeading ? portfolio.masonryGallery.masonryHeading : ''}</h2>
+                <h2 class="text-animate pfont" in:textAnimate id="portfolio_heading" gsap-duration="1" gsap-start="top 80%">{portfolio.masonryGallery.masonryHeading ? portfolio.masonryGallery.masonryHeading : ''}</h2>
                 <p>{portfolio.masonryGallery.masonrySubheading ? portfolio.masonryGallery.masonrySubheading : ''}</p>
                 <!-- <Masonry items={portfolio.masonryGallery.masonryItems.data} paginate="true" postperpage="6"/> -->
-                <div class="categories__tabs__heading" in:fly id="portfolio_cat" gsap-duration="1.2" gsap-start="top center">
+                <div class="categories__tabs__heading" in:fly id="portfolio_cat" gsap-duration="1.2" gsap-start="top 80%">
                     <ul>
                         {#each portfolio.masonryGallery.masonryItems.data as heading}
                             <li>
                                 <!-- svelte-ignore a11y-click-events-have-key-events -->
                                 <span 
+                                class="pfont"
                                 data-category="{heading.id}"
                                 class:active="{activeTab === heading.id}"
                                 on:click="{() => handleTabClick(heading.id)}"
@@ -192,10 +184,6 @@
     <!-- </Animate> -->
 </section>
 
-<section class="m-0 article-wrapper" id="article-wrapper">
-	<ArticleSection />
-</section>
-
 <section class="m-0 cta-wrapper autoscroll-exception" id="cta-wrapper">
 	<Cta />
 </section>
@@ -254,14 +242,14 @@
                         width: 15rem;
                         padding: 0 1rem;
                     }
-                    border-right: 3px solid $gray;	
+                    border-right: 1px solid $gray;	
                     &:last-child {
                         border: none;
                     }
                     span{				
-                        font-family: $secondary-font;
+                        font-family: $primary-font;
                         font-size: 1.75rem;
-                        color: #D8D7D7;
+                        color: #E0D1A3;
                         text-transform: uppercase;
                         margin-bottom: 2em;
                         font-weight: 500;
