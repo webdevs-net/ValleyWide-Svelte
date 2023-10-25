@@ -1050,3 +1050,17 @@ img {
 .image-scale-up {
     transform: scale(0.8);
 }
+
+.light-pagination-nav .option{
+    path{
+        fill: #000;
+    }
+}
+.light-pagination-nav .option:hover, .light-pagination-nav .option.active{
+    background: transparent !important;
+    color: #F3CF0F !important;
+    text-decoration: underline;
+    path{
+        fill: #F3CF0F;
+    }
+}

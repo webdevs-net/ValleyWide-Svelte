@@ -454,7 +454,7 @@
 	}
 
     :global(.option.prev path, .option.next path) {
-        fill: $primary-color;
+        fill: #F3CF0F;
     }
     :global(.option.prev::after) {
         content: 'Prev';
