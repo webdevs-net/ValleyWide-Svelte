@@ -1,10 +1,7 @@
 <script lang="ts">
 	import { Col, Container, Row } from "sveltestrap";
 	export let data;
-	import ArticleSection from "$lib/components/layout/ArticleSection.svelte";
-	import Cta from "$lib/components/layout/Cta.svelte";
 	import PageBanner from "$lib/components/layout/PageBanner.svelte";
-	import Animate from "$lib/components/Animate.svelte";
     import { PUBLIC_STRAPI_API } from '$env/static/public';
     import axios from "axios";
     import noFeatured from "$lib/img/blog-empty.svg"
@@ -70,6 +67,8 @@
 
     import { onMount } from "svelte";
 	import { loadingCursor } from '$lib/cursorChange.js';
+	import Contactform from "$lib/components/layout/Contactform.svelte";
+	import PageBreak from "$lib/components/layout/PageBreak.svelte";
 	onMount(() => {
 		loadingCursor();
 	});
@@ -139,7 +138,7 @@
                                                     <span>{('0' + (index + 1)).slice(-2)}</span>
                                                     {project.attributes.title ? project.attributes.title : ''}
                                                     <i><svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M1.29004 12.3459L6.29004 6.84595L1.29004 1.34595" stroke="#00ADEE" stroke-width="2" stroke-linecap="round"/>
+                                                        <path d="M1.29004 12.3459L6.29004 6.84595L1.29004 1.34595" stroke="#CF9B14" stroke-width="2" stroke-linecap="round"/>
                                                         </svg>
                                                     </i>
                                                 </div>
@@ -170,22 +169,23 @@
         <Container>
             <Row>
                 <Col class="text-center ">
+                    <PageBreak/>
                     <div class="portfolio-cta__content">
                         <p in:slide id="portfolio-cta-preheading" gsap-duration="1.5" gsap-start="top center">{portfolio.ourApproachPreHeading ? portfolio.ourApproachPreHeading : ''}</p>
-                        <h2 class="text-animate secondary-font" in:textAnimate id="portfolio-cta-heading" gsap-duration="1.5" gsap-start="top center">{@html portfolio.ourApproachHeading ? portfolio.ourApproachHeading : ''}</h2>                 
+                        <h2 class="text-animate pfont stc" in:textAnimate id="portfolio-cta-heading" gsap-duration="1.5" gsap-start="top center">{@html portfolio.ourApproachHeading ? portfolio.ourApproachHeading : ''}</h2>                 
                     </div>
                     <div class="portfolio-cta__btns" gsap-start="top top" in:fly id="portfolio-cta-button" gsap-delay="1" gsap-duration="1.5" >
                         <a href="{portfolio.ourApproachLeftBtnUrl ? portfolio.ourApproachLeftBtnUrl : '#'}" class="btn btn-secondary">{portfolio.ourApproachLeftBtnTitle ? portfolio.ourApproachLeftBtnTitle : 'Button'}</a>
                         <a href="{portfolio.ourApproachRightBtnUrl ? portfolio.ourApproachRightBtnUrl : '#'}" class="btn btn-inverted">{portfolio.ourApproachRightBtnTitle ? portfolio.ourApproachRightBtnTitle : 'Button'}</a>
-                    </div>                   
+                    </div>
+                    <PageBreak/>
                 </Col>
             </Row>
         </Container>
-    <!-- </Animate> -->
 </section>
 
 <section class="m-0 cta-wrapper autoscroll-exception" id="cta-wrapper">
-	<Cta />
+	<Contactform/>
 </section>
 <style lang="scss">
     section{
@@ -372,7 +372,7 @@
                     }   
                 }  
                 &__text{
-                    background-color: $secondary-color;
+                    background-color: rgba(80, 79, 79, 0.7);
                     color: #fff;
                     padding: 0.5rem 3rem 0.5rem 0.5rem;
                     position: absolute;
@@ -382,6 +382,10 @@
                     max-width: 90%;
                     text-align: left;
                     transition: 1.5s;
+                    gap: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
                     @include media-max(ipadmini){
                         margin: 0;
                         // font-size: 0.6rem;
@@ -389,7 +393,7 @@
                         bottom: 0.5rem
                     } 
                     span{
-                        color: $primary-color;
+                        color: #CF9B14;
                         font-size: 1.2rem;
                         margin: 0 0.8rem 0;
                         @include media-max(sm){
@@ -417,6 +421,8 @@
         position: relative;  
               
         &__content{
+            max-width: 40rem;
+            margin: auto;
             h2 {
                 // flex-wrap: wrap;
                 justify-content: center;
