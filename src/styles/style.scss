@@ -1064,3 +1064,14 @@ img {
         fill: #F3CF0F;
     }
 }
+.option path, .option path {
+    fill: #F3CF0F;
+}
+:global(.option.prev::after) {
+    content: 'Prev';
+    margin-left: 0.25rem;
+}
+:global(.option.next::before) {
+    content: 'Next';
+    margin-right: 0.25rem;
+}

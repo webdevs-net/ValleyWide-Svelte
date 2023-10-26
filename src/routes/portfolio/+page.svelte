@@ -193,6 +193,8 @@
     }
     .portfolio-masonry{
         position: relative;
+        margin-top: 7rem;
+        margin-bottom: 7rem;
         .list-text-details {
             position: absolute;
             top: 15rem;
@@ -452,16 +454,4 @@
     .cta-wrapper, .article-wrapper {
 		padding: unset;
 	}
-
-    :global(.option.prev path, .option.next path) {
-        fill: #F3CF0F;
-    }
-    :global(.option.prev::after) {
-        content: 'Prev';
-        margin-left: 0.25rem;
-    }
-    :global(.option.next::before) {
-        content: 'Next';
-        margin-right: 0.25rem;
-    }
 </style>

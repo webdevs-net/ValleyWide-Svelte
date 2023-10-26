@@ -1,9 +1,8 @@
 <script lang="ts">
-    import { Form, FormGroup, Input, Label, Col, Container, Row } from 'sveltestrap';
+    import { Col, Container, Row } from 'sveltestrap';
     import Cta from '$lib/components/layout/Cta.svelte';
-	// import Animate from '$lib/components/Animate.svelte';
-    // import { fade, fly } from 'svelte/transition';
     import { textAnimate, fly, fadeIn, slide } from '$lib/GsapAnimation.js';
+    import articlesbackground from '$lib/img/articles.png';
     export let data;
     const domain = 'https://vwapi.netdevs.net/';
 
@@ -30,12 +29,12 @@
 	<meta name="description" content="ULF BUILT" />
 </svelte:head>
 
-<div class="cover" style="background:#1E2D39;">
+<div class="cover" style="background:url({articlesbackground});">
 <Container>
     <div class="cover__covertitle">
-        <p class="pfont ptc mb-1 pt-3 article" in:slide id="single_article_pre" gsap-duration="1">Article</p>
+        <p class="sfont stc mb-1 pt-3 article" in:slide id="single_article_pre" gsap-duration="1">Article</p>
         <!-- class="text-animate" in:textAnimate id="single_article_heading" gsap-duration="0.5" -->
-        <h2 class="pfont stc mb-4 text-animate" in:textAnimate id="single_article_title" gsap-duration="1.3">{title ? title : ''}</h2>
+        <h2 class="sfont stc mb-4 text-animate" in:textAnimate id="single_article_title" gsap-duration="1.3">{title ? title : ''}</h2>
         <p class="ptc pb-5" in:fly id="single_article_detail" gsap-duration="1" gsap-delay="1" gsap-y="10">{location} | {published} · {minutesRead} {minutesRead > '1' || !minutesRead ? 'mins' : 'min'}. read</p>
     </div>
 </Container>
@@ -46,7 +45,7 @@
 <section class="content">
     <!-- <Animate> -->
         <Container class="py-4">
-            <h2 class="pb-3 sblue text-animate secondary-font" in:textAnimate id="single_article_content_heading" gsap-duration="1.3">{title ? title : ''}</h2>
+            <h2 class="pb-3 sblue text-animate primary-font" in:textAnimate id="single_article_content_heading" gsap-duration="1.3">{title ? title : ''}</h2>
             <div class="two-columns">
                 {@html content ? content : ''}
             </div>
@@ -56,7 +55,7 @@
 <section class="related-articles">
     <!-- <Animate> -->
         <Container>
-            <h2 class="text-center pb-4 text-animate secondary-font" in:textAnimate id="about_related_title" gsap-duration="1.3">Related Articles</h2>
+            <h2 class="text-center pb-4 text-animate stc pfont" in:textAnimate id="about_related_title" gsap-duration="1.3">Related Articles</h2>
             <Row>
                 {#each filteredItems as blog,i (blog.id)}
                 <Col md="4" class="pb-5">
@@ -72,7 +71,7 @@
                             </div>
                             {/if}
                             <h3 class="pt-3"><a href="/articles/{blog.attributes.slug ? blog.attributes.slug : '#'}">{blog.attributes.title ? blog.attributes.title : ''}</a></h3>
-                            <p class="ptc">{blog.attributes.location ? blog.attributes.location : 'Vail, Colorado'} | {new Date(Date.parse(blog.attributes.publishedAt)).toLocaleString('default', { month: 'long',  day: 'numeric' })} · {blog.attributes.minutesRead ? blog.attributes.minutesRead : '2'} {blog.attributes.minutesRead > '1' || !blog.attributes.minutesRead ? 'mins' : 'min'}. read</p>
+                            <p>{blog.attributes.shorttext}</p>
                         <!-- </Animate> -->
                     </div>
                 </Col>
@@ -111,12 +110,11 @@
         }
         p{
             text-align: left;
-            color: $gray;
+            color: $white-color;
             font-size: 1.125rem;
             font-weight: 500;
             font-feature-settings: 'pnum' on, 'lnum' on;
             &.article {
-                color: $primary-color;
                 font-size: 1.438rem;
                 font-weight: 500;
             }
@@ -164,7 +162,8 @@
         }
     }
     .sblue {
-        color: $secondary-color;
+        color: $primary-color;
+        font-family: $primary-font;
         font-size: 2.813rem;
         @include media-max(sm){
             text-align: center;
@@ -172,7 +171,7 @@
     }
 }
 .related-articles{
-    background: #e5eef3;
+    background: #f2f2f2;
     margin-bottom: 0;
     padding: 4.375rem 3.125rem 3.125rem 3.125rem;
     @include media-max(sm) {
@@ -192,8 +191,8 @@
     }
     a{
         text-decoration: none;
-        color: $secondary-color;
-        font-family: $secondary-font;
+        color: $primary-color;
+        font-family: $primary-font;
     }
     p {
         font-size: 1.25rem;

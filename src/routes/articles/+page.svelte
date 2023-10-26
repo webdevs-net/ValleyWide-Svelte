@@ -8,37 +8,31 @@
 	import Animate from '$lib/components/Animate.svelte';
     import { PUBLIC_STRAPI_API } from '$env/static/public';
     import axios from "axios";
-    // import { fade, fly } from 'svelte/transition';
     import { textAnimate, fly, fadeIn, slide } from '$lib/GsapAnimation.js';
-    // let blogs = data.blogs.data;
     let domain = "https://vwapi.netdevs.net/"
     let title = data.page.data.attributes.title;
     let fallback = data.fallback.data.attributes.fallbackImage.data;
-    // let items = blogs;
   let currentPage = 1;
   let pageSize = 5;
   let articleList = [];
   let categories = data.categories.data;
   let loadingArticle;
   
-    // Date on click
-    let activeDate = 'DESC'; // made newest/latest default on date filter
+    let activeDate = 'DESC';
     function activeDateClick(datesort) { 
         activeDate = datesort;
     }
 
-    // Category tab on click
     let activeCategoryTab = '';
     function activeCategoryTabClick(id) {
         activeCategoryTab = id;
     }
 
-    // check if there is new value selected for either activeDate or activeCategoryTab, then run the fetch function
     $: if (activeDate || activeCategoryTab) { 
-        loadingArticle = true; // to able to show loading text, if true show loading text
+        loadingArticle = true;
         (async () => {
             let apiUrl;
-            if(activeCategoryTab || activeCategoryTab != '') { // if has activeCategoryTab, add it on the fetch url
+            if(activeCategoryTab || activeCategoryTab != '') {
                 apiUrl = domain + "api/blogs?sort[0]=createdAt:"+activeDate+"&filters[blog_category][id][$eq]="+activeCategoryTab+"&populate=deep";
             } else {
                 apiUrl = domain + "api/blogs?sort[0]=createdAt:"+activeDate+"&populate=deep";
@@ -56,15 +50,10 @@
             }
         })();
     }
-    
-    // variable for {#key} to check if has new data in either activeDate or activeCategoryTab, to recreate their contents 
     $: listener = {activeDate, activeCategoryTab};
 
     function scrollToTop() {
         const element = document.getElementById('articleblog');
-        // element.scrollIntoView({
-        //         behavior: 'smooth'
-        // });
         const y = element.offsetTop + 1500;
         console.log(y);
         window.scrollTo({ top: y, behavior: 'smooth' });
@@ -72,6 +61,7 @@
 
     import { onMount } from "svelte";
 	import { loadingCursor } from '$lib/cursorChange.js';
+	import PageBreak from '$lib/components/layout/PageBreak.svelte';
 	onMount(() => {
 		loadingCursor();
 	});
@@ -116,7 +106,7 @@
 <section class="mw-1000 text-center article-section">
     <!-- <Animate> -->
         <Container>
-            <h2 class="mb-2 text-center text-animate secondary-font" in:textAnimate id="article_heading" gsap-duration="0.5">{data.page.data.attributes.section2heading ? data.page.data.attributes.section2heading : ''}</h2>
+            <h2 class="mb-2 text-center text-animate pfont" in:textAnimate id="article_heading" gsap-duration="0.5">{data.page.data.attributes.section2heading ? data.page.data.attributes.section2heading : ''}</h2>
             <p class="text-left" in:fly id="article_content" gsap-duration="1" gsap-delay="0.5">{@html data.page.data.attributes.section2description ? data.page.data.attributes.section2description : ''}</p>
         </Container>
     <!-- </Animate> -->
@@ -149,12 +139,12 @@
                                     <div class="blogsection7 zoomImg">
                                         {#if blog.attributes.featuredimage.data != null}
                                             {#if blog.attributes.featuredimage.data.attributes.formats != null}
-                                                <img in:fadeIn id="article_img{i}" gsap-duration="2" width="{blog.attributes.featuredimage.data.attributes.width}" height="{blog.attributes.featuredimage.data.attributes.height}" src="{blog.attributes.featuredimage.data.attributes.formats.large.url ? url+blog.attributes.featuredimage.data.attributes.formats.large.url : url+blog.attributes.featuredimage.data.attributes.url}" alt="{blog.attributes.title}" class="blog-img w-100">
+                                                <img in:fadeIn id="article_img{i}" gsap-duration="2" width="{blog.attributes.featuredimage.data.attributes.width}" height="{blog.attributes.featuredimage.data.attributes.height}" src="{blog.attributes.featuredimage.data.attributes.formats.large.url ? domain+blog.attributes.featuredimage.data.attributes.formats.large.url : domain+blog.attributes.featuredimage.data.attributes.url}" alt="{blog.attributes.title}" class="blog-img w-100">
                                             {:else}
-                                                <img in:fadeIn id="article_img{i}" gsap-duration="2" alt="{blog.attributes.title}" src="{fallback ? url+fallback.attributes.url : blogempty}" class="blog-img w-100">
+                                                <img in:fadeIn id="article_img{i}" gsap-duration="2" alt="{blog.attributes.title}" src="{fallback ? domain+fallback.attributes.url : blogempty}" class="blog-img w-100">
                                             {/if}
                                         {:else}
-                                            <img in:fadeIn id="article_img{i}" gsap-duration="2" alt="{blog.attributes.title}" src="{fallback ? url+fallback.attributes.url : blogempty}" class="blog-img w-100">
+                                            <img in:fadeIn id="article_img{i}" gsap-duration="2" alt="{blog.attributes.title}" src="{fallback ? domain+fallback.attributes.url : blogempty}" class="blog-img w-100">
                                         {/if}
                                     </div>
                                 <!-- </Animate> -->
@@ -164,8 +154,8 @@
                                 <Animate>
                                     <div class="blogsection5">
                                         <div>
-                                            <p class="pre-head" in:slide id="article_detail{i}" gsap-duration="1">{blog.attributes.location ? blog.attributes.location : 'Vail, Colorado'} | {new Date(Date.parse(blog.attributes.publishedAt)).toLocaleString('default', { month: 'long',  day: 'numeric' })} · {blog.attributes.minutesRead ? blog.attributes.minutesRead : '2'} {blog.attributes.minutesRead > '1' || !blog.attributes.minutesRead ? 'minutes' : 'minute'} read</p>
-                                            <h2 class="text-animate secondary-font" in:textAnimate id="article_title{i}" gsap-duration="1.3">{blog.attributes.title}</h2>
+                                            <p class="pre-head ptc" in:slide id="article_detail{i}" gsap-duration="1">{blog.attributes.location ? blog.attributes.location : 'Vail, Colorado'} | {new Date(Date.parse(blog.attributes.publishedAt)).toLocaleString('default', { month: 'long',  day: 'numeric' })} · {blog.attributes.minutesRead ? blog.attributes.minutesRead : '2'} {blog.attributes.minutesRead > '1' || !blog.attributes.minutesRead ? 'minutes' : 'minute'} read</p>
+                                            <h2 class="text-animate pfont" in:textAnimate id="article_title{i}" gsap-duration="1.3">{blog.attributes.title}</h2>
                                             <p in:slide id="article_text{i}" gsap-duration="1" gsap-delay="1" gsap-y="20">{blog.attributes.shorttext}</p>
                                             <div in:fly id="article_btn{i}" gsap-duration="1" gsap-delay="1.3" gsap-y="20" >
                                              <a class="btn btn-secondary" href="/articles/{blog.attributes.slug}">Read more</a>
@@ -196,11 +186,7 @@
                 {/if}
             {/if}
         {/key}
-    <div class="divider">
-        <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12.9931 22.2157L3.45312 12.9257L12.9931 3.63574L22.5431 12.9257L12.9931 22.2157Z" stroke="#D8D7D7" stroke-width="2.5" stroke-miterlimit="10"/>
-        </svg>
-    </div>
+        <PageBreak/>
 </Container>
 </section>
 <Cta/>
@@ -296,12 +282,13 @@
         overflow: hidden;
     }
     .blogsection5{
-        background-color: #e9ebef;
+        background-color: #FFF3E8;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%;
         padding: 3rem;
+        box-shadow: 0 3px 10px #ccc;
         @include media-max(sm){
             padding: 2rem;
             text-align: center;
