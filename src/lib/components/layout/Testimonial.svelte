@@ -7,11 +7,11 @@
 	import { fly } from '$lib/GsapAnimation.js';
 </script>
 
-<section class="testimonial testimonialA">
+<div class="testimonial testimonialA">
 	<Animate>
 		<Container>
 			<Row>
-				<Col >
+				<Col>
 					<p class="text-center" in:fly id="{testimonial_id}" gsap-duration="1.2" gsap-y="50">
 						{ testimonial ? testimonial : '' }
 					</p>
@@ -19,15 +19,16 @@
 			</Row>
 		</Container>
 	</Animate>
-</section>
+</div>
 
 <style lang="scss">
 	.testimonial{
-		padding: 3rem 0;
+		padding: 0;
 		min-height: 10vh;
-
 		p{
-			font-size: 1.688rem;
+			font-size: 1.25rem;
+			max-width: 60rem;
+			margin: auto;
     		font-weight: 400;		
 			position: relative;
 			padding: 0 3rem;
