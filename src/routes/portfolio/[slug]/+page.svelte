@@ -124,7 +124,7 @@
 			<Row>
 				<Col class="text-center" md={{ size: 8, offset: 2 }} xs="12">
 					<div class="portfolio-cta__content">
-						<h2 class="text-animate secondary-font" in:textAnimate gsap-duration="1.5" id="single-portfolio-cta-heading">{ctaHeading ? ctaHeading : "Experience Living your Dreams"}</h2>
+						<h2 class="text-animate ptc pfont" in:textAnimate gsap-duration="1.5" id="single-portfolio-cta-heading">{ctaHeading ? ctaHeading : "Experience Living your Dreams"}</h2>
 						<div in:fly id="single-portfolio-cta-cont" gsap-duration="1.2"  gsap-y="50" >
 							{@html data.portfolio.data[0].attributes.content ? data.portfolio.data[0].attributes.content : "<p>This Castle in Colorado exudes grandeur with its rugged, locally sourced stone walls and curved, wood and wrought iron staircases. Its traditional design is further enhanced by a mountain lion sculpture that guards the property.</p>"}         
 						</div>
@@ -266,7 +266,6 @@ section{
 }
 
 .about-property{
-	// margin-top: -4rem;
 	margin: 0;
 	padding: 4rem 0;
 	min-height: unset;
