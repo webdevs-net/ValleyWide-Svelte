@@ -471,7 +471,7 @@ export function slowDownSection(node) {
             y: () => {
 
                 if(window.innerWidth <= 1024) { // 1024 below
-                    direction = scrollY > previousScrollY ? -0.7 : 0.7;
+                    direction = scrollY > previousScrollY ? -0.9 : 0.9;
                 } else { // desktop
                     direction = scrollY > previousScrollY ? -1 : 1;
                 }
@@ -490,25 +490,25 @@ export function slowDownSection(node) {
                 onEnter: () => {
                     gsap.to('#' + parentElementID, {
                         opacity: 1,
-                        duration: 2,
+                        duration: 1,
                     });
                 },
                 onLeave: () => {
                     gsap.to('#' + parentElementID, {
                         opacity: 0,
-                        duration: 1.5,
+                        duration: 0.5,
                     });
                 },
                 onLeaveBack: () => {
                     gsap.to('#' + parentElementID, {
                         opacity: 0,
-                        duration: 1.5,
+                        duration: 0.5,
                     });
                 },
                 onEnterBack: () => {
                     gsap.to('#' + parentElementID, {
                         opacity: 1,
-                        duration: 2,
+                        duration: 1,
                     });
                 },
                 // markers: true,
@@ -520,31 +520,31 @@ export function slowDownSection(node) {
         gsap.to(container, {
             scrollTrigger: {
                 trigger: '#' + parentElementID,
-                start: () => start + ' ' + window.innerHeight * 0.7,
-                end: () => '90% ' + window.innerHeight * 0.3,
+                start: () => start + ' ' + window.innerHeight * 0.9,
+                end: () => '90% ' + window.innerHeight * 0.1,
                 scrub: true, // Use scrub to smooth the animation
                 onEnter: () => {
                     gsap.to('#' + parentElementID, {
                         opacity: 1,
-                        duration: 2,
+                        duration: 0,
                     });
                 },
                 onLeave: () => {
                     gsap.to('#' + parentElementID, {
-                        opacity: 0,
-                        duration: 2,
+                        opacity: 1,
+                        duration: 0,
                     });
                 },
                 onLeaveBack: () => {
                     gsap.to('#' + parentElementID, {
-                        opacity: 0,
-                        duration: 2,
+                        opacity: 1,
+                        duration: 0,
                     });
                 },
                 onEnterBack: () => {
                     gsap.to('#' + parentElementID, {
                         opacity: 1,
-                        duration: 2,
+                        duration: 0,
                     });
                 },
                 // markers: true,
