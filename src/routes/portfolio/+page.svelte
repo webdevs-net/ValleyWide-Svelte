@@ -278,7 +278,7 @@
 			}
 		}
         .portfolio-results-container {
-            min-height: 200vh;
+            // min-height: 200vh;
         }
         .masonry-wrapper {
             min-height: 31rem;

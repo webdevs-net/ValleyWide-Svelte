@@ -51,8 +51,8 @@ function scrollToTop() {
 
 </script>
 <footer class="footer">
-    <div class="pre-footer">
-        <div class="pre-footer__btt" on:click="{scrollToTop}">
+    <div class="pre-footer" on:click="{scrollToTop}">
+        <div class="pre-footer__btt">
             <svg width="30" height="11" viewBox="0 0 30 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1.44043 8.96631L15.4066 1.71729L28.5605 8.96631" stroke="white" stroke-width="2" stroke-linecap="square"/>
             </svg>
