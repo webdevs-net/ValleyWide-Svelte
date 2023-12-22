@@ -553,7 +553,7 @@ align-items: end;
 					}					
 					li{
 						list-style: none;
-						width: 25%;
+						padding-left: 1rem; padding-right: 1rem;
 						border-right: 1px solid $gray;	
 						transition: 0.3s all;					
 						@include media-max(sm){

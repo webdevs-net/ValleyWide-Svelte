@@ -84,7 +84,7 @@ $: listener = {propCount, activeTab};
 					}										
 					li{
 						list-style: none;
-						width: 25%;
+						padding-left: 1rem; padding-right: 1rem;
 						@include media-max(sm){
 							width: 15rem;
 							padding: 0 1rem;
