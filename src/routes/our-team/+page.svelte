@@ -67,8 +67,8 @@
             </Col>
             <Col md="12" class="tm-box-col">
                 <div class="tm-box wtc">
-                    <h3 class="sfont" id="owner_name" gsap-duration="1.5" gsap-x="-5">{ourTeam.team_member_owner.data.name}</h3>
-                    <h4 class="sfont" id="owner_title" gsap-duration="1.5" gsap-x="-5" >{ourTeam.team_member_owner.data.position}</h4>
+                    <h3 class="sfont" id="owner_name" gsap-duration="1.5" gsap-x="-5">{ourTeam.team_member_owner.data.attributes.name}</h3>
+                    <h4 class="sfont" id="owner_title" gsap-duration="1.5" gsap-x="-5" >{ourTeam.team_member_owner.data.attributes.position}</h4>
                 </div>
             </Col>
         </Row>
