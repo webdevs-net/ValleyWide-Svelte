@@ -13,7 +13,7 @@
 	let pageBannerheight = 60;
 </script>
 
-<section in:fadeIn id="banner_bg" class="banner {extraClass ? extraClass : ''} {transparent ? transparent : 'transparent'} autoscroll-exception" style="--banner: url({pageBanner}); height: {pageBannerheight}vh;">
+<section in:fadeIn id="banner_bg" class="banner {extraClass ? extraClass : ''} {transparent ? transparent : 'transparent5'} autoscroll-exception" style="--banner: url({pageBanner}); height: {pageBannerheight}vh;">
 	<div class="banner_overlay" in:fadeOut id="banner_overlay" gsap-duration="1.5" gsap-delay="0"></div>
 	<Container>
 		<Row>
@@ -34,6 +34,9 @@
 <style lang="scss">
 	.transparent{
 		box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.2);
+	}
+	.transparent5{
+		box-shadow: inset 0 0 0 50vw rgba(0,0,0,0.5);
 	}
 	.banner{
 		background-image: var(--banner);
