@@ -91,7 +91,7 @@
   <Navbar expand="md">
 	<NavbarBrand href="/">
 		<div class="logo-container">
-			<img src={siteSettings.Header.Logo.data ? domain+siteSettings.Header.Logo.data.attributes.url : logo} alt="ULFBUILT" class="logo"/>
+			<img src={siteSettings.Header.Logo.data ? domain+siteSettings.Header.Logo.data.attributes.url : logo} alt="VALLEYWIDE" class="logo"/>
 		</div>
 	</NavbarBrand>
 	{#if !isOpen}
@@ -138,7 +138,7 @@
 					<span class="icon"></span> <!-- x icon -->
 				</div>
 				<a href="/" class="mobile-menu-logo">
-					<img src={siteSettings.Header.Logo.data ? domain+siteSettings.Header.Logo.data.attributes.url : logo} alt="ULFBUILT" class="logo"/>
+					<img src={siteSettings.Header.Logo.data ? domain+siteSettings.Header.Logo.data.attributes.url : logo} alt="VALLEYWIDE" class="logo"/>
 				</a>				
 				
 

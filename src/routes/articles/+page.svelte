@@ -70,7 +70,7 @@
 </script>
 <svelte:head>
 	<title>{title ? title : 'Articles & Press'}</title>
-	<meta name="description" content="ULF BUILT" />
+	<meta name="description" content="VALLEYWIDE" />
 </svelte:head>
 
 <PageBanner title="{data.page.data.attributes.title ? data.page.data.attributes.title : 'Articles & Press'}" extraClass="articles" subTitle="{data.page.data.attributes.Subheading ? data.page.data.attributes.Subheading : ''}"  banner="{domain}{data.page.data.attributes.Cover.data[0].attributes.formats.large_x2.url ? data.page.data.attributes.Cover.data[0].attributes.formats.large_x2.url  : data.page.data.attributes.Cover.data[0].attributes.url}"/>

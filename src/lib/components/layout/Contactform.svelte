@@ -57,7 +57,7 @@
 				headers: { 'Content-Type': 'application/json', 'Authorization': 'bearer ' + PUBLIC_STRAPI_API },
 				body: JSON.stringify({
 					"to": emailTo ? emailTo : 'dev@netdevs.com',
-					"subject": emailSubject ? emailSubject : 'UlfBuilt Contact Form',
+					"subject": emailSubject ? emailSubject : 'VALLEYWIDE Contact Form',
 					"html": "<h1>"+name+"</h1><p>"+email+"</p><p>"+phone+"</p><p>"+message+"</p>",
 				})
 			})

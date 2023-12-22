@@ -26,7 +26,7 @@
 </script>
 <svelte:head>
 	<title>{title} - Article</title>
-	<meta name="description" content="ULF BUILT" />
+	<meta name="description" content="VALLEYWIDE" />
 </svelte:head>
 
 <div class="cover" style="background:url({articlesbackground});">

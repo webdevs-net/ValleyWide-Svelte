@@ -17,7 +17,7 @@
 </script>
 <svelte:head>
 	<title>{data.data.attributes.title ? data.data.attributes.title : 'Privacy Policy'}</title>
-	<meta name="description" content="ULF BUILT" />
+	<meta name="description" content="VALLEYWIDE" />
 </svelte:head>
 <PageBanner title="{data.data.attributes.title ? data.data.attributes.title : 'Privacy Policy'}" extraClass="privacy" subTitle="{data.data.attributes.Subheading ? data.data.attributes.Subheading : ''}"  banner="{domain}{data.data.attributes.Cover.data.attributes.url}"/>
 

@@ -103,7 +103,7 @@ const handleBottomArrowClick = () => {
 <svelte:window bind:scrollY={y} />
 <svelte:head>
 	<title>{home.title ? home.title : 'Home'}</title>
-	<meta name="description" content="ULF BUILT" />
+	<meta name="description" content="VALLEYWIDE" />
 </svelte:head>
 
 <PageBanner title="{home.topBanner.heading ? home.topBanner.heading : 'Building Excellence'}" subTitle="{home.topBanner.paragraph ? home.topBanner.paragraph : ''}" banner="{domain}{home.topBanner.background.data.attributes.formats.large_x2.url ? home.topBanner.background.data.attributes.formats.large_x2.url : home.topBanner.background.data.attributes.url}" bannerMobile="{domain}{home.topBanner.background.data.attributes.formats.medium.url}" extraClass="homebanner" bannerheight="100" customtop="custom-top" />

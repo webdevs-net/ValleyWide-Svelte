@@ -43,7 +43,7 @@
             headers: { 'Content-Type': 'application/json', 'Authorization': 'bearer ' + PUBLIC_STRAPI_API },
             body: JSON.stringify({
                 "to": emailTo ? emailTo : 'dev@netdevs.com',
-                "subject": emailSubject ? emailSubject : 'UlfBuilt Contact Form',
+                "subject": emailSubject ? emailSubject : 'VALLEYWIDE Contact Form',
                 "html": "<h1>"+name+"</h1><p>"+email+"</p><p>"+formPhone+"</p><p>"+message+"</p>",
             })
 		})
@@ -65,7 +65,7 @@
 </script>
 <svelte:head>
 	<title>{data.contact.data.attributes.title ? data.contact.data.attributes.title : 'Contact Us'}</title>
-	<meta name="description" content="ULF BUILT" />
+	<meta name="description" content="VALLEYWIDE" />
 </svelte:head>
 
 <PageBanner title="{data.contact.data.attributes.title ? data.contact.data.attributes.title : 'Contact Us'}" extraClass="contact" subTitle="{data.contact.data.attributes.Subheading ? data.contact.data.attributes.Subheading : ''}" banner="{domain}{data.contact.data.attributes.featuredimage.data.attributes.formats.large_x2.url ? data.contact.data.attributes.featuredimage.data.attributes.formats.large_x2.url : data.contact.data.attributes.featuredimage.data.attributes.url}" />
@@ -89,7 +89,7 @@
             <Row>
                 <Col md="7">
                     <!-- <Animate> -->
-                        <iframe title="ULF BUILT" gsap-start="top center" in:fadeIn id="contact_map" gsap-duration="1.5" src="{data.contact.data.attributes.map_url ? data.contact.data.attributes.map_url : 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12289.756932100185!2d-106.59873028576666!3d39.63982841472373!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8741d9050f708981%3A0x28a8cd6309f12845!2sULFBUILT!5e0!3m2!1sen!2sin!4v1681880274611!5m2!1sen!2sin'}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
+                        <iframe title="VALLEYWIDE" gsap-start="top center" in:fadeIn id="contact_map" gsap-duration="1.5" src="{data.contact.data.attributes.map_url ? data.contact.data.attributes.map_url : 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12289.756932100185!2d-106.59873028576666!3d39.63982841472373!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8741d9050f708981%3A0x28a8cd6309f12845!2sVALLEYWIDE!5e0!3m2!1sen!2sin!4v1681880274611!5m2!1sen!2sin'}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
                     <!-- </Animate> -->
                 </Col>
                 <Col md="5" class="flex-vcenter">

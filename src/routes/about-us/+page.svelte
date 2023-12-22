@@ -43,7 +43,7 @@
 </script>
 <svelte:head>
 	<title>{abouttitle ? abouttitle : 'About us'}</title>
-	<meta name="description" content="ULFBUILT" />
+	<meta name="description" content="VALLEYWIDE" />
 </svelte:head>
 <svelte:window bind:scrollY={scroll} />
 

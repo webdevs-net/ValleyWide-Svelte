@@ -33,7 +33,7 @@
 </script>
 <svelte:head>
 	<title>{data.data.attributes.title ? data.data.attributes.title : 'Our Team'}</title>
-	<meta name="description" content="ULF BUILT" />
+	<meta name="description" content="VALLEYWIDE" />
 </svelte:head>
 <PageBanner title="{data.data.attributes.title ? data.data.attributes.title : 'Our Team'}" subTitle="{data.data.attributes.Subheading ? data.data.attributes.Subheading : ''}"  banner="{domain}{data.data.attributes.Cover.data.attributes.formats.large_x2.url ? data.data.attributes.Cover.data.attributes.formats.large_x2.url : data.data.attributes.Cover.data.attributes.url}" bannerMobile="{domain}{data.data.attributes.Cover.data.attributes.formats.medium.url}"/>
 <section class="our-team mvw-10" in:slowDownSection id="our-team">
@@ -67,8 +67,8 @@
             </Col>
             <Col md="12" class="tm-box-col">
                 <div class="tm-box wtc">
-                    <h3 class="sfont" id="owner_name" gsap-duration="1.5" gsap-x="-5">ULF LINDROTH</h3>
-                    <h4 class="sfont" id="owner_title" gsap-duration="1.5" gsap-x="-5" >Owner</h4>
+                    <h3 class="sfont" id="owner_name" gsap-duration="1.5" gsap-x="-5">{ourTeam.team_member_owner.data.name}</h3>
+                    <h4 class="sfont" id="owner_title" gsap-duration="1.5" gsap-x="-5" >{ourTeam.team_member_owner.data.position}</h4>
                 </div>
             </Col>
         </Row>
