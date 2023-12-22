@@ -680,7 +680,7 @@ header{
     &__col {
         &:first-child {
             flex: 0 0 auto;
-            padding-left: 1rem; padding-right: 1rem;
+            width: 25%;
             @include media-max(sm){
                 .footer__widget--item{
                     text-align: center;
@@ -696,7 +696,7 @@ header{
         }
         &:nth-child(3) {
             flex: 0 0 auto;
-            padding-left: 1rem; padding-right: 1rem;
+            width: 25%;
         }
         &:nth-child(4) {
             display: none;
