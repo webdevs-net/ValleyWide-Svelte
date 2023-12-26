@@ -210,7 +210,7 @@
             <!-- </Animate>		 -->
             {#each featuredProjects.sort(() => 0.5 - Math.random()).slice(0, 2) as featuredProject, index}
                 <Col md="6">
-                    <div class="explore__article" in:fly id="related-items{index}" gsap-duration="1" gsap-delay={index/2} gsap-y="30" gsap-start="top center">
+                    <div class="explore__article" in:fly id="related-items{index}" gsap-duration="1" gsap-delay={index/2} gsap-y="30">
                         <a href="portfolio/{featuredProject.attributes.slug}" data-sveltekit-reload class="zoomImg">
                             <!-- <img src="{domain}{featuredProject.attributes.featuredImage.data.attributes.url}" alt="{featuredProject.attributes.featuredImage.data.attributes.alternativeText}"> -->
                             {#if featuredProject.attributes.featuredImage.data != null}

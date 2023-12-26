@@ -75,7 +75,8 @@
 					font-weight: 400;
 					// font-size: 5rem;		
 					font-size: 3.5rem;		
-					margin-bottom: 1rem;	
+					margin-bottom: 1rem;
+					text-shadow: 0 0 10px #000;
 					justify-content: center;
 					@include media-max(sm) {
 						font-size: 3rem;
@@ -87,7 +88,8 @@
 			}
 			&__paragraph{
 				color: #fff;
-				font-size: 1.25rem;	
+				text-shadow: 0 0 10px #000;
+				font-size: 1.25rem;
 				@include media-max(sm) {
 					font-size: 1.2rem;
 				}							

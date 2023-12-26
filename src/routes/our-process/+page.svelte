@@ -29,8 +29,8 @@
                 <Row>
                     <Col class="md-12 text-center">
                         <div class="our-process__heading">
-                            <h2 class="text-animate secondary-font" in:textAnimate id="process_title" gsap-duration="1" gsap-start="top center">{processData.section1heading ? processData.section1heading : ''}</h2>
-                            <div in:fadeIn id="process_sub" gsap-duration="1" gsap-delay="0.5" gsap-start="top center">
+                            <h2 class="text-animate secondary-font" in:textAnimate id="process_title" gsap-duration="1">{processData.section1heading ? processData.section1heading : ''}</h2>
+                            <div in:fadeIn id="process_sub" gsap-duration="1" gsap-delay="0.5">
                                 {@html processData.section1text ? processData.section1text : ''}
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                     <Col class="md-12">
                         <!-- <Animate> -->
                             {#if processData.section2image.data}
-                            <img in:fadeIn id="process_img" gsap-duration="1.5" gsap-start="top center"  src="{domain}{processData.section2image.data.attributes.formats.large.url ? processData.section2image.data.attributes.formats.large.url : processData.section2image.data.attributes.url}"
+                            <img in:fadeIn id="process_img" gsap-duration="1.5"  src="{domain}{processData.section2image.data.attributes.formats.large.url ? processData.section2image.data.attributes.formats.large.url : processData.section2image.data.attributes.url}"
                             srcset="{domain}{processData.section2image.data.attributes.url} 330w,
                                     {domain}{processData.section2image.data.attributes.url} 660w,
                                     {domain}{processData.section2image.data.attributes.url} 990w"

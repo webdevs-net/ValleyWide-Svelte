@@ -127,7 +127,7 @@
                                 <div class="container masonry-wrapper">       
                                     {#each paginate({ items, pageSize, currentPage }) as project, index}			
                                         <div class="masonry-items {index + 1 == firstEven ? 'firstEven' : ''}{index + 1 == lastOdd ? 'lastOdd' : ''}" 
-                                        in:fly id="masonry-items{index}" gsap-duration="2" gsap-y="10" gsap-start="top center"> 
+                                        in:fly id="masonry-items{index}" gsap-duration="2" gsap-y="10"> 
                                             <a data-sveltekit-reload href="/portfolio/{project.attributes.slug}" class="zoomImg">  
                                                 {#if project.attributes.featuredImage.data != null}
                                                     <img src="{domain}{project.attributes.featuredImage.data.attributes.formats.large.url ? project.attributes.featuredImage.data.attributes.formats.large.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}">
@@ -171,8 +171,8 @@
                 <Col class="text-center ">
                     <PageBreak/>
                     <div class="portfolio-cta__content">
-                        <p in:slide id="portfolio-cta-preheading" gsap-duration="1.5" gsap-start="top center">{portfolio.ourApproachPreHeading ? portfolio.ourApproachPreHeading : ''}</p>
-                        <h2 class="text-animate pfont stc" in:textAnimate id="portfolio-cta-heading" gsap-duration="1.5" gsap-start="top center">{@html portfolio.ourApproachHeading ? portfolio.ourApproachHeading : ''}</h2>                 
+                        <p in:slide id="portfolio-cta-preheading" gsap-duration="1.5">{portfolio.ourApproachPreHeading ? portfolio.ourApproachPreHeading : ''}</p>
+                        <h2 class="text-animate pfont stc" in:textAnimate id="portfolio-cta-heading" gsap-duration="1.5">{@html portfolio.ourApproachHeading ? portfolio.ourApproachHeading : ''}</h2>                 
                     </div>
                     <div class="portfolio-cta__btns" gsap-start="top top" in:fly id="portfolio-cta-button" gsap-delay="1" gsap-duration="1.5" >
                         <a href="{portfolio.ourApproachLeftBtnUrl ? portfolio.ourApproachLeftBtnUrl : '#'}" class="btn btn-secondary">{portfolio.ourApproachLeftBtnTitle ? portfolio.ourApproachLeftBtnTitle : 'Button'}</a>
@@ -299,10 +299,10 @@
                 text-align: center;  
                 // padding-top: 0.8rem;
                 &:nth-child(even) {
-                    margin-top: 2rem;
+                    margin-top: 1rem;
                 }
                 &:nth-child(odd) {
-                    margin-bottom: 2rem;
+                    margin-bottom: 1rem;
                 }
                 &.firstEven {
                     margin-top: 5rem;

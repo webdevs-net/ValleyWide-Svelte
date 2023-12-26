@@ -445,8 +445,8 @@ export function slowDownSection(node) {
     const parentElementID = parentElement.id;
     const container = parentElement.querySelector('.container');
 
-    const start = parentElement.getAttribute("gsap-start") ? parentElement.getAttribute("gsap-start") : '10vw';
-
+    const start = parentElement.getAttribute("gsap-start") ? parentElement.getAttribute("gsap-start") : '5vw';
+    console.log("New" + start);
     let scrollY = 0; // Initial scroll position
     let previousScrollY = 0; // Previous scroll position
     let direction;
@@ -496,7 +496,7 @@ export function slowDownSection(node) {
                 onLeave: () => {
                     gsap.to('#' + parentElementID, {
                         opacity: 0,
-                        duration: 0.5,
+                        duration: 1,
                     });
                 },
                 onLeaveBack: () => {

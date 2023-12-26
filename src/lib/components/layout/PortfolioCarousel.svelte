@@ -133,7 +133,7 @@ function lazy(node, data) {
       <div class="mobile-image">
         {#each images as image, index}
           <Animate>
-            <div class="slider-container__carousel-cell" in:fadeIn id="mobile-items{index}" gsap-duration="2" gsap-start="top center">
+            <div class="slider-container__carousel-cell" in:fadeIn id="mobile-items{index}" gsap-duration="2">
               <img src="{domain}{image.attributes.formats.large.url ? image.attributes.formats.large.url : image.attributes.url}" alt="{image.attributes.alternativeText ? image.attributes.alternativeText : ''}" />         
               <a href="{domain}{image.attributes.url}?download" class="download" download>
                 <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -107,7 +107,7 @@
 	<!-- <Animate> -->
 		{#each bannerQuotes as bannerQuote, index}
 				{#if bannerQuote.banner.data}
-				<div in:scaleUp id="single-portfolio-bannerOnly{index}" gsap-start="top center" gsap-duration="2" class="fireplace section--bannerOnly image-scale-up" style="--lrbg: url({domain}{bannerQuote.banner.data.attributes.formats.large.url ? bannerQuote.banner.data.attributes.formats.large.url : bannerQuote.banner.data.attributes.url})"></div>
+				<div in:scaleUp id="single-portfolio-bannerOnly{index}" gsap-duration="2" class="fireplace section--bannerOnly image-scale-up" style="--lrbg: url({domain}{bannerQuote.banner.data.attributes.formats.large.url ? bannerQuote.banner.data.attributes.formats.large.url : bannerQuote.banner.data.attributes.url})"></div>
 				<!-- <div class="parallax-wrapper">
 					<ParallaxImage imageHeight="100" imageUrl="{domain}{bannerQuote.banner.data.attributes.formats.large.url ? bannerQuote.banner.data.attributes.formats.large.url : bannerQuote.banner.data.attributes.url}">
 					</ParallaxImage>
@@ -148,7 +148,7 @@
 				</Col>	
 				{#each relatedPortfolios as rPortfolio, index}
 					<Col md="6">
-						<div class="related__article"  in:fly id="related-items{index}" gsap-duration="1" gsap-delay={index/2} gsap-y="30" gsap-start="top center">
+						<div class="related__article"  in:fly id="related-items{index}" gsap-duration="1" gsap-delay={index/2} gsap-y="30">
 							<a href="{rPortfolio.attributes.slug}" data-sveltekit-reload class="zoomImg">
 								{#if rPortfolio.attributes.featuredImage.data != null}
 								<img src="{domain}{rPortfolio.attributes.featuredImage.data.attributes.formats.large.url ? rPortfolio.attributes.featuredImage.data.attributes.formats.large.url : rPortfolio.attributes.featuredImage.data.attributes.url}" alt="{rPortfolio.attributes.featuredImage.data.attributes.alternativeText}" />

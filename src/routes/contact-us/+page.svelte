@@ -75,9 +75,9 @@
         <Container class="contact_inner__content">
             <Row>
                 <Col md="12">
-                    <h2 class="text-center text-animate primary-font stc" in:textAnimate id="contact_heading" gsap-duration="1.5" gsap-start="top center">{data.contact.data.attributes.section1Title ? data.contact.data.attributes.section1Title : ''}</h2>
+                    <h2 class="text-center text-animate primary-font stc" in:textAnimate id="contact_heading" gsap-duration="1.5">{data.contact.data.attributes.section1Title ? data.contact.data.attributes.section1Title : ''}</h2>
                     <h4 class="text-center pfont">{data.contact.data.attributes.Section1SubAuthor ? '-' : ''} <span class="ptc"><i>{data.contact.data.attributes.Section1SubAuthor ? data.data.attributes.Section1SubAuthor : ''}</i></span></h4>
-                    <p class="two-columns pt-3" in:fadeIn id="contact_content" gsap-duration="1.5" gsap-delay="0.5" gsap-start="top center">{@html data.contact.data.attributes.Subheading2 ? data.contact.data.attributes.Subheading2 : ''}</p>
+                    <p class="two-columns pt-3" in:fadeIn id="contact_content" gsap-duration="1.5" gsap-delay="0.5">{@html data.contact.data.attributes.Subheading2 ? data.contact.data.attributes.Subheading2 : ''}</p>
                 </Col>
             </Row>
         </Container>
@@ -89,12 +89,12 @@
             <Row>
                 <Col md="7">
                     <!-- <Animate> -->
-                        <iframe title="VALLEYWIDE" gsap-start="top center" in:fadeIn id="contact_map" gsap-duration="1.5" src="{data.contact.data.attributes.map_url ? data.contact.data.attributes.map_url : 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12289.756932100185!2d-106.59873028576666!3d39.63982841472373!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8741d9050f708981%3A0x28a8cd6309f12845!2sVALLEYWIDE!5e0!3m2!1sen!2sin!4v1681880274611!5m2!1sen!2sin'}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
+                        <iframe title="VALLEYWIDE" in:fadeIn id="contact_map" gsap-duration="1.5" src="{data.contact.data.attributes.map_url ? data.contact.data.attributes.map_url : 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12289.756932100185!2d-106.59873028576666!3d39.63982841472373!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8741d9050f708981%3A0x28a8cd6309f12845!2sVALLEYWIDE!5e0!3m2!1sen!2sin!4v1681880274611!5m2!1sen!2sin'}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map-iframe"></iframe>
                     <!-- </Animate> -->
                 </Col>
                 <Col md="5" class="flex-vcenter">
                     <!-- <Animate> -->
-                    <div in:slide id="contact_detail" gsap-duration="1.5" gsap-x="-5" gsap-start="top center">
+                    <div in:slide id="contact_detail" gsap-duration="1.5" gsap-x="-5">
                         <h5 class="ptc sfont">{data.contact.data.attributes.office_address_title ? data.contact.data.attributes.office_address_title : ''}</h5>
                         <h5 class="stc sfont pb-4 mb-4">{@html office_address ? office_address : ''}</h5>
                         <h5 class="ptc sfont">{data.contact.data.attributes.mailing_address_title ? data.contact.data.attributes.mailing_address_title : ''}</h5>

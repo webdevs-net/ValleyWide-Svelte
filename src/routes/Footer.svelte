@@ -98,7 +98,9 @@ function scrollToTop() {
                                                                   
                         </div>
                         <div class="footer__post-footer__paragraph">
-                            <p>{siteSettings.SiteDetails.OperatingHours ? siteSettings.SiteDetails.OperatingHours.replace(/(<([^>]+)>)/gi, "") : ''}
+                            <!-- {@html siteSettings.SiteDetails.OperatingHours ? siteSettings.SiteDetails.OperatingHours.replace(/(<([^>]+)>)/gi, "") : ''} -->
+                            <p>
+                                {@html siteSettings.SiteDetails.OperatingHours}
 
                                 {#await promise}
                                 {:then widgets}     
@@ -154,13 +156,56 @@ function scrollToTop() {
         display: flex;
         justify-content: space-between;
     }
+    :global(.footer__post-footer__paragraph p p span) {
+        color: #aca7a7;
+    }
+
+    :global(.footer__post-footer__paragraph p span a) {
+        position: relative;
+    }
+    :global(.footer__post-footer__paragraph p span a::after) {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.1em;
+        background-color: #fff;
+        opacity: 0;
+        transition: opacity 300ms, transform 300ms;
+        transform: scale(0);
+        transform-origin: center;
+        }
+
+    :global(.footer__post-footer__paragraph p span a:hover::after, .footer__post-footer__paragraph p span a:focus::after){
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+    }
+    // :global(.footer__post-footer__paragraph p span a::before) {
+    //         content: '';
+    //         position: absolute;
+    //         bottom: 0;
+    //         left: 50%;
+    //         width: 6px;
+    //         height: 6px;
+    //         background-color: #fff;
+    //         border-radius: 50%;
+    //         transform: translateX(-50%) scale(0);
+    //         transition: transform 0.3s ease-in-out;
+    // }
+    // :global(.footer__post-footer__paragraph p span a:hover::before) {
+    //         transform: translateX(-50%) scale(1);
+    // }
+    // :global(.footer__post-footer__paragraph p span a:hover) {
+    //         color: #ff4500;
+    //     }
     :global(.footer__col:nth-child(4) .footer__widget--item a){
     display: block;
     padding: 0.25rem 0;
     }
     :global(.footer__post-footer__paragraph p span a){
         text-decoration: none;
-        padding-right: 1rem;
+        margin-right: 1rem;
         @include media-max(sm){
             display: none;
         }

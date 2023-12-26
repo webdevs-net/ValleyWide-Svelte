@@ -180,7 +180,7 @@ function preventAnchorClick(event) {
 </Col>
 <Col md=9 class="carousel-section" style="overflow: hidden;padding-left:0px;position: relative;height: 40rem;">
 <div class="carousel" style="position:absolute;left:0;top:0;">
-<div class="slides" in:fly id="carousel-image-container" gsap-duration="1" gsap-y="10" gsap-start="top center"
+<div class="slides" in:fly id="carousel-image-container" gsap-duration="1" gsap-y="10"
   on:mousedown={handleStart}
   on:mousemove={handleMove}
   on:mouseup={handleEnd}
