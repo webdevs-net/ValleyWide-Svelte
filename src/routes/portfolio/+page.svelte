@@ -261,8 +261,8 @@
                             font-size: 1.2rem;
                         }	
                         &.active{
-                            color: $secondary-color;
-                            border-bottom-color: $secondary-color;
+                            color: $primary-color;
+                            border-bottom-color: $primary-color;
                         }
                     }
                 }

@@ -233,7 +233,7 @@ const handleBottomArrowClick = () => {
 	</Container>
 </section>
 
-<section class="section-100" id="tnr">
+<section id="tnr">
 	<div class="tnr">
 		<ParallaxImage imageHeight="80" imageUrl="{domain}{home.midBanner.background.data.attributes.formats.large_x2.url ? home.midBanner.background.data.attributes.formats.large_x2.url : home.midBanner.background.data.attributes.url}" overlay="1">
 		</ParallaxImage>
