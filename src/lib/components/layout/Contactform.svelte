@@ -3,7 +3,7 @@
     import { Form, FormGroup, Input, Button } from 'sveltestrap';
 	import { PUBLIC_STRAPI_API } from '$env/static/public';
 	import { onMount } from 'svelte';
-	import axios from '$lib/axios';
+	import axios from 'axios';
 	import { textAnimate, fly, fadeIn, slide, bgZoom } from '$lib/GsapAnimation.js';
 	let domain = "https://vwapi.netdevs.net/"
 	let emailTo = '';

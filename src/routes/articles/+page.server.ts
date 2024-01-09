@@ -1,4 +1,4 @@
-import axios from '$lib/axios';
+import axios from 'axios';
 let domain = "https://vwapi.netdevs.net/"
 import { STRAPI_API } from '$env/static/private';
 export async function load() {
