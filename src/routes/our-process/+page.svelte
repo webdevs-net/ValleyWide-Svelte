@@ -22,7 +22,7 @@
 	<title>{processData.section1heading ? processData.section1heading : 'Our Process'}</title>
 	<meta name="description" content="VALLEYWIDE" />
 </svelte:head>
-<PageBanner title="{processData.section1heading ? processData.section1heading : 'Our Process'}" subTitle="{processData.bannerSub ? processData.bannerSub : ''}" banner="{domain}{processData.Cover.data[0].attributes.formats.large_x2 ? processData.Cover.data[0].attributes.formats.large_x2.url : processData.Cover.data[0].attributes.url}" />
+<PageBanner title="{processData.section1heading ? processData.section1heading : 'Our Process'}" subTitle="{processData.bannerSub ? processData.bannerSub : ''}" banner="{domain}{processData.Cover.data[0].attributes.formats.large ? processData.Cover.data[0].attributes.formats.large.url : processData.Cover.data[0].attributes.url}" />
 <section class="our-process">
         <Container>
             <!-- <Animate> -->

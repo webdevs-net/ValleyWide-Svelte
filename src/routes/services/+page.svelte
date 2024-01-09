@@ -24,14 +24,14 @@
 	<meta name="description" content="VALLEYWIDE" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </svelte:head>
-<PageBanner title="{page.Title ? page.Title : 'Services'}" extraClass="services" subTitle="{page.Subheading ? page.Subheading : ''}"  banner="{domain}{page.Cover.data[0].attributes.formats.large_x2.url ? page.Cover.data[0].attributes.formats.large_x2.url : page.Cover.data[0].attributes.url}"  />
+<PageBanner title="{page.Title ? page.Title : 'Services'}" extraClass="services" subTitle="{page.Subheading ? page.Subheading : ''}"  banner="{domain}{page.Cover.data[0].attributes.formats.large.url ? page.Cover.data[0].attributes.formats.large.url : page.Cover.data[0].attributes.url}"  />
 
 <section class="service-b mvw-10" in:slowDownSection id="service-b">
     <!-- <Animate> -->
         <Container>
             <h2 class="text-center mb-5 py-3 text-animate secondary-font" in:textAnimate id="about_s1_title" gsap-duration="1">{page.section1heading ? page.section1heading : ''}</h2>
                 <Row>
-                    <Col md=4 sm=6 xs=12>
+                    <Col md=6 sm=6 xs=12>
                         <!-- <Animate> -->
                             <div class="service-b__service-box">
                                 <div class="service-b__service-box__service-box-inner">
@@ -44,7 +44,7 @@
                             </div>
                         <!-- </Animate> -->
                     </Col>
-                    <Col md=4 sm=6 xs=12>
+                    <Col md=6 sm=6 xs=12>
                         <!-- <Animate> -->
                             <div class="service-b__service-box">
                                 <div class="service-b__service-box__service-box-inner">
@@ -57,7 +57,7 @@
                             </div>
                         <!-- </Animate> -->
                     </Col>
-                    <Col md=4 sm=6 xs=12>
+                    <Col md=6 sm=6 xs=12>
                         <!-- <Animate> -->
                             <div class="service-b__service-box">
                                 <div class="service-b__service-box__service-box-inner">
@@ -70,7 +70,7 @@
                             </div>
                         <!-- </Animate> -->
                     </Col>
-                    <Col md=4 sm=6 xs=12>
+                    <Col md=6 sm=6 xs=12>
                         <!-- <Animate> -->
                             <div class="service-b__service-box">
                                 <div class="service-b__service-box__service-box-inner">
@@ -83,32 +83,7 @@
                             </div>
                         <!-- </Animate> -->
                     </Col>
-                    <Col md=4 sm=6 xs=12>
-                        <!-- <Animate> -->
-                            <div class="service-b__service-box">
-                                <div class="service-b__service-box__service-box-inner">
-                                    <div class="service-b__service-box__service-box-inner__service-icon">
-                                        <img in:fadeIn gsap-start="center top" id="about_icon5" gsap-duration="2" src="{domain}{page.section1item5icon.data.attributes.url}" alt="{page.section1item5heading}" width="{page.section1item5icon.data.attributes.width}" height="{page.section1item5icon.data.attributes.height}">
-                                    </div>
-                                    <h4 in:slide gsap-start="center top" id="about_title_icon5" gsap-duration="2">{page.section1item5heading ? page.section1item5heading : ''}</h4>
-                                </div>
-                                <p in:fadeIn gsap-start="center top" id="about_content_icon5" gsap-duration="2">{page.section1item5text ? page.section1item5text : ''}</p>
-                            </div>
-                        <!-- </Animate> -->
-                    </Col>
-                    <Col md=4 sm=6 xs=12>
-                        <!-- <Animate> -->
-                            <div class="service-b__service-box">
-                                <div class="service-b__service-box__service-box-inner">
-                                    <div class="service-b__service-box__service-box-inner__service-icon">
-                                        <img in:fadeIn gsap-start="center top" id="about_icon6" gsap-duration="2" src="{domain}{page.section1item6icon.data.attributes.url}" alt="{page.section1item6heading}" width="{page.section1item6icon.data.attributes.width}" height="{page.section1item6icon.data.attributes.height}">
-                                    </div>
-                                    <h4 in:slide gsap-start="center top" id="about_title_icon6" gsap-duration="2">{page.section1item6heading ? page.section1item6heading : ''}</h4>
-                                </div>
-                                <p in:fadeIn gsap-start="center top" id="about_content_icon6" gsap-duration="2">{page.section1item6text ? page.section1item6text : ''}</p>
-                            </div>
-                        <!-- </Animate> -->
-                    </Col>
+                    
                 </Row>
         </Container>
     <!-- </Animate> -->

@@ -446,7 +446,6 @@ export function slowDownSection(node) {
     const container = parentElement.querySelector('.container');
 
     const start = parentElement.getAttribute("gsap-start") ? parentElement.getAttribute("gsap-start") : '5vw';
-    console.log("New" + start);
     let scrollY = 0; // Initial scroll position
     let previousScrollY = 0; // Previous scroll position
     let direction;
