@@ -1,13 +1,9 @@
 <script lang="ts">
 	import { Col, Container, Row } from "sveltestrap";
     import { Form, FormGroup, Input, Button } from 'sveltestrap';
-    // import contactBG from "$lib/img/ContactBG.jpg";
-    // import contactBGPlain from "$lib/img/ContactBGPlain.jpeg";
 	import { PUBLIC_STRAPI_API } from '$env/static/public';
 	import { onMount } from 'svelte';
 	import axios from 'axios';
-	import Animate from '$lib/components/Animate.svelte';
-    // import { fade, fly } from 'svelte/transition';
 	import { textAnimate, fly, fadeIn, slide, bgZoom } from '$lib/GsapAnimation.js';
 	let domain = "https://vwapi.netdevs.net/"
 	let emailTo = '';
@@ -94,7 +90,7 @@
 {:then contactSettings} 
 <!-- <Animate> -->
 <section class="contact" in:bgZoom id="form-section-bg">
-	<div class="contact-form-bg bg" style="--contactBG: url({domain}{contactSettings.background.data.attributes.url})" ></div>
+	<div class="contact-form-bg bg" style="--contactBG: url({domain}{contactSettings.background.data.attributes.formats.large.url})" ></div>
 	<Container>
 		<Row>
 			<Col md="6">

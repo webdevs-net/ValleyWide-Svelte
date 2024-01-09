@@ -189,7 +189,7 @@
 <!-- </Animate> -->
 
 <style lang="scss">
-	$backgroundimage: url('$lib/img/portfolio.jpg'); // Define the URL
+	$backgroundimage: url('$lib/img/portfolio.webp'); // Define the URL
 	:global(.portfolio-page .dropdown.show, .portfolio-page .dropdown-menu) {
 		background-color: rgba(242, 237, 237, 0.20) !important;
 	}

@@ -11,6 +11,7 @@
     export let extraClass;
 	let pageBanner = banner;
 	let pageBannerheight = 60;
+
 </script>
 
 <section in:fadeIn id="banner_bg" class="banner {extraClass ? extraClass : ''} {transparent ? transparent : 'transparent5'} autoscroll-exception" style="--banner: url({pageBanner}); height: {pageBannerheight}vh;">

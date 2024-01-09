@@ -9,8 +9,7 @@ export async function load() {
     }    
     const response = await axios.get(url, { headers });
 
-
-    const urlProperties = domain+'api/portfolios?populate=deep';
+    const urlProperties = domain+'api/portfolios?fields[0]=title&fields[1]=slug';
     const properties = await axios.get(urlProperties, { headers }); 
 
     const urlSiteSettings = domain+'api/site-setting?populate=deep,3';

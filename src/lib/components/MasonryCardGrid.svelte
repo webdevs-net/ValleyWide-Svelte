@@ -6,12 +6,6 @@
     import noFeatured from "$lib/img/blog-empty.svg"
     import Animate from "./Animate.svelte";
     let domain = "https://vwapi.netdevs.net/"
-    // const gap = 5;
-    // const defaultDirection = "end";
-    // const align = "end";
-    // const column = 3;
-    // const columnSize = 0;
-    // const columnSizeRatio = 0;
     import axios from "axios";
     export let id;
     let projects;

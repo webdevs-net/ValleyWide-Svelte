@@ -289,9 +289,9 @@ const handleBottomArrowClick = () => {
 }
 .arrow-top{
   top: 0;
-  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+  background: -moz-linear-gradient(top, rgba(255 249 241, 1) 0%, rgba(255,255,255,0) 100%);
+  background: -webkit-linear-gradient(top, rgba(255 249 241, 1) 0%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to bottom, rgba(255 249 241, 1) 0%,rgba(255,255,255,0) 100%);
   display: flex;
 align-items: end;
 }
@@ -300,9 +300,9 @@ align-items: end;
 }
 .arrow-bottom{
   bottom: 0;
-  background: -moz-linear-gradient(bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-  background: -webkit-linear-gradient(bottom, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
-  background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+  background: -moz-linear-gradient(bottom, rgba(255 249 241, 1) 0%, rgba(255,255,255,0) 100%);
+  background: -webkit-linear-gradient(bottom, rgba(255 249 241, 1) 0%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to top, rgba(255 249 241, 1) 0%,rgba(255,255,255,0) 100%);
   display: flex;
 }
 .arrow-bottom img{

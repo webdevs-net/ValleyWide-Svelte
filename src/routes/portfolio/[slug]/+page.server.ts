@@ -9,9 +9,9 @@ export const load: PageLoad = async ({ params, fetch }) => {
     }    
     const response = await axios.get(url, { headers });
 
-    const urlporfolios = domain+'api/portfolios?populate=deep';
-    
-    const portfolios = await axios.get(urlporfolios, { headers }); 
+
+    const urlporfolios = domain+'api/portfolios?fields[0]=title&fields[1]=slug&populate[2]=featuredImage';
+    const portfolios = await axios.get(urlporfolios, {headers});
 
     const urlSiteSettings = domain+'api/site-setting?populate=deep,3';
     const siteSettings = await axios.get(urlSiteSettings, { headers }); 

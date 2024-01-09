@@ -2,8 +2,6 @@
 	export let data;
 	import { Col, Container, Row,  Accordion, AccordionItem } from "sveltestrap";
 	import Carousel3 from "$lib/components/layout/Carousel3.svelte";
-	let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
-
 	import PageBreak from "$lib/components/layout/PageBreak.svelte";
 	import ArticleSection from "$lib/components/layout/ArticleSection.svelte";
 	import ParallaxImage from "$lib/components/parallaxImage.svelte";
@@ -107,7 +105,7 @@ const handleBottomArrowClick = () => {
 	<meta name="description" content="VALLEYWIDE" />
 </svelte:head>
 
-<PageBanner title="{home.topBanner.heading ? home.topBanner.heading : 'Building Excellence'}" subTitle="{home.topBanner.paragraph ? home.topBanner.paragraph : ''}" banner="{domain}{home.topBanner.background.data.attributes.formats.large_x2.url ? home.topBanner.background.data.attributes.formats.large_x2.url : home.topBanner.background.data.attributes.url}" bannerMobile="{domain}{home.topBanner.background.data.attributes.formats.medium.url}" extraClass="homebanner" bannerheight="100" transparent="transparent" />
+<PageBanner title="{home.topBanner.heading ? home.topBanner.heading : 'Building Excellence'}" subTitle="{home.topBanner.paragraph ? home.topBanner.paragraph : ''}" banner="{domain}{home.topBanner.background.data.attributes.formats.large.url ? home.topBanner.background.data.attributes.formats.large.url : home.topBanner.background.data.attributes.url}" bannerMobile="{domain}{home.topBanner.background.data.attributes.formats.medium.url}" extraClass="homebanner" bannerheight="100" transparent="transparent" />
 
 <section class="loc-gallery" in:slowDownSection id="loc-gallery">
 	<Container>
@@ -134,8 +132,8 @@ const handleBottomArrowClick = () => {
 <section class="bannerOnly " id="bannerOnly">
 	<div class="bannerOnly--Container">
 		<div in:fadeIn id="bannerOnlyImg" gsap-duration="2" class="section--bannerOnly">
-			<!-- {home.homeBuilderBanner.data.attributes.formats.large_x2.url ? home.homeBuilderBanner.data.attributes.formats.large_x2.url : home.homeBuilderBanner.data.attributes.url} -->
-		<ParallaxImage imageHeight="80" imageUrl="{domain}{home.homeBuilderBanner.data.attributes.formats.large_x2.url ? home.homeBuilderBanner.data.attributes.formats.large_x2.url : home.homeBuilderBanner.data.attributes.url}"></ParallaxImage>
+			<!-- {home.homeBuilderBanner.data.attributes.formats.large.url ? home.homeBuilderBanner.data.attributes.formats.large.url : home.homeBuilderBanner.data.attributes.url} -->
+		<ParallaxImage imageHeight="80" imageUrl="{domain}{home.homeBuilderBanner.data.attributes.formats.large.url ? home.homeBuilderBanner.data.attributes.formats.large.url : home.homeBuilderBanner.data.attributes.url}"></ParallaxImage>
 		</div>
 	</div>
 </section>
@@ -235,7 +233,7 @@ const handleBottomArrowClick = () => {
 
 <section id="tnr">
 	<div class="tnr">
-		<ParallaxImage imageHeight="80" imageUrl="{domain}{home.midBanner.background.data.attributes.formats.large_x2.url ? home.midBanner.background.data.attributes.formats.large_x2.url : home.midBanner.background.data.attributes.url}" overlay="1">
+		<ParallaxImage imageHeight="80" imageUrl="{domain}{home.midBanner.background.data.attributes.formats.large.url ? home.midBanner.background.data.attributes.formats.large.url : home.midBanner.background.data.attributes.url}" overlay="1">
 		</ParallaxImage>
 		<div class="tnr__wrapper">
 			<Container>
@@ -454,8 +452,8 @@ align-items: end;
 		color: $primary-color;
 	}	
 	.loc-gallery{
-		padding-top: 10vw;
-		margin-bottom: 30vw;
+		margin-top: 10vw;
+		margin-bottom: 20vw;
 		h2{
 			font-family: $primary-font;
 			margin-bottom: 1rem;
