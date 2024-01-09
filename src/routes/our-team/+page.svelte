@@ -3,6 +3,7 @@
 	import PageBanner from "$lib/components/layout/PageBanner.svelte";
     import Contactform from "$lib/components/layout/Contactform.svelte";
     import Modal from "$lib/components/layout/Modal.svelte";
+    import photoplaceholder from "$lib/img/userplaceholder.webp";
     import { textAnimate, fly, fadeIn, slide, slowDownSection } from '$lib/GsapAnimation.js';
 
 	export let data;
@@ -61,8 +62,11 @@
             </Col>
             <Col md=6 class="tm-img">
                 <div>
+                    {#if ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats != null}
                     <img in:fadeIn id="owner_image" gsap-duration="1.5" alt="{ourTeam.team_member_owner.data.attributes.name}" src="{domain}{ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url ? ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url : ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.url}">
-
+                    {:else}
+                    <img in:fadeIn id="ownder_image" gsap-duration="1.5" alt="Owner Photo" src="{photoplaceholder}"/>
+                    {/if}
                 </div>
             </Col>
             <Col md="12" class="tm-box-col">
@@ -94,16 +98,16 @@
                             on:click={() => getMemberIndex(index)}
                             on:click={() => (showModal = true)}
                             >
+                            {#if member.attributes.memberPhoto.data.attributes.formats != null}
                                 <img in:fadeIn id="member_image{index}" gsap-duration="1.5" width="{member.attributes.memberPhoto.data.attributes.width}" height="{member.attributes.memberPhoto.data.attributes.height}" src="{domain}{member.attributes.memberPhoto.data.attributes.formats.large.url ? member.attributes.memberPhoto.data.attributes.formats.large.url : member.attributes.memberPhoto.data.attributes.url}" alt="member">
-                                
+                            {:else}
+                                <img in:fadeIn id="member_image{index}" gsap-duration="1.5" src="{photoplaceholder}" alt="member">
+                            {/if}
                                     <div class="tm-box2 wtc px-5 py-3" style="bottom: 1rem;">
-                                        <!-- our-team__member_caption class removed -->
                                         <h5 class="sfont" in:slide id="member_name{index}" gsap-duration="2" gsap-x="-10">{member.attributes.name}</h5>
                                         <p class="sfont gtc" in:slide id="member_title{index}" gsap-duration="2" gsap-x="-10">{member.attributes.position}</p>
                                     </div>
-                                
                             </div>
-                            <!-- </a> -->
                         </Col>                    
                     {/each} 
                     

@@ -1,5 +1,5 @@
 import { STRAPI_API } from '$env/static/private';
-import axios from '$lib/axios';
+import axios from 'axios';
 let domain = "https://vwapi.netdevs.net/"
 export async function load() {
     const url = domain+'api/our-services-page?populate=*';
@@ -8,7 +8,7 @@ export async function load() {
     }  
     const response = await axios.get(url, { headers });
 
-    const urlPortfolios = domain+'api/portfolios?populate=deep';
+    const urlPortfolios = domain+'api/portfolios?fields[0]=title&fields[1]=slug&populate[2]=featuredImage';;
     const portfolios = await axios.get(urlPortfolios, { headers }); 
 
     const urlSiteSettings = domain+'api/site-setting?populate=deep,3';
