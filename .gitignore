@@ -12,3 +12,4 @@ package.json
 vite.config.ts
 svelte.config.js
 src/routes/+page.server.ts
+.svelte-kit/generated/root.svelte
