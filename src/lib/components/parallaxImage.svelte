@@ -86,7 +86,7 @@ style="--height: {imageHeight}vh">
   }
 
   .parallax-img {
-    width: 100%;
+    width: 120%;
     height: auto;
     min-width: 1000px;
     position: absolute;
@@ -94,7 +94,7 @@ style="--height: {imageHeight}vh">
     left: 0;
 
     @include media-max(default){
-      width: 100%;
+      width: 140%;
       // min-height: 100vh;
     }
     @include media-max(sm){
