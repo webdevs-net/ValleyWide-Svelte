@@ -80,10 +80,10 @@
 </section>
 
 <!-- <Animate> -->
-<!-- <section class="phase1-img" in:fadeIn id="phase1_img1" gsap-duration="2" style="--phs1: url({domain}{processData.section3image.data.attributes.formats.large_x2 ? processData.section3image.data.attributes.formats.large.url : processData.section3image.data.attributes.url })"></section>  -->
+<!-- <section class="phase1-img" in:fadeIn id="phase1_img1" gsap-duration="2" style="--phs1: url({domain}{processData.section3image.data.attributes.formats.large_x2 ? processData.section3image.data.attributes.formats.large_x2.url : processData.section3image.data.attributes.url })"></section>  -->
 
 <div class="parallax-wrapper">
-<ParallaxImage imageHeight="70" imageUrl="{domain}{processData.section3image.data.attributes.formats.large_x2 ? processData.section3image.data.attributes.formats.large.url : processData.section3image.data.attributes.url}">
+<ParallaxImage imageHeight="70" imageUrl="{domain}{processData.section3image.data.attributes.formats.large_x2 ? processData.section3image.data.attributes.formats.large_x2.url : processData.section3image.data.attributes.url}">
 </ParallaxImage> 
 </div>
 <!-- </Animate> -->
@@ -132,10 +132,10 @@
 </section>
 
 <!-- <Animate> -->
-    <section class="phase__banner image-scale-up" in:scaleUp id="phase1_img2" gsap-duration="2" style="--phs1Banner: url({domain}{processData.section6image.data.attributes.formats.large_x2 ? processData.section6image.data.attributes.formats.large.url : processData.section6image.data.attributes.url })">
+    <section class="phase__banner image-scale-up" in:scaleUp id="phase1_img2" gsap-duration="2" style="--phs1Banner: url({domain}{processData.section6image.data.attributes.formats.large_x2 ? processData.section6image.data.attributes.formats.large_x2.url : processData.section6image.data.attributes.url })">
     </section>  
     <!-- <div class="parallax-wrapper">
-        <ParallaxImage imageHeight="100" imageUrl="{domain}{processData.section6image.data.attributes.formats.large_x2 ? processData.section6image.data.attributes.formats.large.url : processData.section6image.data.attributes.url }">
+        <ParallaxImage imageHeight="100" imageUrl="{domain}{processData.section6image.data.attributes.formats.large_x2 ? processData.section6image.data.attributes.formats.large_x2.url : processData.section6image.data.attributes.url }">
         </ParallaxImage> 
     </div> -->
 <!-- </Animate> -->
@@ -195,9 +195,9 @@
 </section>
 
 <!-- <Animate> -->
-    <!-- <section class="phase2-img" in:fadeIn id="phase2_img1" gsap-duration="2" style="--phs2: url({domain}{processData.section10phase2image.data.attributes.formats.large_x2 ? processData.section10phase2image.data.attributes.formats.large.url : processData.section10phase2image.data.attributes.url })"></section>  -->
+    <!-- <section class="phase2-img" in:fadeIn id="phase2_img1" gsap-duration="2" style="--phs2: url({domain}{processData.section10phase2image.data.attributes.formats.large_x2 ? processData.section10phase2image.data.attributes.formats.large_x2.url : processData.section10phase2image.data.attributes.url })"></section>  -->
     <div class="parallax-wrapper">
-        <ParallaxImage imageHeight="70" imageUrl="{domain}{processData.section10phase2image.data.attributes.formats.large_x2 ? processData.section10phase2image.data.attributes.formats.large.url : processData.section10phase2image.data.attributes.url }">
+        <ParallaxImage imageHeight="70" imageUrl="{domain}{processData.section10phase2image.data.attributes.formats.large_x2 ? processData.section10phase2image.data.attributes.formats.large_x2.url : processData.section10phase2image.data.attributes.url }">
         </ParallaxImage> 
     </div>
 <!-- </Animate> -->
