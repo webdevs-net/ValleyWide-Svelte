@@ -22,8 +22,8 @@ gsap.registerPlugin(ScrollTrigger, SplitText, Observer);
 
 const delayDefault = '0';
 const durationDefault = '0.5';
-const flyY = '70';
-const slideX = '7';
+const flyY = '90';
+const slideX = '9';
 const startDefault = "top bottom"; // start default for other animations
 
 let mm = gsap.matchMedia();
