@@ -12,7 +12,7 @@
     export let data;
 
     let abouttitle = data.about.data.attributes.Title
-    let aboutimage = data.about.data.attributes.featuredimage.data.attributes.formats.large.url ? data.about.data.attributes.featuredimage.data.attributes.formats.large.url : data.about.data.attributes.featuredimage.data.attributes.url 
+    let aboutimage = data.about.data.attributes.featuredimage.data.attributes.formats.large_x2.url ? data.about.data.attributes.featuredimage.data.attributes.formats.large_x2.url : data.about.data.attributes.featuredimage.data.attributes.url 
     let aboutsubheading = data.about.data.attributes.Aboutsubheading
     let about = data.about.data.attributes
     let url = "https://vwapi.netdevs.net/";
@@ -62,7 +62,7 @@
 <section class="remodel" in:fly id="remodel-img-section" gsap-y="20">
     <div class="remodel__bgimage">
         {#if about.Section4image.data}
-        <img class="image-scale-up" in:scaleUp id="remodel-img" gsap-duration="2" src="{about.Section4image.data.attributes.formats.large.url ? url+about.Section4image.data.attributes.formats.large.url : url+about.Section4image.data.attributes.url}" alt="{about.Section3heading}" width="{about.Section4image.data.attributes.width}" height="{about.Section4image.data.attributes.height}">
+        <img class="image-scale-up" in:scaleUp id="remodel-img" gsap-duration="2" src="{about.Section4image.data.attributes.formats.large_x2.url ? url+about.Section4image.data.attributes.formats.large_x2.url : url+about.Section4image.data.attributes.url}" alt="{about.Section3heading}" width="{about.Section4image.data.attributes.width}" height="{about.Section4image.data.attributes.height}">
         {/if}
         <p class="text-center pt-3"><i><b>{about.Section4text ? about.Section4text : ''}</b></i></p>
     </div>  

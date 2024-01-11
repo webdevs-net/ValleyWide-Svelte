@@ -247,7 +247,7 @@
             @include media-max(xs){
                 content: '';
                 display: block;
-                // background-image: url(/src/lib/img/service-mobile-bars1.svg);
+                background-image: url(/src/lib/img/service-mobile-bars1.svg);
                 background-position: center;
                 background-size: contain;
                 background-repeat: no-repeat;
@@ -257,7 +257,7 @@
                 z-index: -1;
             }
             @include media-max(mm){
-                // background-image: url(/src/lib/img/service-mobile-bars.svg);
+                background-image: url(/src/lib/img/service-mobile-bars.svg);
                 background-size: auto;
             }
         }

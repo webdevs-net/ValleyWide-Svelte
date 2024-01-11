@@ -4,7 +4,6 @@
     import Cta from '$lib/components/layout/Cta.svelte';
     export let data;
     import blogempty from "$lib/img/blog-empty.svg";
-    import nophoto from "$lib/img/no-photo.webp";
 	import PageBanner from '$lib/components/layout/PageBanner.svelte';
 	import Animate from '$lib/components/Animate.svelte';
     import { PUBLIC_STRAPI_API } from '$env/static/public';
@@ -74,20 +73,7 @@
 	<meta name="description" content="VALLEYWIDE" />
 </svelte:head>
 
-<PageBanner
-  title={(data.page?.data?.attributes?.title || 'Articles & Press')}
-  extraClass="articles"
-  subTitle={(data.page?.data?.attributes?.Subheading || '')}
-  banner={
-    domain +
-    (
-      (data.page?.data?.attributes?.Cover?.data?.[0]?.attributes?.formats?.large?.url ||
-        data.page?.data?.attributes?.Cover?.data?.[0]?.attributes?.url) || ""
-    )
-  }
-/>
-<!-- {data.page.data.attributes.Cover.data[0].attributes.formats.large.url ? data.page.data.attributes.Cover.data[0].attributes.formats.large.url : data.page.data.attributes.Cover.data[0].attributes.url} -->
-
+<PageBanner title="{data.page.data.attributes.title ? data.page.data.attributes.title : 'Articles & Press'}" extraClass="articles" subTitle="{data.page.data.attributes.Subheading ? data.page.data.attributes.Subheading : ''}"  banner="{domain}{data.page.data.attributes.Cover.data[0].attributes.formats.large_x2.url ? data.page.data.attributes.Cover.data[0].attributes.formats.large_x2.url  : data.page.data.attributes.Cover.data[0].attributes.url}"/>
 <section class="category">
     <!-- <Animate> -->
         <Container>
