@@ -34,7 +34,7 @@
 {:then ctaData} 
 <!-- <Animate> -->
 	<section class="home-cta" id="cta-section" in:bgZoom gsap-scale="1.3">
-		<div class="home-cta-bg bg" id="cta-section-bg" style="--cta-banner: url({domain}{ctaData.backgroundImage.data.attributes.formats.large_x2.url ? ctaData.backgroundImage.data.attributes.formats.large_x2.url : ctaData.backgroundImage.data.attributes.url})"></div>
+		<div class="home-cta-bg bg" id="cta-section-bg" style="--cta-banner: url({domain}{ctaData.backgroundImage.data.attributes.formats.large.url ? ctaData.backgroundImage.data.attributes.formats.large.url : ctaData.backgroundImage.data.attributes.url})"></div>
 		<Container fluid class="container-white">
 			<Row>
 				<Col class="text-center">
