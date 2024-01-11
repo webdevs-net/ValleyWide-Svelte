@@ -130,7 +130,7 @@
                                         in:fly id="masonry-items{index}" gsap-duration="2" gsap-y="10"> 
                                             <a data-sveltekit-reload href="/portfolio/{project.attributes.slug}" class="zoomImg">  
                                                 {#if project.attributes.featuredImage.data != null}
-                                                    <img src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium_x2.url ? project.attributes.featuredImage.data.attributes.formats.medium_x2.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}">
+                                                    <img src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium.url ? project.attributes.featuredImage.data.attributes.formats.medium.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}">
                                                 {:else}
                                                     <img src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}">
                                                 {/if}
