@@ -1,5 +1,5 @@
 // @ts-nocheck
-import axios from '$lib/axios';
+import axios from 'axios';
 import { STRAPI_API } from '$env/static/private';
 let domain = "https://vwapi.netdevs.net/"
 export const load = async ({ params, fetch }: Parameters<PageLoad>[0]) => {
