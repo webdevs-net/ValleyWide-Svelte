@@ -43,5 +43,5 @@
 
 <!-- HTML template -->
 {#each progressiveImages as img (img.lowResSrc)}
-  <img {src} alt="Progressive Image Loading" class:blur-up={!img.loaded} />
+  <img loading="lazy" {src} alt="Progressive Image Loading" class:blur-up={!img.loaded} />
 {/each}

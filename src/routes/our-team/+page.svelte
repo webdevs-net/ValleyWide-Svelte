@@ -50,7 +50,7 @@
 <section>
     {#if ourTeam.SecondSectionImage.data}
     <div class="heading-image">
-        <img in:fadeIn id="team_image" gsap-duration="1.5" src="{domain}{ourTeam.SecondSectionImage.data.attributes.formats.large.url ? ourTeam.SecondSectionImage.data.attributes.formats.large.url : ourTeam.SecondSectionImage.data.attributes.url}" placeholder="{domain}{ourTeam.SecondSectionImage.data.attributes.url}" alt="Team Philosophy" width="{ourTeam.SecondSectionImage.data.attributes.width}" height="{ourTeam.SecondSectionImage.data.attributes.height}"/>
+        <img loading="lazy" in:fadeIn id="team_image" gsap-duration="1.5" src="{domain}{ourTeam.SecondSectionImage.data.attributes.formats.large.url ? ourTeam.SecondSectionImage.data.attributes.formats.large.url : ourTeam.SecondSectionImage.data.attributes.url}" placeholder="{domain}{ourTeam.SecondSectionImage.data.attributes.url}" alt="Team Philosophy" width="{ourTeam.SecondSectionImage.data.attributes.width}" height="{ourTeam.SecondSectionImage.data.attributes.height}"/>
     </div>
 {/if}
 </section>
@@ -63,9 +63,9 @@
             <Col md=6 class="tm-img">
                 <div>
                     {#if ourTeam.team_member_owner?.data?.attributes?.memberPhoto?.data?.attributes?.formats != null}
-                    <img in:fadeIn id="owner_image" gsap-duration="1.5" alt="{ourTeam.team_member_owner.data.attributes.name}" src="{domain}{ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url ? ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url : ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.url}">
+                    <img loading="lazy" in:fadeIn id="owner_image" gsap-duration="1.5" alt="{ourTeam.team_member_owner.data.attributes.name}" src="{domain}{ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url ? ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url : ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.url}">
                     {:else}
-                    <img in:fadeIn id="ownder_image" gsap-duration="1.5" alt="Owner Photo" src="{photoplaceholder}"/>
+                    <img loading="lazy" in:fadeIn id="ownder_image" gsap-duration="1.5" alt="Owner Photo" src="{photoplaceholder}"/>
                     {/if}
                 </div>
             </Col>
@@ -99,9 +99,9 @@
                             on:click={() => (showModal = true)}
                             >
                             {#if ourTeam.team_member_owner?.data?.attributes?.memberPhoto?.data?.attributes?.formats != null}
-                            <img in:fadeIn id="owner_image" gsap-duration="1.5" alt="{ourTeam.team_member_owner.data.attributes.name}" src="{domain}{ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url ? ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url : ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.url}">
+                            <img loading="lazy" in:fadeIn id="owner_image" gsap-duration="1.5" alt="{ourTeam.team_member_owner.data.attributes.name}" src="{domain}{ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url ? ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url : ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.url}">
                             {:else}
-                                <img in:fadeIn id="ownder_image" gsap-duration="1.5" alt="Owner Photo" src="{photoplaceholder}"/>
+                                <img loading="lazy" in:fadeIn id="ownder_image" gsap-duration="1.5" alt="Owner Photo" src="{photoplaceholder}"/>
                             {/if}
                                     <div class="tm-box2 wtc px-5 py-3" style="bottom: 1rem;">
                                         <h5 class="sfont" in:slide id="member_name{index}" gsap-duration="2" gsap-x="-10">{member.attributes.name}</h5>
@@ -115,7 +115,7 @@
                         <div class="memberModal">
                             <div class="memberModal__image">
                                 {#if memberImage}
-                                <img src="{domain}{memberImage}" alt="member">
+                                <img loading="lazy" src="{domain}{memberImage}" alt="member">
                                 {/if}
                             </div>
                             <div class="memberModal__details">

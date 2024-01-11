@@ -42,7 +42,7 @@
                     <Col class="md-12">
                         <!-- <Animate> -->
                             {#if processData.section2image.data}
-                            <img in:fadeIn id="process_img" gsap-duration="1.5"  src="{domain}{processData.section2image.data.attributes.formats.large.url ? processData.section2image.data.attributes.formats.large.url : processData.section2image.data.attributes.url}"
+                            <img loading="lazy" in:fadeIn id="process_img" gsap-duration="1.5"  src="{domain}{processData.section2image.data.attributes.formats.large.url ? processData.section2image.data.attributes.formats.large.url : processData.section2image.data.attributes.url}"
                             srcset="{domain}{processData.section2image.data.attributes.url} 330w,
                                     {domain}{processData.section2image.data.attributes.url} 660w,
                                     {domain}{processData.section2image.data.attributes.url} 990w"

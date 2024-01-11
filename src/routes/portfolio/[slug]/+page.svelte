@@ -151,9 +151,9 @@
 						<div class="related__article"  in:fly id="related-items{index}" gsap-duration="1" gsap-delay={index/2} gsap-y="30">
 							<a href="{rPortfolio.attributes.slug}" data-sveltekit-reload class="zoomImg">
 								{#if rPortfolio.attributes.featuredImage.data != null}
-								<img src="{domain}{rPortfolio.attributes.featuredImage.data.attributes.formats.large.url ? rPortfolio.attributes.featuredImage.data.attributes.formats.large.url : rPortfolio.attributes.featuredImage.data.attributes.url}" alt="{rPortfolio.attributes.featuredImage.data.attributes.alternativeText}" />
+								<img loading="lazy" src="{domain}{rPortfolio.attributes.featuredImage.data.attributes.formats.large.url ? rPortfolio.attributes.featuredImage.data.attributes.formats.large.url : rPortfolio.attributes.featuredImage.data.attributes.url}" alt="{rPortfolio.attributes.featuredImage.data.attributes.alternativeText}" />
 								{:else}
-								<img src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{rPortfolio.attributes.title}" >
+								<img loading="lazy" src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{rPortfolio.attributes.title}" >
 								{/if}
 								<div class="related__article__text">
 									<span>{('0' + (index + 1)).slice(-2)}</span>
@@ -170,7 +170,7 @@
 				<!-- <Col md="6">
 					<div class="related__article">
 						<a href="#">
-							<img src="{vailWood}" alt="vail">
+							<img loading="lazy" src="{vailWood}" alt="vail">
 							<div class="related__article__text">
 								<span>02</span>
 								Cordillera Sunsets

@@ -48,9 +48,9 @@
                 <div class="masonry-items" in:fly="{{ y: 0, duration: 1000, delay:index * 1500}}" out:fly="{{y:0, duration:1000 }}">       
                     <a data-sveltekit-reload href="/portfolio/{project.attributes.slug}" class="zoomImg">      
                         {#if project.attributes.featuredImage.data != null}
-                        <img src="{domain}{project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}" >   
+                        <img loading="lazy" src="{domain}{project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}" >   
                         {:else}
-                        <img src="{noFeatured}" alt="{project.attributes.title}" >
+                        <img loading="lazy" src="{noFeatured}" alt="{project.attributes.title}" >
                         {/if}
                         <!-- <div class="masonry-items__text">
                             <span>{index + 1}</span>

@@ -21,7 +21,7 @@
                 <Swipe bind:active_item bind:this={SwipeComp}>
                     {#each images as image}
                     <SwipeItem>
-                        <img class="img-fluid" src={image} alt="">
+                        <img loading="lazy" class="img-fluid" src={image} alt="">
                     </SwipeItem>
                     {/each}
                 </Swipe>
@@ -29,7 +29,7 @@
             <div class="card-body">
                   <div class="is-center">
                       {#each images as image, i}
-                          <img class="{active_item == i ? 'rounded' : 'img-thumbnail'}" on:click={() => changeSlide(i)} src={image} alt="">
+                          <img loading="lazy" class="{active_item == i ? 'rounded' : 'img-thumbnail'}" on:click={() => changeSlide(i)} src={image} alt="">
                       {/each}
                   </div>
             </div>

@@ -153,12 +153,12 @@
                                     <div class="blogsection7 zoomImg">
                                         {#if blog.attributes.featuredimage.data != null}
                                             {#if blog.attributes.featuredimage.data.attributes.formats != null}
-                                                <img in:fadeIn id="article_img{i}" gsap-duration="2" width="{blog.attributes.featuredimage.data.attributes.width}" height="{blog.attributes.featuredimage.data.attributes.height}" src="{blog.attributes.featuredimage.data.attributes.formats.large.url ? domain+blog.attributes.featuredimage.data.attributes.formats.large.url : domain+blog.attributes.featuredimage.data.attributes.url}" alt="{blog.attributes.title}" class="blog-img w-100">
+                                                <img loading="lazy" in:fadeIn id="article_img{i}" gsap-duration="2" width="{blog.attributes.featuredimage.data.attributes.width}" height="{blog.attributes.featuredimage.data.attributes.height}" src="{blog.attributes.featuredimage.data.attributes.formats.large.url ? domain+blog.attributes.featuredimage.data.attributes.formats.large.url : domain+blog.attributes.featuredimage.data.attributes.url}" alt="{blog.attributes.title}" class="blog-img w-100">
                                             {:else}
-                                                <img in:fadeIn id="article_img{i}" gsap-duration="2" alt="{blog.attributes.title}" src="{fallback ? domain+fallback.attributes.url : blogempty}" class="blog-img w-100">
+                                                <img loading="lazy" in:fadeIn id="article_img{i}" gsap-duration="2" alt="{blog.attributes.title}" src="{fallback ? domain+fallback.attributes.url : blogempty}" class="blog-img w-100">
                                             {/if}
                                         {:else}
-                                            <img in:fadeIn id="article_img{i}" gsap-duration="2" alt="{blog.attributes.title}" src="{fallback ? domain+fallback.attributes.url : blogempty}" class="blog-img w-100">
+                                            <img loading="lazy" in:fadeIn id="article_img{i}" gsap-duration="2" alt="{blog.attributes.title}" src="{fallback ? domain+fallback.attributes.url : blogempty}" class="blog-img w-100">
                                         {/if}
                                     </div>
                                 <!-- </Animate> -->

@@ -91,15 +91,15 @@
   <Navbar expand="md">
 	<NavbarBrand href="/">
 		<div class="logo-container">
-			<img src={siteSettings.Header.Logo.data ? domain+siteSettings.Header.Logo.data.attributes.url : logo} alt="VALLEYWIDE" class="logo"/>
+			<img loading="lazy" src={siteSettings.Header.Logo.data ? domain+siteSettings.Header.Logo.data.attributes.url : logo} alt="VALLEYWIDE" class="logo"/>
 		</div>
 	</NavbarBrand>
 	{#if !isOpen}
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div class="{isOpen ? "hamburger open" : "hamburger close" }" on:click={toggleMenu}>
 			<!-- <span class="icon"></span>		 -->
-			<img width="49" height="49" src="{siteSettings.Header.hamburgerLight.data ? domain+siteSettings.Header.hamburgerLight.data.attributes.url : HamburgerLight}" alt="hamburger" class="light-hamburger">
-			<img width="49" height="49" src="{siteSettings.Header.hamburgerDark.data ? domain+siteSettings.Header.hamburgerDark.data.attributes.url : HamburgerDark}" alt="hamburger" class="dark-hamburger">
+			<img loading="lazy" width="49" height="49" src="{siteSettings.Header.hamburgerLight.data ? domain+siteSettings.Header.hamburgerLight.data.attributes.url : HamburgerLight}" alt="hamburger" class="light-hamburger">
+			<img loading="lazy" width="49" height="49" src="{siteSettings.Header.hamburgerDark.data ? domain+siteSettings.Header.hamburgerDark.data.attributes.url : HamburgerDark}" alt="hamburger" class="dark-hamburger">
 		</div>
 	{/if}
 	<NavbarToggler on:click={() => (isOpen = !isOpen)} />
@@ -138,7 +138,7 @@
 					<span class="icon"></span> <!-- x icon -->
 				</div>
 				<a href="/" class="mobile-menu-logo">
-					<img src={siteSettings.Header.Logo.data ? domain+siteSettings.Header.Logo.data.attributes.url : logo} alt="VALLEYWIDE" class="logo"/>
+					<img loading="lazy" src={siteSettings.Header.Logo.data ? domain+siteSettings.Header.Logo.data.attributes.url : logo} alt="VALLEYWIDE" class="logo"/>
 				</a>				
 				
 

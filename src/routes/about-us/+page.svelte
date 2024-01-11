@@ -62,7 +62,7 @@
 <section class="remodel" in:fly id="remodel-img-section" gsap-y="20">
     <div class="remodel__bgimage">
         {#if about.Section4image.data}
-        <img class="image-scale-up" in:scaleUp id="remodel-img" gsap-duration="2" src="{about.Section4image.data.attributes.formats.large.url ? url+about.Section4image.data.attributes.formats.large.url : url+about.Section4image.data.attributes.url}" alt="{about.Section3heading}" width="{about.Section4image.data.attributes.width}" height="{about.Section4image.data.attributes.height}">
+        <img loading="lazy" class="image-scale-up" in:scaleUp id="remodel-img" gsap-duration="2" src="{about.Section4image.data.attributes.formats.large.url ? url+about.Section4image.data.attributes.formats.large.url : url+about.Section4image.data.attributes.url}" alt="{about.Section3heading}" width="{about.Section4image.data.attributes.width}" height="{about.Section4image.data.attributes.height}">
         {/if}
         <p class="text-center pt-3"><i><b>{about.Section4text ? about.Section4text : ''}</b></i></p>
     </div>  
@@ -103,7 +103,7 @@
                         <!-- style:transform={`translate3d(0, ${(scroll * -0.15)}px, 0)`} -->
                         {#if about.Section6image.data}
                         <div class="imgcont">
-                            <img in:fly id="sp-img1" gsap-y="30" gsap-duration="2" gsap-start="top 70%" src="{about.Section6image.data.attributes.formats.large.url ? url+about.Section6image.data.attributes.formats.large.url : url+about.Section6image.data.attributes.url}" alt="{about.Section6subheading}" class="w-100" width="{about.Section6image.data.attributes.width}" height="{about.Section6image.data.attributes.height}">
+                            <img loading="lazy" in:fly id="sp-img1" gsap-y="30" gsap-duration="2" gsap-start="top 70%" src="{about.Section6image.data.attributes.formats.large.url ? url+about.Section6image.data.attributes.formats.large.url : url+about.Section6image.data.attributes.url}" alt="{about.Section6subheading}" class="w-100" width="{about.Section6image.data.attributes.width}" height="{about.Section6image.data.attributes.height}">
                         </div>
                         {/if}
                     </div>
@@ -121,7 +121,7 @@
                         <!-- style:transform={`translate3d(0, ${(scroll * -0.15)+450}px, 0)`} -->
                         {#if about.Section7image.data}
                         <div class="imgcont">
-                            <img in:fly gsap-y="30" gsap-duration="2" id="sp-img2" gsap-start="top 70%"  src="{about.Section7image.data.attributes.formats.large.url ? url+about.Section7image.data.attributes.formats.large.url : url+about.Section7image.data.attributes.url}" alt="{about.Section7heading}" class="w-100" width="{about.Section7image.data.attributes.width}" height="{about.Section7image.data.attributes.height}">
+                            <img loading="lazy" in:fly gsap-y="30" gsap-duration="2" id="sp-img2" gsap-start="top 70%"  src="{about.Section7image.data.attributes.formats.large.url ? url+about.Section7image.data.attributes.formats.large.url : url+about.Section7image.data.attributes.url}" alt="{about.Section7heading}" class="w-100" width="{about.Section7image.data.attributes.width}" height="{about.Section7image.data.attributes.height}">
                         </div>
                         {/if}
                     </div>
@@ -151,7 +151,7 @@
                         <!-- style:transform={`translate3d(0, ${(scroll * -0.1)+500}px, 0)`} -->
                         {#if about.Section8image.data}
                         <div class="imgcont">
-                            <img in:fly gsap-y="30" gsap-duration="2" id="sp-img3"  gsap-start="top 70%"  src="{about.Section8image.data.attributes.formats.large.url ? url+about.Section8image.data.attributes.formats.large.url : url+about.Section8image.data.attributes.url}" alt="{about.Section8heading}" class="w-100" width="{about.Section8image.data.attributes.width}" height="{about.Section8image.data.attributes.height}">
+                            <img loading="lazy" in:fly gsap-y="30" gsap-duration="2" id="sp-img3"  gsap-start="top 70%"  src="{about.Section8image.data.attributes.formats.large.url ? url+about.Section8image.data.attributes.formats.large.url : url+about.Section8image.data.attributes.url}" alt="{about.Section8heading}" class="w-100" width="{about.Section8image.data.attributes.width}" height="{about.Section8image.data.attributes.height}">
                         </div>
                         {/if}
                     </div>

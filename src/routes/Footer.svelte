@@ -124,7 +124,7 @@ function scrollToTop() {
 <div class="copyright">
     <Container>
         <a href="https://homebuilder.app" target="_blank">
-            <img src="{credit}" class="mySVG" alt="HomeBuilder.app">
+            <img loading="lazy" src="{credit}" class="mySVG" alt="HomeBuilder.app">
         </a>
     </Container>
 </div>

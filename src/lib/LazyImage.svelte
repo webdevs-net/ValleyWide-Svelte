@@ -34,4 +34,4 @@
     });
 </script>
 
-<img {alt} bind:this={img} class="{className}" />  
+<img loading="lazy" {alt} bind:this={img} class="{className}" />  

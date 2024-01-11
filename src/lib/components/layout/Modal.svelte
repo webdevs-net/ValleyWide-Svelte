@@ -14,7 +14,7 @@
 	on:click|self={() => dialog.close()}
 >
 	<div on:click|stopPropagation>
-		<img src="{xButton}" class="close" alt="close" on:click={() => dialog.close()}>
+		<img loading="lazy" src="{xButton}" class="close" alt="close" on:click={() => dialog.close()}>
 		<slot />
 	</div>
 </dialog>

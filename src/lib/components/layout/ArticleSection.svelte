@@ -40,7 +40,7 @@
 				<Col md="6" class="">
 					<div >
 						{#if insight.image.data}
-						<img in:slide id="global_article_img" gsap-x="-30" gsap-duration="1.2" src="{domain}{insight.image.data.attributes.formats.large.url ? insight.image.data.attributes.formats.large.url : insight.image.data.attributes.url}" alt="Stair">
+						<img loading="lazy" in:slide id="global_article_img" gsap-x="-30" gsap-duration="1.2" src="{domain}{insight.image.data.attributes.formats.large.url ? insight.image.data.attributes.formats.large.url : insight.image.data.attributes.url}" alt="Stair">
 						{/if}
 					</div>
 				</Col>

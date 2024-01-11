@@ -170,10 +170,10 @@ function preventAnchorClick(event) {
   <!-- {#if controls} -->
   <div class="left-right desktop">
       <button class="left" on:click={prevslide}>
-          <img src="{leftar}">
+          <img loading="lazy" src="{leftar}">
       </button>
       <button class="right" on:click={nextslide}>
-          <img src="{rightar}">
+          <img loading="lazy" src="{rightar}">
       </button>
   </div>
   </div>
@@ -192,11 +192,11 @@ function preventAnchorClick(event) {
           <div class="slider-container__carousel-cell" id="carousel-item">
             <a href="/portfolio/{project.attributes.slug ? project.attributes.slug : '#'}" data-sveltekit-reload class="zoomImg" draggable="false">
               {#if project.attributes.featuredImage.data != null}
-                <img draggable="false" src="{domain}{project.attributes.featuredImage.data.attributes.formats.large.url ? project.attributes.featuredImage.data.attributes.formats.large.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.featuredImage.data.attributes.alternativeText}" />
+                <img loading="lazy" draggable="false" src="{domain}{project.attributes.featuredImage.data.attributes.formats.large.url ? project.attributes.featuredImage.data.attributes.formats.large.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.featuredImage.data.attributes.alternativeText}" />
               {:else}
               {#await promise}
               {:then fallback} 
-                <img src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}"  draggable="false">
+                <img loading="lazy" src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}"  draggable="false">
               {/await}
               {/if}
               <div class="slider-container__carousel-cell__text">
@@ -218,10 +218,10 @@ function preventAnchorClick(event) {
 <div class="slider-caption">
 <div class="left-right mobile">
 <button class="left" on:click={prevslide}>
-    <img src="{leftar}">
+    <img loading="lazy" src="{leftar}">
 </button>
 <button class="right" on:click={nextslide}>
-    <img src="{rightar}">
+    <img loading="lazy" src="{rightar}">
 </button>
 </div>
 </div>

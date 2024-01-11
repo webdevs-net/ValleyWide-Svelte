@@ -29,10 +29,10 @@
   </style>
   
   <!-- {#if loaded}
-  <img {src} {alt} class:loaded bind:this={thisImage} loading="lazy" />
+  <img loading="lazy" {src} {alt} class:loaded bind:this={thisImage} loading="lazy" />
   {:else} 
   {@const src = lowRes}
-  <img {src} {alt} class:loaded bind:this={thisImage} loading="lazy" />
+  <img loading="lazy" {src} {alt} class:loaded bind:this={thisImage} loading="lazy" />
   {/if} -->
 
-  <img {src} {alt} class:loaded bind:this={thisImage} loading="lazy" />
+  <img loading="lazy" {src} {alt} class:loaded bind:this={thisImage} loading="lazy" />

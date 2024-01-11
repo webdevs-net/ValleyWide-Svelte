@@ -177,10 +177,10 @@ const handleBottomArrowClick = () => {
 							{/each}
 							</div>
 							<div class="arrow-top" on:click={handleTopArrowClick}>
-							  <img src="{arrowtop}" alt="arrowtop" />
+							  <img loading="lazy" src="{arrowtop}" alt="arrowtop" />
 							</div>
 							<div class="arrow-bottom" on:click={handleBottomArrowClick}>
-							  <img src="{arrowtop}" alt="arrowbottom" />
+							  <img loading="lazy" src="{arrowtop}" alt="arrowbottom" />
 							</div>
 						  </div>
 						{/if}
@@ -201,9 +201,9 @@ const handleBottomArrowClick = () => {
 												<!-- in:fly="{{ y: 0, duration: 1000, delay:index * 1500}}" out:fly="{{y:0, duration:1000 }}       -->
 												<a data-sveltekit-reload href="/portfolio/{project.attributes.slug}" class="zoomImg">      
 													{#if project.attributes.featuredImage.data != null}
-													<img src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium.url ? project.attributes.featuredImage.data.attributes.formats.medium.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}" >   
+													<img loading="lazy" src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium.url ? project.attributes.featuredImage.data.attributes.formats.medium.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.title}" >   
 													{:else}
-													<img src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}" >
+													<img loading="lazy" src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}" >
 													{/if}
 												</a>
 											</div>	                    
@@ -270,7 +270,7 @@ const handleBottomArrowClick = () => {
 				<Col md="5" class="my-auto containerimg" >
 					<div class="childimg">
 						{#if home.reputation.image.data}
-							<img in:fly2 id="reputation-img" src="{domain}{home.reputation.image.data.attributes.formats.medium.url ? home.reputation.image.data.attributes.formats.medium.url : home.reputation.image.data.attributes.url}" alt="{home.reputation.image.data.attributes.alternativeText}" >
+							<img loading="lazy" in:fly2 id="reputation-img" src="{domain}{home.reputation.image.data.attributes.formats.medium.url ? home.reputation.image.data.attributes.formats.medium.url : home.reputation.image.data.attributes.url}" alt="{home.reputation.image.data.attributes.alternativeText}" >
 						{/if}
 					</div>
 				</Col>
@@ -284,7 +284,7 @@ const handleBottomArrowClick = () => {
 			<Col md="6" class="">
 				<div class="process__top-image childimg2" >
 					{#if home.ourProcessTopImage.data}
-						<img in:fly2 id="process-top-img" gsap-y="-60" src="{domain}{home.ourProcessTopImage.data[0].attributes.formats.medium.url ? home.ourProcessTopImage.data[0].attributes.formats.medium.url : home.ourProcessTopImage.data[0].attributes.url}" alt="{home.ourProcessTopImage.data[0].attributes.alternativeText}"/>
+						<img loading="lazy" in:fly2 id="process-top-img" gsap-y="-60" src="{domain}{home.ourProcessTopImage.data[0].attributes.formats.medium.url ? home.ourProcessTopImage.data[0].attributes.formats.medium.url : home.ourProcessTopImage.data[0].attributes.url}" alt="{home.ourProcessTopImage.data[0].attributes.alternativeText}"/>
 					{/if}
 				</div>
 			</Col>
@@ -305,7 +305,7 @@ const handleBottomArrowClick = () => {
 			<Col md="5" class="my-auto containerimg3">
 				<div class="process__bottom childimg3">
 					{#if home.ourProcessRightImage.data}
-						<img in:fly2 id="process-bottom-img" gsap-y="-150" src="{domain}{home.ourProcessRightImage.data.attributes.formats.medium.url ? home.ourProcessRightImage.data.attributes.formats.medium.url : home.ourProcessRightImage.data.attributes.url}" alt="{home.ourProcessRightImage.data.attributes.alternativeText}">
+						<img loading="lazy" in:fly2 id="process-bottom-img" gsap-y="-150" src="{domain}{home.ourProcessRightImage.data.attributes.formats.medium.url ? home.ourProcessRightImage.data.attributes.formats.medium.url : home.ourProcessRightImage.data.attributes.url}" alt="{home.ourProcessRightImage.data.attributes.alternativeText}">
 					{/if}
 				</div>
 			</Col>
@@ -332,7 +332,7 @@ const handleBottomArrowClick = () => {
 				<Col md="5" class="my-auto containerimg4">
 					<div class="childimg4">
 						{#if home.ourStoryRightImage.data}
-							<img in:fly2 id="story-img"  src="{domain}{home.ourStoryRightImage.data.attributes.formats.medium.url ? home.ourStoryRightImage.data.attributes.formats.medium.url : home.ourStoryRightImage.data.attributes.url}" alt="{home.ourStoryRightImage.data.attributes.alternativeText}">
+							<img loading="lazy" in:fly2 id="story-img"  src="{domain}{home.ourStoryRightImage.data.attributes.formats.medium.url ? home.ourStoryRightImage.data.attributes.formats.medium.url : home.ourStoryRightImage.data.attributes.url}" alt="{home.ourStoryRightImage.data.attributes.alternativeText}">
 						{/if}
 					</div>	
 				</Col>

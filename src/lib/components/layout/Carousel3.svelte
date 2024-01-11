@@ -158,10 +158,10 @@ let clientY = e.touches[0].clientY;
       </div>
     <div class="left-right desktop">
         <button class="left" on:click={left}>
-            <img src="{leftar}">
+            <img loading="lazy" src="{leftar}">
         </button>
         <button class="right" on:click={right}>
-            <img src="{rightar}">
+            <img loading="lazy" src="{rightar}">
         </button>
     </div>
     </div>
@@ -173,11 +173,11 @@ let clientY = e.touches[0].clientY;
             <div class="slider-container__carousel-cell" id="carousel-item">
               <a href="/portfolio/{project.attributes.slug ? project.attributes.slug : '#'}" data-sveltekit-reload class="zoomImg" draggable="false">
                 {#if project.attributes.featuredImage.data != null}
-                  <img draggable="false" src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium.url ? project.attributes.featuredImage.data.attributes.formats.medium.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.featuredImage.data.attributes.alternativeText}" />
+                  <img loading="lazy" draggable="false" src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium.url ? project.attributes.featuredImage.data.attributes.formats.medium.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.featuredImage.data.attributes.alternativeText}" />
                 {:else}
                 {#await promise}
                 {:then fallback} 
-                  <img src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}"  draggable="false">
+                  <img loading="lazy" src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}"  draggable="false">
                 {/await}
                 {/if}
                 <div class="slider-container__carousel-cell__text">
@@ -192,11 +192,11 @@ let clientY = e.touches[0].clientY;
           <div class="slider-container__carousel-cell" id="carousel-item">
             <a href="/portfolio/{project.attributes.slug ? project.attributes.slug : '#'}" data-sveltekit-reload class="zoomImg" draggable="false">
               {#if project.attributes.featuredImage.data != null}
-                <img draggable="false" src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium.url ? project.attributes.featuredImage.data.attributes.formats.medium.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.featuredImage.data.attributes.alternativeText}" />
+                <img loading="lazy" draggable="false" src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium.url ? project.attributes.featuredImage.data.attributes.formats.medium.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.featuredImage.data.attributes.alternativeText}" />
               {:else}
               {#await promise}
               {:then fallback} 
-                <img src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}"  draggable="false">
+                <img loading="lazy" src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}"  draggable="false">
               {/await}
               {/if}
               <div class="slider-container__carousel-cell__text">
@@ -211,11 +211,11 @@ let clientY = e.touches[0].clientY;
         <div class="slider-container__carousel-cell" id="carousel-item">
           <a href="/portfolio/{project.attributes.slug ? project.attributes.slug : '#'}" data-sveltekit-reload class="zoomImg" draggable="false">
             {#if project.attributes.featuredImage.data != null}
-              <img draggable="false" src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium.url ? project.attributes.featuredImage.data.attributes.formats.medium.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.featuredImage.data.attributes.alternativeText}" />
+              <img loading="lazy" draggable="false" src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium.url ? project.attributes.featuredImage.data.attributes.formats.medium.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.featuredImage.data.attributes.alternativeText}" />
             {:else}
             {#await promise}
             {:then fallback} 
-              <img src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}"  draggable="false">
+              <img loading="lazy" src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}"  draggable="false">
             {/await}
             {/if}
             <div class="slider-container__carousel-cell__text">
@@ -230,11 +230,11 @@ let clientY = e.touches[0].clientY;
       <div class="slider-container__carousel-cell" id="carousel-item">
         <a href="/portfolio/{project.attributes.slug ? project.attributes.slug : '#'}" data-sveltekit-reload class="zoomImg" draggable="false">
           {#if project.attributes.featuredImage.data != null}
-            <img draggable="false" src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium.url ? project.attributes.featuredImage.data.attributes.formats.medium.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.featuredImage.data.attributes.alternativeText}" />
+            <img loading="lazy" draggable="false" src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium.url ? project.attributes.featuredImage.data.attributes.formats.medium.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.featuredImage.data.attributes.alternativeText}" />
           {:else}
           {#await promise}
           {:then fallback} 
-            <img src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}"  draggable="false">
+            <img loading="lazy" src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}"  draggable="false">
           {/await}
           {/if}
           <div class="slider-container__carousel-cell__text">
@@ -249,11 +249,11 @@ let clientY = e.touches[0].clientY;
     <div class="slider-container__carousel-cell" id="carousel-item">
       <a href="/portfolio/{project.attributes.slug ? project.attributes.slug : '#'}" data-sveltekit-reload class="zoomImg" draggable="false">
         {#if project.attributes.featuredImage.data != null}
-          <img draggable="false" src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium.url ? project.attributes.featuredImage.data.attributes.formats.medium.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.featuredImage.data.attributes.alternativeText}" />
+          <img loading="lazy" draggable="false" src="{domain}{project.attributes.featuredImage.data.attributes.formats.medium.url ? project.attributes.featuredImage.data.attributes.formats.medium.url : project.attributes.featuredImage.data.attributes.url}" alt="{project.attributes.featuredImage.data.attributes.alternativeText}" />
         {:else}
         {#await promise}
         {:then fallback} 
-          <img src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}"  draggable="false">
+          <img loading="lazy" src="{fallback ? domain+fallback.attributes.url : noFeatured}" alt="{project.attributes.title}"  draggable="false">
         {/await}
         {/if}
         <div class="slider-container__carousel-cell__text">
@@ -267,20 +267,20 @@ let clientY = e.touches[0].clientY;
         </div>
     </div>
     <button class="left-mobil" on:click={left}>
-        <img src="{rightarrow}">
+        <img loading="lazy" src="{rightarrow}">
     </button>
     <button class="right-mobil" on:click={right}>
-        <img src="{rightarrow}">
+        <img loading="lazy" src="{rightarrow}">
     </button>
 </Col>
 </Row>
   <!-- <div class="slider-caption">
     <div class="left-right mobile">
         <button class="left" on:click={left}>
-            <img src="{leftar}">
+            <img loading="lazy" src="{leftar}">
         </button>
         <button class="right" on:click={right}>
-            <img src="{rightar}">
+            <img loading="lazy" src="{rightar}">
         </button>
     </div>
   </div> -->
