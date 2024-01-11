@@ -339,7 +339,7 @@ const handleBottomArrowClick = () => {
 			</Row>
 		</Container>
 </section>
-<PageBreak />
+<PageBreak top="5rem" bottom="2rem" />
 <section class="m-0 article-wrapper" id="article-wrapper">
 	<ArticleSection />
 </section>

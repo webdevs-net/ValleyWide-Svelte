@@ -66,7 +66,7 @@
 <style lang="scss">
 	.insight{
 		background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-		padding: 8rem 0;
+		padding: 0 0 8rem 0;
 		margin-bottom: 0;
 		min-height: 100vh;
 		display: flex;
