@@ -529,7 +529,7 @@ align-items: end;
 				ul{
 					display: flex;
 					width: 90%;
-					margin: 1rem auto;
+					margin: 1rem auto 3rem auto;
 					padding-left: 0;	
 					justify-content: center;
 					
@@ -551,12 +551,11 @@ align-items: end;
 					}					
 					li{
 						list-style: none;
-						padding-left: 1rem; padding-right: 1rem;
+						padding-left: 2rem; padding-right: 2rem;
 						border-right: 1px solid $gray;	
 						transition: 0.3s all;					
 						@include media-max(sm){
 							width: 15rem;
-							padding: 0 1rem;
 						}
 						&:last-child {
 							border: none;

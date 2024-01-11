@@ -62,7 +62,7 @@
             </Col>
             <Col md=6 class="tm-img">
                 <div>
-                    {#if ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats != null}
+                    {#if ourTeam.team_member_owner?.data?.attributes?.memberPhoto?.data?.attributes?.formats != null}
                     <img in:fadeIn id="owner_image" gsap-duration="1.5" alt="{ourTeam.team_member_owner.data.attributes.name}" src="{domain}{ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url ? ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url : ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.url}">
                     {:else}
                     <img in:fadeIn id="ownder_image" gsap-duration="1.5" alt="Owner Photo" src="{photoplaceholder}"/>
@@ -98,10 +98,10 @@
                             on:click={() => getMemberIndex(index)}
                             on:click={() => (showModal = true)}
                             >
-                            {#if member.attributes.memberPhoto.data.attributes.formats != null}
-                                <img in:fadeIn id="member_image{index}" gsap-duration="1.5" width="{member.attributes.memberPhoto.data.attributes.width}" height="{member.attributes.memberPhoto.data.attributes.height}" src="{domain}{member.attributes.memberPhoto.data.attributes.formats.large.url ? member.attributes.memberPhoto.data.attributes.formats.large.url : member.attributes.memberPhoto.data.attributes.url}" alt="member">
+                            {#if ourTeam.team_member_owner?.data?.attributes?.memberPhoto?.data?.attributes?.formats != null}
+                            <img in:fadeIn id="owner_image" gsap-duration="1.5" alt="{ourTeam.team_member_owner.data.attributes.name}" src="{domain}{ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url ? ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.formats.large.url : ourTeam.team_member_owner.data.attributes.memberPhoto.data.attributes.url}">
                             {:else}
-                                <img in:fadeIn id="member_image{index}" gsap-duration="1.5" src="{photoplaceholder}" alt="member">
+                                <img in:fadeIn id="ownder_image" gsap-duration="1.5" alt="Owner Photo" src="{photoplaceholder}"/>
                             {/if}
                                     <div class="tm-box2 wtc px-5 py-3" style="bottom: 1rem;">
                                         <h5 class="sfont" in:slide id="member_name{index}" gsap-duration="2" gsap-x="-10">{member.attributes.name}</h5>
